@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fatima Noor</title>
+    <link rel="icon" href="images/wotteo.jpg"  type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet" >
+    <link href="css/background.css" rel="stylesheet" >
+    <link href="css/navbar.css" rel="stylesheet" >
+    <link href="css/about.css" rel="stylesheet" >
+    <link href="css/scrollbar.css" rel="stylesheet" >
+    <link href="css/heroSection.css" rel="stylesheet" >   
+    <link href="css/counter.css" rel="stylesheet" >
+    <link href="css/footer.css" rel="stylesheet" >
+    <link href="css/animation.css" rel="stylesheet" >
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+                      
+</head>
+<body>
+    <div class="canvas-container">
+        <canvas id="backgroundCanvas"></canvas>
+    </div>
+    <main class="main">
+        <section class="heroSection">
+            <div class="planet planet-1"></div>
+            <div class="planet planet-2"></div>
+            <div class="planet planet-3"></div>
+            <div class="planet planet-4"></div>
+        
+        
+            <header class="header">
+                <a href="#" class="logo">Noor.</a>
+                <div class="hamburger" onclick="toggleDropdown()">&#9776;</div> 
+                <nav class="navbar">
+                    <a href="#">Home</a>
+                    <a href="#About">About</a>
+                    <a href="#">Projects</a>
+                    <a href="#">Skills</a>
+                    <a href="#">Contact</a>
+                </nav>
+                <div class="dropdown-menu" id="dropdownMenu">
+                    <a href="#">Home</a>
+                    <a href="#About">About</a>
+                    <a href="#">Projects</a>
+                    <a href="#">Skills</a>
+                    <a href="#">Contact</a>
+                    <a href="#">Download Résumé</a>
+                </div>
+            </header>
+        
+            <div class="relative flex flex-col items-center mt-20 h-screen ">
+                <h1 class="text-4xl glow"><span class= "noStroke">Hello, I'm </span><span class="stroke">Fatima Noor</span></h1>
+                <p class="text-gray-300 mt-2">Welcome to my portfolio</p>
+                <p class="text-white text-lg mt-4 max-w-xl text-center px-4">
+                    A passionate <b>software engineer</b> specializing in <b>data analytics</b>, <b>machine learning</b>, and <b>backend development</b>. 
+                    My mission is to create innovative solutions that enhance user experiences.
+                </p>
+                <div class="button-container">
+                    <button id="down" class="relative mt-6 px-6 py-3 text-lg text-white font-bold bg-gradient-to-r from-teal-400 to-blue-500 rounded-full overflow-hidden shadow-lg border-2 border-teal-300 glowButton self-start sm:self-center">
+                        <img src="images/wotteo.jpg" alt="Wotteo" class="wotteoImage">
+                        Download Résumé
+                    </button>
+    
+                    <button id="ai"class="relative mt-6 px-6 py-4 text-lg text-white font-bold bg-gradient-to-r from-teal-400 to-blue-500 rounded-full overflow-hidden shadow-lg border-2 border-teal-300 glowButton self-start sm:self-center hidden" id="aiSupportButton">
+                        <img src="images/wotteo.jpg" alt="Wotteo" class="wotteoImage">
+                        Chat with AI Assistant
+                    </button>
+    
+                    
+                    
+                    <div class="mt-4 flex space-x-6 icons">
+                        <a href="https://www.instagram.com" target="_blank" class="icon"aria-label="GitHub">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                        <a href="https://www.kaggle.com" target="_blank" class="icon"aria-label="GitHub">
+                            <i class="fa-brands fa-kaggle"></i>
+                        </a>
+                        <a href="https://www.github.com" target="_blank" class="icon"aria-label="GitHub">
+                            <i class="fa-brands fa-github"></i>
+                        </a>
+                        <a href="https://www.linkedin.com" target="_blank" class="icon"aria-label="GitHub">
+                            <i class="fa-brands fa-linkedin"></i>
+                        </a>
+                    </div>
+                </div>
+                </div>
+                
+            </div>
+    
+
+            <div class="image-container relative">
+                <img src="images/wotteo.jpg" alt="Wotteo" class="w-40 h-auto absolute right-6 wotteo" style="bottom: 220px;" id="b15">
+                <div id="chatBubble" class="chat-btn absolute  ">
+                    <button id="supportButton" class="mt-6 px-9 py-2 text-lg rounded-full overflow-hidden shadow-lg border-2 border-teal-300 cButton self-start  gradient-button ">AI Support</button>
+                </div>
+            </div>
+
+            
+            <section class="wrapper ">
+                <div class="container">
+                <i class="fa-solid fa-check"></i>
+                <span class="num" data-val="26">0</span>
+                <span class="text">Projects </span>
+                </div>
+        
+                <div class="container">
+                <i class="fas fa-smile-beam"></i>
+                <span class="num" data-val="20">0</span>
+                <span class="text">Happy Clients</span>
+                </div>
+        
+                <div class="container">
+                <i class="fa-solid fa-award"></i>
+                <span class="num" data-val="8">0</span>
+                <span class="text">Achievements</span>
+                </div>
+        
+                <div class="container">
+                <i class="fa-solid fa-hourglass-half"></i>
+                <span class="num" data-val="3">0</span>
+                <span class="text">Years Experience</span>
+                </div>
+            </section>
+        </section>
+    </main>
+        
+    <script src="js/scripts.js"></script>
+
+</body>
+</html>
+
+
+
+
+
