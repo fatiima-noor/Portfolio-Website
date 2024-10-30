@@ -1,6 +1,4 @@
 
-
-
 .glow {
     color: white;
     
@@ -31,7 +29,7 @@
 }
 .glowButton {
     position: relative;
-    z-index: 10;
+    z-index: 0;
     transition: background-color 0.3s ease-in-out;
     text-shadow: 0 0 5px rgba(255, 255, 255, 0.7), 
                  0 0 10px rgba(0, 204, 255, 0.7), 
@@ -61,8 +59,14 @@
 .wotteoImage{
     display: none;
 }
-
-
+@media (min-width: 768px) and (max-width: 1025px) {
+    .relative {
+        margin-top: 20%;
+        height: auto; 
+    }
+  
+}
+     
 @media (max-width: 640px) {
     .relative {
         margin-top: 20%; 

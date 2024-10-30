@@ -11,7 +11,7 @@
     <link href="css/navbar.css" rel="stylesheet" >
     <link href="css/about.css" rel="stylesheet" >
     <link href="css/scrollbar.css" rel="stylesheet" >
-    <link href="css/heroSection.css" rel="stylesheet" >   
+    <link href="css/herosection.css" rel="stylesheet" >   
     <link href="css/counter.css" rel="stylesheet" >
     <link href="css/footer.css" rel="stylesheet" >
     <link href="css/animation.css" rel="stylesheet" >
@@ -44,7 +44,7 @@
                 </nav>
                 <div class="dropdown-menu" id="dropdownMenu">
                     <a href="#">Home</a>
-                    <a href="#About">About</a>
+                    <a href="#AboutMobile">About</a>
                     <a href="#">Projects</a>
                     <a href="#">Skills</a>
                     <a href="#">Contact</a>
@@ -52,7 +52,8 @@
                 </div>
             </header>
         
-            <div class="relative flex flex-col items-center mt-20 h-screen ">
+            <div class="relative flex flex-col items-center mt-20 sm:h-screen md:h-[85vh] lg:h-screen">
+
                 <h1 class="text-4xl glow"><span class= "noStroke">Hello, I'm </span><span class="stroke">Fatima Noor</span></h1>
                 <p class="text-gray-300 mt-2">Welcome to my portfolio</p>
                 <p class="text-white text-lg mt-4 max-w-xl text-center px-4">
@@ -86,7 +87,7 @@
                             <i class="fa-brands fa-linkedin"></i>
                         </a>
                     </div>
-                </div>
+                 </div>
                 </div>
                 
             </div>
@@ -126,6 +127,191 @@
                 </div>
             </section>
         </section>
+
+
+        <a href="#About" class="scroll-button">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="20" height="20" class="transition-transform transform hover:scale-110 scrollArrow" fill="#FFFFFF8A">
+                <path d="M169.4 470.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 370.8 224 64c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 306.7L54.6 265.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z"/>
+            </svg>
+        </a>
+
+        <section id="About" class="aboutSection">
+            <div class="flex flex-col items-center  p-6 aboutContainer">
+                <h1 class="text-3xl mb-4 text-white aboutHeading fade-in-scale">About Fatima</h1>
+            
+                <div class="grid flex-grow w-full grid-cols-3 grid-rows-6 gap-4 " style="grid-template-columns: 1.2fr 0.8fr 1fr;">
+                    <div class="col-span-2 row-span-3 rounded-3xl fade-in-scale  p-4 shadow-lg text-white ">
+                        <ul class="list-disc pl-5 space-y-2">
+                            <li class="flex items-start">
+                                <span class="mr-2 text-blue-400">💡</span>
+                                <span>Driven by a passion for technology and innovation</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="mr-2 text-blue-400">🌟</span>
+                                <span>Thrives in dynamic environments that challenge creativity</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="mr-2 text-blue-400">📚</span>
+                                <span>Committed to lifelong learning</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="mr-2 text-blue-400">🔍</span>
+                                <span>Curious about the tech world</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="mr-2 text-blue-400">🤝</span>
+                                <span>Focus on making a meaningful impact</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="mr-2 text-blue-400">🚀</span>
+                                <span>Excited to collaborate on innovative projects</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="row-span-4 rounded-3xl fade-in-scale">
+                        <img src="images/b5.png" alt="developer" class="developer-image">
+                    </div>
+                    
+
+                    <div class="col-span-1.5 row-span-3 rounded-3xl fade-in-scale">
+                        <h2 class="text-2xl font-bold mb-4">Certifications</h2>
+                        <ul class="list-disc pl-5">
+                            <li class="mb-2">Data Scientist - DASCA</li>
+                            <li class="mb-2">Solutions Architect - AWS<li>                            
+                            <li class="mb-2">Google Analytics - Google</li>
+                            <li class="mb-2">Machine Learning Specialization- Coursera</li>
+                            <li class="mb-2">Data Scientist Associate - Microsoft</li>
+                        </ul>
+                    </div>
+            
+                    <div class="col-span-0.5 row-span-3 rounded-3xl fade-in-scale">
+                        <h2 class="text-2xl font-bold mb-4">Skills</h2>
+                        <ul class="list-disc pl-5">
+                            <li class="mb-2">Machine Learning</li>
+                            <li class="mb-2">Front-End Development</li>
+                            <li class="mb-2">AI Specialist</li>
+                            <li class="mb-2">UI/UX Design</li>
+                            <li class="mb-2">Data Analysis</li>
+                        </ul> 
+                    </div>
+    
+        
+                    <div class="row-span-2 rounded-3xl fade-in-scale">
+                        <h2 class="text-2xl font-bold mb-4">Languages</h2>
+                        <ul class="list-disc pl-5">
+                            <li class="mb-2"><span class="font-semibold">Urdu:</span> Native</li>
+                            <li class="mb-2"><span class="font-semibold">English:</span> Fluent</li>
+                            <li class="mb-2"><span class="font-semibold">Punjabi:</span> Conversational</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>  
+
+
+        <section id="AboutMobile" class="aboutSectionMobile">
+            <div class="aboutContainerMobile">
+                <h1 class="aboutHeadingMobile">About Fatima</h1>
+                <div class="about-container fade-in-scale">
+                    <div class="about-text">
+                        <ul>
+                            <li><span class="mr-2 text-blue-400">💡</span> Tech Enthusiast</li>
+                            <li><span class="mr-2 text-blue-400">🌟</span> Challenge Seeker</li>
+                            <li><span class="mr-2 text-blue-400">📚</span> Lifelong learner</li>
+                            <li><span class="mr-2 text-blue-400">🔍</span> Tech-curious</li>
+                            <li><span class="mr-2 text-blue-400">🤝</span> Impact-focused</li>
+                            <li><span class="mr-2 text-blue-400">🚀</span> Excited to innovate</li>
+                        </ul>
+                    </div>
+
+                    <div class="about-text-tablets">
+                        <ul>
+                            <li><span class="mr-2 text-blue-400">💡</span> Passionate about technology</li>
+                            <li><span class="mr-2 text-blue-400">🌟</span> Thrives in creative challenges</li>
+                            <li><span class="mr-2 text-blue-400">📚</span> Committed lifelong learner</li>
+                            <li><span class="mr-2 text-blue-400">🔍</span> Always tech-curious</li>
+                            <li><span class="mr-2 text-blue-400">🤝</span> Focused on making impact</li>
+                            <li><span class="mr-2 text-blue-400">🚀</span> Eager to innovate</li>
+                        </ul>
+                    </div>
+                    <img src="images/b5.png" alt="developer" class="developer-image">
+                </div>
+        
+                <div class="certifications-block fade-in-scale rounded-3xl">
+                    <h2>Certifications</h2>
+                    <ul>
+                        <li>Data Scientist - DASCA</li>
+                        <li>Solutions Architect - AWS</li>
+                        <li>Google Analytics - Google</li>
+                        <li>Machine Learning Specialization - Coursera</li>
+                        <li>Data Scientist Associate - Microsoft</li>
+                    </ul>
+                </div>
+        
+                <div class="skills-block fade-in-scale rounded-3xl">
+                    <h2>Skills</h2>
+                    <ul>
+                        <li>Machine Learning</li>
+                        <li>Front-End Development</li>
+                        <li>AI Specialist</li>
+                        <li>UI/UX Design</li>
+                        <li>Data Analysis</li>
+                    </ul>
+                </div>
+        
+                <div class="languages-block fade-in-scale rounded-3xl">
+                    <h2>Languages</h2>
+                    <ul>
+                        <li><strong>Urdu:</strong> Native</li>
+                        <li><strong>English:</strong> Fluent</li>
+                        <li><strong>Punjabi:</strong> Conversational</li>
+                    </ul>
+                </div>
+
+                <div class="Skills-Labguages-Tablets">
+                    <div class="skills-block-Tablets fade-in-scale rounded-3xl">
+                        <h2>Skills</h2>
+                        <ul class="bulletsTablet">
+                            <li>Machine Learning</li>
+                            <li>Front-End Development</li>
+                            <li>AI Specialist</li>
+                            <li>UI/UX Design</li>
+                            <li>Data Analysis</li>
+                        </ul>
+                    </div>
+            
+                    <div class="languages-block-Tablets fade-in-scale rounded-3xl">
+                        <h2>Languages</h2>
+                        <ul class="bulletsTablet">
+                            <li><strong>Urdu:</strong> Native</li>
+                            <li><strong>English:</strong> Fluent</li>
+                            <li><strong>Punjabi:</strong> Conversational</li>
+                        </ul>
+                    </div>
+                </div>
+        
+            </div>
+        </section>
+        
+        <footer class="footer">
+            <div class="footer-left">
+                <h3 class="cool-text">Let's&nbsp;Connect!</h3>
+                <p>Want to work with me? Feel free to reach out!</p>
+                <button class="hire-me">Get in Touch!</button>
+                <p>Or connect with me on:</p>
+                <div class="social-links">
+                  <a href="https://instagram.com/yourhandle" target="_blank">Instagram</a> |
+                  <a href="https://linkedin.com/in/yourprofile" target="_blank">LinkedIn</a> |
+                  <a href="mailto:hi@cassie.codes">Gmail</a> |
+                  <a href="https://twitter.com/yourhandle" target="_blank">Twitter</a>
+                </div>
+              </div>
+            <div class="footer-right">
+              <img src="images/l13.png" alt="Image">
+            </div>
+          </footer>
+        
     </main>
         
     <script src="js/scripts.js"></script>

@@ -118,7 +118,7 @@ document.addEventListener('DOMContentLoaded', function () {
     observer.observe(counterSection);
   });
   
-  //character
+//character
   window.addEventListener('load', function() {
     const imageContainer = document.querySelector('.image-container');
     
@@ -126,5 +126,37 @@ document.addEventListener('DOMContentLoaded', function () {
         imageContainer.classList.add('float-in-space'); 
     }, 1000); 
 });
-  
+
+//About Section
+const elements = document.querySelectorAll('.fade-in-scale');
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      }, {
+        threshold: 0.1 
+      });
+
+      elements.forEach(el => observer.observe(el));
+
+
+//scroll button
+document.querySelector('.scroll-button').addEventListener('click', function(e) {
+    e.preventDefault();
     
+    const targetId = this.getAttribute('href');
+    const targetElement = document.querySelector(targetId);
+    
+    targetElement.scrollIntoView({ behavior: 'smooth' });
+});
+
+  
+//footer text
+document.addEventListener("DOMContentLoaded", function() {
+    const text = document.querySelector('.cool-text');
+    const letters = text.textContent.split('').map(letter => `<span>${letter}</span>`).join('');
+    text.innerHTML = letters;
+  });
