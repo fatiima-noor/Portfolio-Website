@@ -6,6 +6,7 @@
     <title>Fatima Noor</title>
     <link rel="icon" href="images/wotteo.jpg"  type="image/x-icon">
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="css/style.css" rel="stylesheet" >
     <link href="css/background.css" rel="stylesheet" >
     <link href="css/navbar.css" rel="stylesheet" >
@@ -15,9 +16,9 @@
     <link href="css/counter.css" rel="stylesheet" >
     <link href="css/footer.css" rel="stylesheet" >
     <link href="css/animation.css" rel="stylesheet" >
+    <link href="css/chatbot.css" rel="stylesheet" >
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    
+
                       
 </head>
 <body>
@@ -99,28 +100,27 @@
                     <button id="supportButton" class="mt-6 px-9 py-2 text-lg rounded-full overflow-hidden shadow-lg border-2 border-teal-300 cButton self-start  gradient-button ">AI Support</button>
                 </div>
             </div>
-
             
             <section class="wrapper ">
-                <div class="container">
+                <div class="containerCounter">
                 <i class="fa-solid fa-check"></i>
                 <span class="num" data-val="26">0</span>
                 <span class="text">Projects </span>
                 </div>
         
-                <div class="container">
+                <div class="containerCounter">
                 <i class="fas fa-smile-beam"></i>
                 <span class="num" data-val="20">0</span>
                 <span class="text">Happy Clients</span>
                 </div>
         
-                <div class="container">
+                <div class="containerCounter">
                 <i class="fa-solid fa-award"></i>
                 <span class="num" data-val="8">0</span>
                 <span class="text">Achievements</span>
                 </div>
         
-                <div class="container">
+                <div class="containerCounter">
                 <i class="fa-solid fa-hourglass-half"></i>
                 <span class="num" data-val="3">0</span>
                 <span class="text">Years Experience</span>
@@ -178,7 +178,7 @@
                         <h2 class="text-2xl font-bold mb-4">Certifications</h2>
                         <ul class="list-disc pl-5">
                             <li class="mb-2">Data Scientist - DASCA</li>
-                            <li class="mb-2">Solutions Architect - AWS<li>                            
+                            <li class="mb-2">Solutions Architect - AWS</li>                            
                             <li class="mb-2">Google Analytics - Google</li>
                             <li class="mb-2">Machine Learning Specialization- Coursera</li>
                             <li class="mb-2">Data Scientist Associate - Microsoft</li>
@@ -313,6 +313,28 @@
           </footer>
         
     </main>
+
+  
+    <div class="container" id="chatContainer" >
+        <div class="chat-window">
+            <div class="canvas-container">
+                <canvas id="chatBackgroundCanvas"></canvas>
+            </div>
+            <div class="top-menu">
+                <span class="title">Let's Chat!</span>
+                <span class="close-btn" id="closeChat">
+                    <i class="fa-solid fa-xmark"></i>
+                </span>
+            </div>
+            <ul class="messages"></ul>
+            <div class="bottom-wrapper">
+                <input id="msg_input" placeholder="Type here..." />
+                <div id="send_button" class="app-button">
+                    <i class="fa-solid fa-arrow-right"></i>
+                </div>
+            </div>      
+        </div>
+    </div>
         
     <script src="js/scripts.js"></script>
 
