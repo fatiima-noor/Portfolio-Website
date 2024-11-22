@@ -45,13 +45,12 @@ span.text {
 }
  
 
-/* Styles for screens between 640px and 1024px, which includes iPads */
 @media (min-width: 641px) and (max-width: 1025px) {
     .wrapper {
-        justify-content: center; /* Center elements better for tablets */
-        margin: 0 2rem; /* Adjust margins for tablet view */
+        justify-content: center; 
+        margin: 0 2rem;
         position: relative;
-        padding-top: 1rem; /* Optional: add padding to give space from the hero section */
+        padding-top: 1rem;
         gap: 1rem; 
         transform: translateY(-80px);
         margin-left: 6rem;
@@ -59,23 +58,22 @@ span.text {
     }
 
     .containerCounter {
-        /*width: 45%; /* Adjust width to fit more comfortably */
         max-width: 100%;
-        height: auto; /* Set to auto to adapt to content */
-        margin-bottom: 25px; /* Slightly increase the bottom margin */
+        height: auto; 
+        margin-bottom: 25px;
         
     }
 
     span.num {
-        font-size: 2em; /* Slightly larger font for better readability on tablet */
+        font-size: 2em;
     }
 
     i {
-        font-size: 1.6em; /* Adjust icon size */
+        font-size: 1.6em; 
     }
 
     span.text {
-        font-size: 1.1rem; /* Increase text size for tablet readability */
+        font-size: 1.1rem; 
     }
 }
 

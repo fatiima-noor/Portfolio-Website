@@ -1,3 +1,22 @@
+//smooth scroll
+document.querySelectorAll('.navbar a').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+        const targetId = this.getAttribute('href').substring(1); 
+
+        if (targetId === 'About' || targetId === 'Projects' || targetId === 'achievements') {
+            e.preventDefault(); 
+
+            const targetSection = document.getElementById(targetId);
+            if (targetSection) {
+                window.scrollTo({
+                    top: targetSection.offsetTop,
+                    behavior: 'smooth' 
+                });
+            }
+        }
+    });
+});
+
 //background
 document.addEventListener('DOMContentLoaded', function () {
     const canvas = document.getElementById('backgroundCanvas');
@@ -44,6 +63,55 @@ document.addEventListener('DOMContentLoaded', function () {
   
     animate(); 
   
+
+//chatbot background
+document.addEventListener('DOMContentLoaded', function () {
+    const chatCanvas = document.getElementById('chatBackgroundCanvas');
+    const ctx = chatCanvas.getContext('2d');
+    const chatWindow = document.querySelector('.chat-window');
+
+    function resizeCanvas() {
+        chatCanvas.width = chatWindow.clientWidth;
+        chatCanvas.height = chatWindow.clientHeight;
+    }
+
+    resizeCanvas();
+    window.addEventListener('resize', resizeCanvas); 
+
+    function createStar() {
+        return {
+            x: Math.random() * chatCanvas.width,
+            y: Math.random() * chatCanvas.height,
+            length: Math.random() * 2 + 1,
+            opacity: Math.random() * 0.5 + 0.5,
+            speed: Math.random() * 0.3 + 0.1
+        };
+    }
+
+    const stars = Array.from({ length: 100 }, createStar);
+
+    function drawStars() {
+        ctx.clearRect(0, 0, chatCanvas.width, chatCanvas.height);
+        stars.forEach(star => {
+            ctx.fillStyle = `rgba(255, 255, 255, ${star.opacity})`;
+            ctx.fillRect(star.x, star.y, star.length, 1);
+            star.y += star.speed;
+            if (star.y > chatCanvas.height) {
+                star.y = 0;
+                star.x = Math.random() * chatCanvas.width;
+            }
+        });
+    }
+
+    function animate() {
+        drawStars();
+        requestAnimationFrame(animate);
+    }
+
+    animate();
+});
+
+
 // Hamburger menu toggle
     const hamburger = document.querySelector('.hamburger'); 
     const dropdownMenu = document.querySelector('.dropdown-menu');
@@ -81,9 +149,6 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         }
     });
-  
-  
-    
   
     // Number animation
     let valueDisplays = document.querySelectorAll(".num");
@@ -162,8 +227,7 @@ document.addEventListener("DOMContentLoaded", function() {
   });
 
 
-//chatbot
-
+//chatbot Design
 const supportButton = document.getElementById('supportButton');
 const aibutton = document.getElementById('ai');
 const chatContainer = document.getElementById('chatContainer');
@@ -197,54 +261,10 @@ document.addEventListener("DOMContentLoaded", () => {
     chatContainer.style.display = 'none'; 
 });
 
-//chatbot background
-document.addEventListener('DOMContentLoaded', function () {
-    const chatCanvas = document.getElementById('chatBackgroundCanvas');
-    const ctx = chatCanvas.getContext('2d');
-    const chatWindow = document.querySelector('.chat-window');
 
-    function resizeCanvas() {
-        chatCanvas.width = chatWindow.clientWidth;
-        chatCanvas.height = chatWindow.clientHeight;
-    }
 
-    resizeCanvas();
-    window.addEventListener('resize', resizeCanvas); 
 
-    function createStar() {
-        return {
-            x: Math.random() * chatCanvas.width,
-            y: Math.random() * chatCanvas.height,
-            length: Math.random() * 2 + 1,
-            opacity: Math.random() * 0.5 + 0.5,
-            speed: Math.random() * 0.3 + 0.1
-        };
-    }
-
-    const stars = Array.from({ length: 100 }, createStar);
-
-    function drawStars() {
-        ctx.clearRect(0, 0, chatCanvas.width, chatCanvas.height);
-        stars.forEach(star => {
-            ctx.fillStyle = `rgba(255, 255, 255, ${star.opacity})`;
-            ctx.fillRect(star.x, star.y, star.length, 1);
-            star.y += star.speed;
-            if (star.y > chatCanvas.height) {
-                star.y = 0;
-                star.x = Math.random() * chatCanvas.width;
-            }
-        });
-    }
-
-    function animate() {
-        drawStars();
-        requestAnimationFrame(animate);
-    }
-
-    animate();
-});
-
-//Chatbot Internal Design
+//Chatbot Message Internal Design
 function getCurrentTimestamp() {
     const now = new Date();
     let hours = now.getHours();
@@ -265,7 +285,6 @@ function renderMessageToScreen(args) {
   
     let messagesContainer = document.querySelector('.messages');
   
-    // create message element
     let message = document.createElement('li');
     message.className = `message ${args.message_side}`;
     message.innerHTML = `
@@ -334,4 +353,23 @@ function randomstring(length = 20) {
 
 window.addEventListener('load', function () {
     showBotMessage('Hello there! Type in a message.');
+});
+
+//Achievements
+document.querySelector('.prev').addEventListener('click', function() {
+    const current = document.querySelector('input[type=radio]:checked');
+    if (current.id === 'slide1') {
+        document.getElementById('slide4').checked = true; 
+    } else if (current.previousElementSibling) {
+        current.previousElementSibling.checked = true; 
+    }
+});
+
+document.querySelector('.next').addEventListener('click', function() {
+    const current = document.querySelector('input[type=radio]:checked');
+    if (current.id === 'slide4') {
+        document.getElementById('slide1').checked = true; 
+    } else if (current.nextElementSibling) {
+        current.nextElementSibling.checked = true; 
+    }
 });

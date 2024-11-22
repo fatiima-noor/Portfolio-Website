@@ -17,9 +17,8 @@
     <link href="css/footer.css" rel="stylesheet" >
     <link href="css/animation.css" rel="stylesheet" >
     <link href="css/chatbot.css" rel="stylesheet" >
-
-
-                      
+    <link href="css/projects.css" rel="stylesheet" >
+    <link href="css/achievements.css" rel="stylesheet" >
 </head>
 <body>
     <div class="canvas-container">
@@ -39,16 +38,16 @@
                 <nav class="navbar">
                     <a href="#">Home</a>
                     <a href="#About">About</a>
-                    <a href="#">Projects</a>
-                    <a href="#">Skills</a>
-                    <a href="#">Contact</a>
+                    <a href="#Projects">Projects</a>
+                    <a href="#achievements">Achievements</a>
+                    <a href="contactme.html">Contact</a>
                 </nav>
                 <div class="dropdown-menu" id="dropdownMenu">
                     <a href="#">Home</a>
                     <a href="#AboutMobile">About</a>
-                    <a href="#">Projects</a>
-                    <a href="#">Skills</a>
-                    <a href="#">Contact</a>
+                    <a href="#Projects">Projects</a>
+                    <a href="#achievements">Achievements</a>
+                    <a href="contactme.html">Contact</a>
                     <a href="#">Download Résumé</a>
                 </div>
             </header>
@@ -138,7 +137,6 @@
         <section id="About" class="aboutSection">
             <div class="flex flex-col items-center  p-6 aboutContainer">
                 <h1 class="text-3xl mb-4 text-white aboutHeading fade-in-scale">About Fatima</h1>
-            
                 <div class="grid flex-grow w-full grid-cols-3 grid-rows-6 gap-4 " style="grid-template-columns: 1.2fr 0.8fr 1fr;">
                     <div class="col-span-2 row-span-3 rounded-3xl fade-in-scale  p-4 shadow-lg text-white ">
                         <ul class="list-disc pl-5 space-y-2">
@@ -170,7 +168,7 @@
                     </div>
                     
                     <div class="row-span-4 rounded-3xl fade-in-scale">
-                        <img src="images/b5.png" alt="developer" class="developer-image">
+                        <img src="images/developer.png" alt="developer" class="developer-image">
                     </div>
                     
 
@@ -235,7 +233,7 @@
                             <li><span class="mr-2 text-blue-400">🚀</span> Eager to innovate</li>
                         </ul>
                     </div>
-                    <img src="images/b5.png" alt="developer" class="developer-image">
+                    <img src="images/developer.png" alt="developer" class="developer-image">
                 </div>
         
                 <div class="certifications-block fade-in-scale rounded-3xl">
@@ -290,10 +288,160 @@
                         </ul>
                     </div>
                 </div>
+            </div>
+        </section>
+    
+
+        <section id="Projects" class="projectsSection">
+            <div class="flex flex-col items-center p-6 projectsContainer">
+                <h1 class="text-3xl mb-4 text-white projectsHeading fade-in-scale">Projects in Action</h1>
+                <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-4 w-full">
+                    <div class="project-card rounded-3xl fade-in-scale">
+                        <h2 class="text-2xl font-bold mb-2 projectCardHeading">GPA Calculator</h2>
+                        <div class="overlay">
+                            <p>A Django-based application that calculates GPA and generates PDF reports with a responsive front-end and Dockerized deployment.</p>
+                            <a href="https://github.com/your-repo-link" class="github-button">
+                                <span>Visit Github</span>
+                                <span class="arrow"> <i class="fa-solid fa-chevron-right"></i> </span>
+                            </a>
+                        </div>
+                    </div>
         
+                    <div class="project-card rounded-3xl fade-in-scale">
+                        <h2 class="text-2xl font-bold mb-2 projectCardHeading">Data Scraper</h2>
+                        <div class="overlay">
+                            <p>A Python-based web scraper to extract and organize dataset metadata from the Google Earth Engine catalog for research.</p>
+                            <a href="https://github.com/your-repo-link" class="github-button">
+                                <span>Visit Github</span>
+                                <span class="arrow"> <i class="fa-solid fa-chevron-right"></i> </span>
+                            </a>
+                        </div>
+                    </div>
+        
+                    <div class="project-card rounded-3xl fade-in-scale">
+                        <h2 class="text-2xl font-bold mb-2 projectCardHeading">Portfolio Website</h2>
+                        <div class="overlay">
+                            <p>A personal website showcasing skills, projects, and a resume, with a modern design and smooth navigation.</p>
+                            <a href="https://github.com/your-repo-link" class="github-button">
+                                <span>Visit Github</span>
+                                <span class="arrow"> <i class="fa-solid fa-chevron-right"></i> </span>
+                            </a>
+                        </div>
+                    </div>
+        
+                    <div class="project-card rounded-3xl fade-in-scale">
+                        <h2 class="text-2xl font-bold mb-2 projectCardHeading">E-commerce Platform</h2>
+                        <div class="overlay">
+                            <p>An online store built with full-stack technologies, featuring secure payment integration and responsive design.</p>
+                            <a href="https://github.com/your-repo-link" class="github-button">
+                                <span>Visit Github</span>
+                                <span class="arrow"> <i class="fa-solid fa-chevron-right"></i> </span>
+                            </a>
+                        </div>
+                    </div>
+        
+                    <div class="project-card rounded-3xl fade-in-scale">
+                        <h2 class="text-2xl font-bold mb-2 projectCardHeading">Weather App</h2>
+                        <div class="overlay">
+                            <p>A React-based application displaying weather information using a public API, with real-time updates and a user-friendly UI.</p>
+                            <a href="https://github.com/your-repo-link" class="github-button">
+                                <span>Visit Github</span>
+                                <span class="arrow"> <i class="fa-solid fa-chevron-right"></i> </span>
+                            </a>
+                        </div>
+                    </div>
+        
+                    <div class="project-card rounded-3xl fade-in-scale">
+                        <h2 class="text-2xl font-bold mb-2 projectCardHeading">NLP Workshops</h2>
+                        <div class="overlay">
+                            <p>An interactive data visualization tool for displaying analytics insights using D3.js and custom graphs.</p>
+                            <a href="https://github.com/your-repo-link" class="github-button">
+                                <span>Visit Github</span>
+                                <span class="arrow"> <i class="fa-solid fa-chevron-right"></i> </span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+      
+        <section id="achievements">
+            <h1 class="text-3xl mb-4 text-white projectsHeading fade-in-scale">Achievements</h1>
+            <div id="slider">
+                <input type="radio" name="slider" id="slide1" checked>
+                <input type="radio" name="slider" id="slide2">
+                <input type="radio" name="slider" id="slide3">
+                <input type="radio" name="slider" id="slide4">
+                <div id="slides">
+                    <div id="overflow">
+                        <div class="inner">
+                            <div class="slide slide_1">
+                                <div class="slide-content">
+                                    <h2>🏆 Hackathon Winner</h2>
+                                    <ul>
+                                        <li><strong>Hackathon Name:</strong> TechFest 2023</li>
+                                        <li><strong>Achievement:</strong> Secured 1st place among 50+ teams.</li>
+                                        <li><strong>Project:</strong> AI-powered Task Manager</li>
+                                        <li><strong>Team Size:</strong> 3 members</li>
+                                    </ul>
+                                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odio, sapiente! Recusandae cumque doloribus ex minima odit saepe molestiae in. Veritatis, laborum. Cum laboriosam quae neque nihil fugiat cumque distinctio delectus?</p>
+                                </div>
+                            </div>
+                            <div class="slide slide_2">
+                                <div class="slide-content">
+                                    <h2>📜 Professional Certifications</h2>
+                                    <ul>
+                                        <li><strong>Google Data Analytics Certificate:</strong> Completed with a 97% score.</li>
+                                        <li><strong>Microsoft Azure Fundamentals:</strong> Certified in Cloud Computing basics.</li>
+                                        <li><strong>Coursera:</strong> Machine Learning Specialization by Andrew Ng.</li>
+                                    </ul>
+                                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odio, sapiente! Recusandae cumque doloribus ex minima odit saepe molestiae in. Veritatis, laborum. Cum laboriosam quae neque nihil fugiat cumque distinctio delectus?</p>
+                                </div>
+                            </div>
+                            <div class="slide slide_3">
+                                <div class="slide-content">
+                                    <h2>💼 Internship Experiences</h2>
+                                    <ul>
+                                        <li><strong>Company:</strong> Cosmic 365</li>
+                                        <li><strong>Role:</strong> Software Development Intern</li>
+                                        <li><strong>Contribution:</strong> Built a responsive web dashboard for user analytics.</li>
+                                        <li><strong>Tech Stack:</strong> React.js, Node.js, MongoDB</li>
+                                    </ul>
+                                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odio, sapiente! Recusandae cumque doloribus ex minima odit saepe molestiae in. Veritatis, laborum. Cum laboriosam quae neque nihil fugiat cumque distinctio delectus?</p>
+                                </div>
+                            </div>
+                            <div class="slide slide_4">
+                                <div class="slide-content">
+                                    <h2>🚀 Successful Project Launch</h2>
+                                    <ul>
+                                        <li><strong>Project:</strong> Personal CGPA Calculator</li>
+                                        <li><strong>Description:</strong> Web app for students to calculate and save GPA data.</li>
+                                        <li><strong>Tech Stack:</strong> HTML, CSS, Django</li>
+                                        <li><strong>Impact:</strong> Used by over 200+ students in the university.</li>
+                                    </ul>
+                                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odio, sapiente! Recusandae cumque doloribus ex minima odit saepe molestiae in. Veritatis, laborum. Cum laboriosam quae neque nihil fugiat cumque distinctio delectus?</p>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="controls">
+                    <label class="prev" id="prevBracket">&#8249;</label>
+                    <label class="next" id="nextBracket">&#8250;</label>  
+                </div>
+                <div id="bullets">
+                    <label for="slide1"></label>
+                    <label for="slide2"></label>
+                    <label for="slide3"></label>
+                    <label for="slide4"></label>
+                </div>
             </div>
         </section>
         
+        
+
+
         <footer class="footer">
             <div class="footer-left">
                 <h3 class="cool-text">Let's&nbsp;Connect!</h3>
@@ -301,14 +449,14 @@
                 <button class="hire-me">Get in Touch!</button>
                 <p>Or connect with me on:</p>
                 <div class="social-links">
-                  <a href="https://instagram.com/yourhandle" target="_blank">Instagram</a> |
-                  <a href="https://linkedin.com/in/yourprofile" target="_blank">LinkedIn</a> |
+                  <a href="https://instagram.com/" target="_blank">Instagram</a> |
+                  <a href="https://linkedin.com/in/" target="_blank">LinkedIn</a> |
                   <a href="mailto:hi@cassie.codes">Gmail</a> |
                   <a href="https://twitter.com/yourhandle" target="_blank">Twitter</a>
                 </div>
               </div>
             <div class="footer-right">
-              <img src="images/l13.png" alt="Image">
+              <img src="images/footerWotteo.png" alt="Image">
             </div>
           </footer>
         
@@ -340,8 +488,3 @@
 
 </body>
 </html>
-
-
-
-
-
