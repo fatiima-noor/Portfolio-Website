@@ -1,0 +1,129 @@
+/*Counter*/
+.wrapper {
+    padding: 60px 20px; 
+    margin-top: -200px; 
+    margin-left: 6rem;
+    margin-right: 6rem;
+    display: flex; 
+    justify-content: space-around;
+
+}
+
+
+.containerCounter {
+    width: 35vmin;
+    height: 25vmin;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; ;
+    padding: 1em 0;
+    position: relative;
+    font-size: 16px;
+    border-radius: 0.5em;
+    background-color: rgba(4, 59, 59, 0.6);
+    border-bottom: 5px solid #0c97aa;
+}
+i {
+    color: #0c97aa;
+    font-size: 2em;
+    text-align: center;
+}
+span.num {
+    color: #ffffff;
+    display: grid;
+    place-items: center;
+    font-weight: 600;
+    font-size: 3em;
+}
+span.text {
+    color: #e0e0e0;
+    padding-top: 3px;
+    font-size: 1 rem;
+    text-align: center;
+    font-weight: 400;
+    line-height: 0;
+}
+ 
+
+@media (min-width: 641px) and (max-width: 1025px) {
+    .wrapper {
+        justify-content: center; 
+        margin: 0 2rem;
+        position: relative;
+        padding-top: 1rem;
+        gap: 1rem; 
+        transform: translateY(-80px);
+        margin-left: 6rem;
+        margin-right: 6rem;
+    }
+
+    .containerCounter {
+        max-width: 100%;
+        height: auto; 
+        margin-bottom: 25px;
+        
+    }
+
+    span.num {
+        font-size: 2em;
+    }
+
+    i {
+        font-size: 1.6em; 
+    }
+
+    span.text {
+        font-size: 1.1rem; 
+    }
+}
+
+
+@media (max-width: 768px) {
+    .wrapper {
+        flex-wrap: wrap;
+        justify-content: space-between; 
+        margin-left: 1rem;
+        margin-right: 1rem;
+        position: relative;
+        margin-top: 0%;
+    }
+
+    .containerCounter {
+        width: 48%;
+        max-width: 100%;
+        height: 150px; 
+        margin-bottom: 20px;
+}
+
+
+@media (max-width: 640px) {
+    .wrapper {
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin-left: 1rem;
+        margin-right: 1rem;
+        transform: none;
+        position: relative;
+        transform: translateY(-60px);
+    }
+
+    .containerCounter {
+        width: 48%; 
+        max-width: 100%; 
+        height: 100px; 
+        margin-bottom: 20px; 
+    }
+
+    span.num {
+        font-size: 1.8em; 
+    }
+
+    i {
+        font-size: 1.5em; 
+    }
+
+    span.text {
+        font-size: 1rem; 
+    }
+}
+
