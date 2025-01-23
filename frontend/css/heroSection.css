@@ -58,12 +58,15 @@
 .wotteoImage{
     display: none;
 }
+
+    
+
+
 @media (min-width: 768px) and (max-width: 1025px) {
     .relative {
         margin-top: 20%;
         height: auto; 
     }
-  
 }
      
 @media (max-width: 640px) {
@@ -142,4 +145,32 @@
     .icons i1 { 
         font-size: 20px; 
     }
+}
+
+
+@media (min-width: 1180px) and (max-width: 1450px) {
+    .relative {
+        margin-top: 10% !important;
+        height: auto !important;
+        margin-bottom: 25% !important;
+    }
+
+    .noStroke{
+        font-size: 2rem; 
+
+    }
+    .stroke {
+        font-size: 3rem;  
+    }
+    
+    .icon {
+        margin-top: -2rem;
+    }
+    .wotteo{
+        width: 15rem;
+    }
+    #supportButton{
+        margin-right: 3rem;
+    }
+
 }

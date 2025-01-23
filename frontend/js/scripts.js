@@ -261,6 +261,56 @@ document.addEventListener("DOMContentLoaded", () => {
     chatContainer.style.display = 'none'; 
 });
 
+//suggested questions
+document.querySelectorAll('.default-question').forEach((question) => {
+    question.addEventListener('click', function () {
+        const userMessage = this.textContent; 
+        showUserMessage(userMessage); 
+        const response = getDefaultResponse(userMessage); 
+        showBotMessage(response); 
+        document.querySelector('.default-questions').style.display = 'none';
+    });
+});
+
+function getDefaultResponse(message) {
+    const defaultResponses = {
+        "When are you available?": "I'm available 24/7 to assist you.",
+        "What services do you offer?": "I can help with troubleshooting, FAQs, and general guidance.",
+        "What is your latest project about?": "My latest project is a real-time chat application that uses WebSockets for instant communication between users. It’s built with Node.js and React, and it includes message encryption for privacy.",
+        "Where are you from?": "I am from Lahore, Pakistan. I am ready to work remote.",
+        "How do I contact support?": "You can reach support by emailing fatimanoor6387@gmail.com.",
+    };
+
+    return defaultResponses[message] || null; 
+}
+
+// Chatbot Message Handlers
+document.getElementById('send_button').addEventListener('click', function () {
+    const userMessage = document.getElementById('msg_input').value.trim();
+    showUserMessage(userMessage); 
+    document.getElementById('msg_input').value = ''; 
+    const response = getDefaultResponse(userMessage) || randomstring();
+    setTimeout(() => {
+        showBotMessage(response); 
+    }, 300); 
+});
+
+function showBotMessage(message, datetime = getCurrentTimestamp()) {
+    renderMessageToScreen({
+        text: message,
+        time: datetime,
+        message_side: 'left',
+    });
+}
+
+function showUserMessage(message, datetime = getCurrentTimestamp()) {
+    renderMessageToScreen({
+        text: message,
+        time: datetime,
+        message_side: 'right',
+    });
+}
+
 
 
 
@@ -305,13 +355,38 @@ function renderMessageToScreen(args) {
 }
   
 document.addEventListener('DOMContentLoaded', function () {
-    document.getElementById('msg_input').addEventListener('keydown', function (e) {
+    const inputField = document.getElementById('msg_input');
+    const sendButton = document.getElementById('send_button');
+
+    inputField.addEventListener('keydown', function (e) {
         if (e.key === 'Enter') {
-            e.preventDefault();
-            document.getElementById('send_button').click();
+            e.preventDefault(); 
+            sendMessage(); 
         }
     });
+
+    sendButton.addEventListener('click', sendMessage); 
 });
+
+function sendMessage() {
+    const inputField = document.getElementById('msg_input');
+    const userMessage = inputField.value.trim(); 
+    if (!userMessage) return; 
+    const suggestiveQuestions = document.querySelector('.default-questions');
+    if (suggestiveQuestions) {
+        suggestiveQuestions.style.display = 'none';
+    }
+
+    showUserMessage(userMessage); 
+    inputField.value = ''; 
+
+    const response = getDefaultResponse(userMessage) || randomstring();
+    setTimeout(() => {
+        showBotMessage(response); 
+    }, 300); 
+}
+
+
 
 function showUserMessage(message, datetime) {
     renderMessageToScreen({
@@ -329,13 +404,6 @@ function showBotMessage(message, datetime) {
     });
 }
 
-document.getElementById('send_button').addEventListener('click', function (e) {
-    showUserMessage(document.getElementById('msg_input').value);
-    document.getElementById('msg_input').value = '';
-    setTimeout(function () {
-        showBotMessage(randomstring());
-    }, 300);
-});
 
 function randomstring(length = 20) {
     let output = '';
@@ -355,6 +423,8 @@ window.addEventListener('load', function () {
     showBotMessage('Hello there! Type in a message.');
 });
 
+
+
 //Achievements
 document.querySelector('.prev').addEventListener('click', function() {
     const current = document.querySelector('input[type=radio]:checked');
@@ -373,3 +443,10 @@ document.querySelector('.next').addEventListener('click', function() {
         current.nextElementSibling.checked = true; 
     }
 });
+
+
+
+
+
+
+
