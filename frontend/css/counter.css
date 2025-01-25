@@ -93,8 +93,8 @@ span.text {
         max-width: 100%;
         height: 150px; 
         margin-bottom: 20px;
+    }
 }
-
 
 @media (max-width: 640px) {
     .wrapper {
@@ -127,3 +127,13 @@ span.text {
     }
 }
 
+@media (min-width: 1180px) and (max-width: 1450px) {
+    .wrapper {
+        gap: 1rem;
+    }
+    
+    .containerCounter {
+        width: 30vmin;
+        height: 20vmin;
+    }
+}
