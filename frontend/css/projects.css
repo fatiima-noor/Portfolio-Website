@@ -42,27 +42,27 @@
 }
 
 .project-card:nth-child(1)::before {
-    background-image: url('/images/projectCard2.jpg');
+    background-image: url('../images/projectCard2.jpg');
 }
 
 .project-card:nth-child(2)::before {
-    background-image: url('/images/projectCard1.jpg');
+    background-image: url('../images/projectCard1.jpg');
 }
 
 .project-card:nth-child(3)::before {
-    background-image: url('/images/projectCard4.jpg');
+    background-image: url('../images/projectCard4.jpg');
 }
 
 .project-card:nth-child(4)::before {
-    background-image: url('/images/projectCard5.jpg');
+    background-image: url('../images/projectCard5.jpg');
 }
 
 .project-card:nth-child(5)::before {
-    background-image: url('/images/projectCard3.jpg');
+    background-image: url('../images/projectCard3.jpg');
 }
 
 .project-card:nth-child(6)::before {
-    background-image: url('/images/projectCard6.jpg');
+    background-image: url('../images/projectCard6.jpg');
 }
 .overlay {
     position: absolute;
@@ -159,6 +159,9 @@
     .projectsSection {
         margin-left: 1rem;
         margin-right: 1rem;
+    }
+    .projectsHeading {
+        -webkit-text-stroke: 0.5px  rgb(2, 80, 80); 
     }
     .project-card {
         height: 200px; 
