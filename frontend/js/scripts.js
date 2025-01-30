@@ -276,9 +276,9 @@ function getDefaultResponse(message) {
     const defaultResponses = {
         "When are you available?": "I'm available 24/7 to assist you.",
         "What services do you offer?": "I can help with troubleshooting, FAQs, and general guidance.",
-        "What is your latest project about?": "My latest project is a real-time chat application that uses WebSockets for instant communication between users. It’s built with Node.js and React, and it includes message encryption for privacy.",
+        "What is your latest project about?": "My latest project is Clip Insights, an AI-powered tool that extracts key insights from video content. I'm actively working on refining its features, optimizing the AI models, and enhancing the user experience to make video analysis more efficient and insightful.My latest project is a real-time chat application that uses WebSockets for instant communication between users. It’s built with Node.js and React, and it includes message encryption for privacy.",
         "Where are you from?": "I am from Lahore, Pakistan. I am ready to work remote.",
-        "How do I contact support?": "You can reach support by emailing fatimanoor6387@gmail.com.",
+        "How do I contact support?": "You can reach support by emailing abdullahashfaq.ds@gmail.com.",
     };
 
     return defaultResponses[message] || null; 
@@ -289,7 +289,7 @@ document.getElementById('send_button').addEventListener('click', function () {
     const userMessage = document.getElementById('msg_input').value.trim();
     showUserMessage(userMessage); 
     document.getElementById('msg_input').value = ''; 
-    const response = getDefaultResponse(userMessage) || randomstring();
+    const response = getDefaultResponse(userMessage) || botOutput();
     setTimeout(() => {
         showBotMessage(response); 
     }, 300); 
@@ -380,7 +380,7 @@ function sendMessage() {
     showUserMessage(userMessage); 
     inputField.value = ''; 
 
-    const response = getDefaultResponse(userMessage) || randomstring();
+    const response = getDefaultResponse(userMessage) || botOutput();
     setTimeout(() => {
         showBotMessage(response); 
     }, 300); 
@@ -405,17 +405,8 @@ function showBotMessage(message, datetime) {
 }
 
 
-function randomstring(length = 20) {
-    let output = '';
-  
-    var randomchar = function () {
-        var n = Math.floor(Math.random() * 62);
-        if (n < 10) return n;
-        if (n < 36) return String.fromCharCode(n + 55);
-        return String.fromCharCode(n + 61);
-    };
-  
-    while (output.length < length) output += randomchar();
+function botOutput(length = 20) {
+    let output = 'Coming Soon! For inquiries plz contact at abdullahashfaq.ds@gmail.com';
     return output;
 }
 
@@ -447,4 +438,64 @@ document.querySelector('.next').addEventListener('click', function() {
 
 
 
+// Timeline 
+const messages = [
+    "$ whoami",
+    "$ ./initialize_life.sh",
+    "$ npm install --save motivation caffeine",
+    "$ git commit -m 'docs: Update life achievements'",
+    "$ docker run -d life-journey:latest"
+];
 
+let messageIndex = 0;
+let charIndex = 0;
+const terminalText = document.getElementById('terminal-text');
+
+function typeMessage() {
+    if (messageIndex < messages.length) {
+        if (charIndex < messages[messageIndex].length) {
+            terminalText.textContent = messages[messageIndex].substring(0, charIndex + 1);
+            charIndex++;
+            setTimeout(typeMessage, 50);
+        } else {
+            setTimeout(() => {
+                messageIndex++;
+                charIndex = 0;
+                terminalText.textContent = '';
+                typeMessage();
+            }, 1500);
+        }
+    } else {
+        messageIndex = 0;
+        setTimeout(() => {
+            terminalText.textContent = '';
+            typeMessage();
+        }, 2000);
+    }
+}
+
+typeMessage();
+
+gsap.registerPlugin(ScrollTrigger);
+
+gsap.utils.toArray('.dev-timeline-item').forEach((item, i) => {
+    gsap.set(item, {
+        opacity: 0,
+        y: 50
+    });
+
+    ScrollTrigger.create({
+        trigger: item,
+        start: "top bottom-=100",
+        end: "top center",
+        scrub: true,
+        onEnter: () => {
+            gsap.to(item, {
+                opacity: 1,
+                y: 0,
+                duration: 0.8,
+                ease: "power2.out"
+            });
+        }
+    });
+});

@@ -7,6 +7,9 @@
     <link rel="icon" href="images/wotteo.jpg"  type="image/x-icon">
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <link href="css/timeline.css" rel="stylesheet" >
     <link href="css/style.css" rel="stylesheet" >
     <link href="css/background.css" rel="stylesheet" >
     <link href="css/navbar.css" rel="stylesheet" >
@@ -46,7 +49,7 @@
                     <a href="#Projects">Projects</a>
                     <a href="#achievements">Achievements</a>
                     <a href="contactme.html">Contact</a>
-                    <a href="#">Download Résumé</a>
+                    <a href="https://drive.google.com/file/d/15Kt2rOtY85is4lC-Yfc-wTTsHoWcYJlo/view">Download Résumé</a>
                 </div>
             </header>
         
@@ -59,9 +62,11 @@
                     Committed to delivering data-driven insights and innovative solutions to solve complex challenges.
                 </p>
                 <div class="button-container">
-                    <button id="down" class="relative mt-6 px-6 py-3 text-lg text-white font-bold bg-gradient-to-r from-teal-400 to-blue-500 rounded-full overflow-hidden shadow-lg border-2 border-teal-300 glowButton self-start sm:self-center">
-                        Download Résumé
-                    </button>
+                    <a href="https://drive.google.com/file/d/15Kt2rOtY85is4lC-Yfc-wTTsHoWcYJlo/view" target="_blank">
+                        <button id="down" class="relative mt-6 px-6 py-3 text-lg text-white font-bold bg-gradient-to-r from-teal-400 to-blue-500 rounded-full overflow-hidden shadow-lg border-2 border-teal-300 glowButton self-start sm:self-center">
+                            Download Résumé
+                        </button>
+                    </a>
     
                     <button id="ai"class="relative mt-6 px-6 py-4 text-lg text-white font-bold bg-gradient-to-r from-teal-400 to-blue-500 rounded-full overflow-hidden shadow-lg border-2 border-teal-300 glowButton self-start sm:self-center hidden" id="aiSupportButton">
                         <img src="images/wotteo.jpg" alt="Wotteo" class="wotteoImage">
@@ -123,6 +128,112 @@
                 </div>
             </section>
         </section>
+
+
+
+
+
+        <section class="text-white" id="timeline">
+            <div class="terminal">
+                <div class="terminal-header">
+                    <div class="terminal-dots">
+                        <div class="terminal-dot" style="background-color: #ff5f56"></div>
+                        <div class="terminal-dot" style="background-color: #ffbd2e"></div>
+                        <div class="terminal-dot" style="background-color: #27c93f"></div>
+                    </div>
+                    <div class="terminal-title">life_journey.sh — bash</div>
+                </div>
+                <div class="terminal-content">
+                    <div class="cursor" id="terminal-text"></div>
+                </div>
+            </div>
+
+            <div class="dev-timeline">
+                <div class="timeline-center"></div>
+
+                <div class="dev-timeline-item">
+                    <div class="funny-text">
+                        Initializing life.exe... ⌛<br>
+                        Downloading consciousness.dll 🧠
+                    </div>
+                    <div class="content">
+                        <div class="title">BORN 2002 👶</div>
+                        <div class="subtitle">System Bootstrap Initiated</div>
+                        <div class="description">Successfully deployed to Planet Earth. First words were 'Hello World!'</div>
+                        <div class="footnote">// TODO: Learn to walk without stack overflow 🚶‍♂️</div>
+                    </div>
+                </div>
+
+                <div class="dev-timeline-item">
+                    <div class="funny-text">
+                        School.exe terminated successfully 🎉<br>
+                        Uninstalling homework.dll 📚
+                    </div>
+                    <div class="content">
+                        <div class="title">ENDED SCHOOL 2019 🎓</div>
+                        <div class="subtitle">Freedom.exe Unlocked</div>
+                        <div class="description">Finally escaped the Matrix. No more asking for bathroom permissions!</div>
+                        <div class="footnote">/* Note: Still can't solve those watermelon math problems 🍉 */</div>
+                    </div>
+                </div>
+
+                <div class="dev-timeline-item">
+                    <div class="funny-text">
+                        College.exe completed in record time ⚡<br>
+                        Brain capacity at 404% 🧠
+                    </div>
+                    <div class="content">
+                        <div class="title">ENDED COLLEGE 2021 📚</div>
+                        <div class="subtitle">Speed Run Achievement Unlocked</div>
+                        <div class="description">Completed college faster than compiling a React app. Who needs sleep anyway?</div>
+                        <div class="footnote">// Warning: Knowledge may be cached ⚠️</div>
+                    </div>
+                </div>
+
+                <div class="dev-timeline-item">
+                    <div class="funny-text">
+                        Teaching.js initialized 👨‍🏫<br>
+                        Loading patience module... 🧘‍♂️
+                    </div>
+                    <div class="content">
+                        <div class="title">STARTED TEACHING 2022 🎯</div>
+                        <div class="subtitle">Debug Mode: Expert</div>
+                        <div class="description">Turns out explaining code is harder than writing it. Students are the best debuggers!</div>
+                        <div class="footnote">/* Error: Student's code works but don't know why 🤔 */</div>
+                    </div>
+                </div>
+
+                <div class="dev-timeline-item">
+                    <div class="funny-text">
+                        Hackathon victory achieved 🏆<br>
+                        Loading celebration.exe... 🎉
+                    </div>
+                    <div class="content">
+                        <div class="title">FIRST HACKATHON WIN 2023 🚀</div>
+                        <div class="subtitle">Achievement Unlocked: Code Warrior</div>
+                        <div class="description">Fueled by pizza and energy drinks, created something awesome in 48 sleepless hours!</div>
+                        <div class="footnote">// Note: Sleep debt currently over 9000 😴</div>
+                    </div>
+                </div>
+
+                <div class="dev-timeline-item">
+                    <div class="funny-text">
+                        Career.exe launched successfully 💼<br>
+                        Adulting mode activated 🎮
+                    </div>
+                    <div class="content">
+                        <div class="title">FIRST INTERNSHIP 2023 💻</div>
+                        <div class="subtitle">Production Access Granted</div>
+                        <div class="description">Finally getting paid to Google things and attend meetings that could've been emails.</div>
+                        <div class="footnote">/* TODO: Figure out why production code works 🤷‍♂️ */</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+
 
 
         <a href="#About" class="scroll-button">
@@ -309,7 +420,7 @@
                     </div>
         
                     <div class="project-card rounded-3xl fade-in-scale">
-                        <h2 class="text-2xl font-bold mb-2 projectCardHeading">STUDYBUDDY</h2>
+                        <h2 class="text-2xl font-bold mb-2 projectCardHeading">StudyBuddy</h2>
                         <div class="overlay">
                             <p>An AI-driven platform for exam preparation, offering personalized learning paths and tools for students.</p>
                             <a href="https://github.com/abdullahdotnet/StudyBuddy-FYP" class="github-button">
@@ -342,7 +453,7 @@
                     </div>
         
                     <div class="project-card rounded-3xl fade-in-scale">
-                        <h2 class="text-2xl font-bold mb-2 projectCardHeading">SMS-Spam-Detection</h2>
+                        <h2 class="text-2xl font-bold mb-2 projectCardHeading">SMS Spam Detection</h2>
                         <div class="overlay">
                             <p>A machine learning application designed to classify SMS messages as spam or non-spam, offering real-time analysis.</p>
                             <a href="https://github.com/abdullahashfaqvirk/SMS-Spam-Detection" class="github-button">
@@ -475,7 +586,6 @@
         </section>
         
         
-
 
         <footer class="footer">
             <div class="footer-left">

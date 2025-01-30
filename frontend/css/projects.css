@@ -64,6 +64,10 @@
 .project-card:nth-child(6)::before {
     background-image: url('../images/projectCard6.jpg');
 }
+.projectCardHeading{
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
 .overlay {
     position: absolute;
     top: 0;
