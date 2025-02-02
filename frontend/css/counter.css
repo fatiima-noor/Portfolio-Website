@@ -22,6 +22,7 @@
     border-radius: 0.5em;
     background-color: rgba(4, 59, 59, 0.6);
     border-bottom: 5px solid #0c97aa;
+    position: relative;
 }
 i {
     color: #0c97aa;
@@ -37,13 +38,40 @@ span.num {
 }
 span.text {
     color: #e0e0e0;
-    padding-top: 3px;
-    font-size: 1 rem;
+    padding: 5px;
+    font-size: 1.2rem;
     text-align: center;
     font-weight: 400;
     line-height: 0;
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
 }
- 
+
+.plus-sign {
+    font-size: 3em;
+    color: #ffffff;
+    opacity: 0;
+    transition: opacity 0.5s ease-in;
+    margin-left: 3px; 
+    line-height: 1; 
+}
+
+span.num {
+    line-height: 1; 
+    white-space: nowrap; 
+}
+
+  
+#numberPlus{
+    padding-top: 15px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+  
 
 @media (min-width: 641px) and (max-width: 1025px) {
     .wrapper {
@@ -135,5 +163,25 @@ span.text {
     .containerCounter {
         width: 30vmin;
         height: 20vmin;
+    }
+}
+@media (max-width: 640px) {
+    .containerCounter {
+        min-height: 100px;
+    }
+
+    span.num,
+    .plus-sign {
+        padding-bottom: 0.8rem;
+        font-size: 2em;
+    }
+
+    i {
+        font-size: 1.2em;
+    }
+
+    span.text {
+        padding-bottom: 0.15rem;
+        font-size: 0.8rem;
     }
 }

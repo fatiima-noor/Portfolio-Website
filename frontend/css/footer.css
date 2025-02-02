@@ -5,7 +5,6 @@
     background-color: rgba(52, 54, 54, 0.7); 
     color: white;
     margin-top: 4rem;
-   
   }
   
   
@@ -32,7 +31,7 @@
     
     .cool-text span:hover {
       transform: rotate(10deg) scale(1.2);
-      color: cyan; /* Change color on hover */
+      color: cyan; 
     }
     
     
@@ -126,7 +125,8 @@
       margin: 0 3px;
     }
   }
-  
+}
+    
 @media (max-width: 480px) {
     .footer {
         display: flex;

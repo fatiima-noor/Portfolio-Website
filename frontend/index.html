@@ -22,6 +22,7 @@
     <link href="css/chatbot.css" rel="stylesheet" >
     <link href="css/projects.css" rel="stylesheet" >
     <link href="css/achievements.css" rel="stylesheet" >
+    <link href="css/testimonial.css" rel="stylesheet" >
 </head>
 <body>
     <div class="canvas-container">
@@ -58,8 +59,8 @@
                 <h1 class="text-4xl glow"><span class= "noStroke">Hello, I'm </span><span class="stroke">Abdullah Ashfaq</span></h1>
                 <p class="text-gray-300 mt-2">Welcome to my portfolio</p>
                 <p class="text-white text-lg mt-4 max-w-xl text-center px-4">
-                   A passionate <b>Data Scientist</b> with expertise in <b>Python</b>, <b>Data Analytics</b>, <b>AI/ML</b>, and <b>Databases</b>.
-                    Committed to delivering data-driven insights and innovative solutions to solve complex challenges.
+                    A fearless <b>Data Scientist</b> wrangling <b>AI/ML models</b>, <b>messy databases</b>, and <b>rogue bugs</b>.
+                    Fueled by caffeine and curiosity, turning chaos into code—one panic attack at a time! 
                 </p>
                 <div class="button-container">
                     <a href="https://drive.google.com/file/d/15Kt2rOtY85is4lC-Yfc-wTTsHoWcYJlo/view" target="_blank">
@@ -76,9 +77,9 @@
                     
                     
                     <div class="mt-4 flex space-x-6 icons">
-                        <a href="#"  class="icon"aria-label="GitHub">
+                        <!--<a href="#"  class="icon"aria-label="GitHub">
                             <i class="fa-brands fa-instagram"></i>
-                        </a>
+                        </a>-->
                         <a href="https://www.kaggle.com/abdullahashfaqvirk" target="_blank" class="icon"aria-label="GitHub">
                             <i class="fa-brands fa-kaggle"></i>
                         </a>
@@ -105,27 +106,41 @@
             <section class="wrapper ">
                 <div class="containerCounter">
                 <i class="fa-solid fa-check"></i>
-                <span class="num" data-val="15">0</span>
+                <div id="numberPlus">
+                    <span class="num" data-val="20">0</span>
+                    <span class="plus-sign">+</span>
+                </div>        
                 <span class="text">Projects </span>
                 </div>
         
                 <div class="containerCounter">
                 <i class="fas fa-smile-beam"></i>
-                <span class="num" data-val="10">0</span>
+                <div id="numberPlus">
+                    <span class="num" data-val="10">0</span>
+                    <span class="plus-sign">+</span>
+                </div>               
                 <span class="text">Happy Clients</span>
                 </div>
         
+
+                <div class="containerCounter">
+                    <i class="fa-solid fa-hourglass-half"></i>
+                    <div id="numberPlus">     
+                        <span class="num" data-val="3">0</span>
+                        <span class="plus-sign">+</span>
+                    </div>
+                    <span class="text">Years Experience</span>
+                </div>
+
+
                 <div class="containerCounter">
                 <i class="fa-solid fa-award"></i>
-                <span class="num" data-val="3">0</span>
+                <div id="numberPlus">
+                    <span class="num" data-val="3">0</span>
+                    <span class="plus-sign">+</span>
+                </div> 
                 <span class="text">Achievements</span>
-                </div>
-        
-                <div class="containerCounter">
-                <i class="fa-solid fa-hourglass-half"></i>
-                <span class="num" data-val="3.5">0</span>
-                <span class="text">Years Experience</span>
-                </div>
+                </div>       
             </section>
         </section>
 
@@ -157,7 +172,7 @@
                         Downloading consciousness.dll 🧠
                     </div>
                     <div class="content">
-                        <div class="title">BORN 2002 👶</div>
+                        <div class="title">BORN 2003 👶</div>
                         <div class="subtitle">System Bootstrap Initiated</div>
                         <div class="description">Successfully deployed to Planet Earth. First words were 'Hello World!'</div>
                         <div class="footnote">// TODO: Learn to walk without stack overflow 🚶‍♂️</div>
@@ -205,29 +220,43 @@
 
                 <div class="dev-timeline-item">
                     <div class="funny-text">
-                        Hackathon victory achieved 🏆<br>
-                        Loading celebration.exe... 🎉
-                    </div>
-                    <div class="content">
-                        <div class="title">FIRST HACKATHON WIN 2023 🚀</div>
-                        <div class="subtitle">Achievement Unlocked: Code Warrior</div>
-                        <div class="description">Fueled by pizza and energy drinks, created something awesome in 48 sleepless hours!</div>
-                        <div class="footnote">// Note: Sleep debt currently over 9000 😴</div>
-                    </div>
-                </div>
-
-                <div class="dev-timeline-item">
-                    <div class="funny-text">
                         Career.exe launched successfully 💼<br>
                         Adulting mode activated 🎮
                     </div>
                     <div class="content">
-                        <div class="title">FIRST INTERNSHIP 2023 💻</div>
+                        <div class="title">FIRST INTERNSHIP 2022 💻</div>
                         <div class="subtitle">Production Access Granted</div>
                         <div class="description">Finally getting paid to Google things and attend meetings that could've been emails.</div>
                         <div class="footnote">/* TODO: Figure out why production code works 🤷‍♂️ */</div>
                     </div>
                 </div>
+
+                <div class="dev-timeline-item">
+                    <div class="funny-text">
+                        Hackathon victory achieved 🏆<br>
+                        Loading celebration.exe... 🎉
+                    </div>
+                    <div class="content">
+                        <div class="title">HACKATHON WINNER x2 🚀</div>
+                        <div class="subtitle">Achievement Unlocked: Code Champion</div>
+                        <div class="description">Fueled by pizza, energy drinks, and questionable decisions, won two hackathons in 2024!</div>
+                        <div class="footnote">// Note: Sleep debt still in the negatives 😴</div>
+                    </div>
+                </div>
+
+                <div class="dev-timeline-item">
+                    <div class="funny-text">
+                        Degree completion incoming... 🎓<br>
+                        Loading “adulting.exe”... 🙄
+                    </div>
+                    <div class="content">
+                        <div class="title">DATA SCIENTIST IN TRAINING 🚀</div>
+                        <div class="subtitle">Achievement Unlocked: Almost Graduated!</div>
+                        <div class="description">Survived 4 years of university life, endless assignments, and caffeine-fueled study sessions. Few more months before I can call myself a 'real adult'!</div>
+                        <div class="footnote">// Note: Finals week is my cardio 🏃‍♀️</div>
+                    </div>
+                </div>
+                
             </div>
         </section>
 
@@ -311,7 +340,6 @@
                         <ul class="list-disc pl-5">
                             <li class="mb-2"><span class="font-semibold">Urdu:</span> Native</li>
                             <li class="mb-2"><span class="font-semibold">English:</span> Fluent</li>
-                            <li class="mb-2"><span class="font-semibold">Punjabi:</span> Conversational</li>
                         </ul>
                     </div>
                 </div>
@@ -396,7 +424,6 @@
                         <ul class="bulletsTablet">
                             <li><strong>Urdu:</strong> Native</li>
                             <li><strong>English:</strong> Fluent</li>
-                            <li><strong>Punjabi:</strong> Conversational</li>
                         </ul>
                     </div>
                 </div>
@@ -413,28 +440,6 @@
                         <div class="overlay">
                             <p>A Chrome extension for optimizing YouTube content consumption with AI-driven features like notes, video snapshots, and summaries.</p>
                             <a href="https://clipinsights.com/" class="github-button">
-                                <span>Visit Github</span>
-                                <span class="arrow"> <i class="fa-solid fa-chevron-right"></i> </span>
-                            </a>
-                        </div>
-                    </div>
-        
-                    <div class="project-card rounded-3xl fade-in-scale">
-                        <h2 class="text-2xl font-bold mb-2 projectCardHeading">StudyBuddy</h2>
-                        <div class="overlay">
-                            <p>An AI-driven platform for exam preparation, offering personalized learning paths and tools for students.</p>
-                            <a href="https://github.com/abdullahdotnet/StudyBuddy-FYP" class="github-button">
-                                <span>Visit Github</span>
-                                <span class="arrow"> <i class="fa-solid fa-chevron-right"></i> </span>
-                            </a>
-                        </div>
-                    </div>
-        
-                    <div class="project-card rounded-3xl fade-in-scale">
-                        <h2 class="text-2xl font-bold mb-2 projectCardHeading">Portfolio Website</h2>
-                        <div class="overlay">
-                            <p>A personal website showcasing skills, projects, and a resume, with a modern design and smooth navigation.</p>
-                            <a href="https://github.com/abdullahashfaqvirk/Personal-Portfolio-Website" class="github-button">
                                 <span>Visit Github</span>
                                 <span class="arrow"> <i class="fa-solid fa-chevron-right"></i> </span>
                             </a>
@@ -462,6 +467,17 @@
                             </a>
                         </div>
                     </div>
+
+                    <div class="project-card rounded-3xl fade-in-scale">
+                        <h2 class="text-2xl font-bold mb-2 projectCardHeading">StudyBuddy</h2>
+                        <div class="overlay">
+                            <p>An AI-driven platform for exam preparation, offering personalized learning paths and tools for students.</p>
+                            <a href="https://github.com/abdullahdotnet/StudyBuddy-FYP" class="github-button">
+                                <span>Visit Github</span>
+                                <span class="arrow"> <i class="fa-solid fa-chevron-right"></i> </span>
+                            </a>
+                        </div>
+                    </div>
         
                     <div class="project-card rounded-3xl fade-in-scale">
                         <h2 class="text-2xl font-bold mb-2 projectCardHeading">Online Retail Customer Analysis</h2>
@@ -472,6 +488,19 @@
                                 <span class="arrow"> <i class="fa-solid fa-chevron-right"></i> </span>
                             </a>
                         </div>
+                    </div>
+
+                    <div class="project-card rounded-3xl fade-in-scale">
+                        <h2 class="text-2xl font-bold mb-2 projectCardHeading">Text Summarization App</h2>
+                        <div class="overlay">
+                            <p>A Hugging Face Spaces app for text summarization, utilizing advanced Transformers for accurate processing and Gradio for a seamless, interactive user interface.</p>
+
+                            <a href="https://github.com/abdullahashfaqvirk/Text-Summarization-App" class="github-button">
+                                <span>Visit Github</span>
+                                <span class="arrow"> <i class="fa-solid fa-chevron-right"></i> </span>
+                            </a>
+                        </div>
+                        
                     </div>
                 </div>
             </div>
@@ -495,13 +524,17 @@
                                         <ul>
                                             <li><strong>Hackathon Name:</strong> NUTech Peshawar 2024</li>
                                             <li><strong>Achievement:</strong> Winner of the Data Analytics Hackathon</li>
-                                            <li><strong>Project:</strong> Data Analytics Tool for Customer Insights</li>
-                                            <li><strong>Team Size:</strong> 5 members</li>
+                                            <li><strong>Team Size:</strong> 3 members</li>
+                                            <li><strong>Team Members:</strong>
+                                                <ul>
+                                                    <li><a href="https://www.linkedin.com/in/duaa-mansur-bb4a1a201/" class="font-bold underline cursor-pointer" target="_blank">Dua Mansoor</a></li>
+                                                    <li><a href="https://www.linkedin.com/in/rabail-anees-2a9182241/" class="font-bold underline cursor-pointer" target="_blank">Rabail Anees</a></li>
+                                                </ul>                                                
+                                            </li>
                                             <li><strong>User Feedback:</strong> Praised for innovative data-driven insights and interactive dashboard.</li>
-                                            <li><strong>Sponsorship:</strong> Sponsored by industry leaders in data science and analytics.</li>
                                             <li><strong>Technologies Used:</strong> Python, Power BI, SQL, and FastAPI.</li>
-                                            <li><strong>Post-Event Impact:</strong> Recognized by sponsors and invited to collaborate on future data science projects.</li>
                                         </ul>
+                                        
                                     </div>
                                    <div id="achievementImage">
                                         <img src="./images/hackathon.jpg" >
@@ -512,14 +545,27 @@
                                 <div class="slide-content">
                                     <div>
                                         <h2>🚀 Career Highlights</h2>
-                                        <img id="mobileImage" src="./images/Preply.png" >
+                                        <img id="mobileImage" src="./images/Preply2.png" >
                                         <ul>
-                                            <li><strong>Event Organizer (Event Management Society, PUCIT):</strong> Organized events, coordinating logistics and engaging participants in university activities.</li>
-                                            <li><strong>Data Science Instructor (Preply):</strong> Delivered 110+ lessons in Python, SQL, Django, and AI/ML, earning a consistent 5/5 rating and Super Tutor recognition.</li>
-                                            <li><strong>Teaching Assistant (PUCIT):</strong> Assisted 45+ students in Data Science labs, offering guidance and evaluations to help them build confidence.</li>
-                                            <li><strong>IBM Data Science Professional Certificate:</strong> Gained hands-on experience with data science tools and methodologies.</li>
-                                            <li><strong>Kaggle Competitions:</strong> Participated in multiple challenges, achieving top 10% in one competition.</li>
+                                            <li><strong>Event Organizer (Event Management Society, PUCIT):</strong>
+                                                <ul>
+                                                    <li>Organized events, coordinated logistics, and engaged participants in university activities.</li>
+                                                    <li>Duration: Jul 2022 - Aug 2023 (1 yr 2 mos)</li>
+                                                </ul>
+                                            </li>
+                                            <li><strong>Teaching Assistant (PUCIT):</strong>
+                                                <ul>
+                                                    <li>Assisted 45+ Data Science students with PF labs, offering support and evaluations to help them build confidence.</li>
+                                                    <li>Duration: Dec 2022 - May 2023 (6 mos)</li>
+                                                </ul>
+                                            </li>
+                                            <li><strong>Data Science Instructor (Preply):</strong>
+                                                <ul>
+                                                    <li>Delivered 110+ lessons in Python, SQL, Django, and AI/ML, earning a consistent 5/5 rating and Super Tutor recognition.</li>
+                                                </ul>
+                                            </li>
                                         </ul>
+                                        
                                     </div>
                                     <div id="achievementImage" class="Preply">
                                         <img src="./images/Preply2.png" >
@@ -533,14 +579,24 @@
                                         <h2>💼 Internships</h2>
                                         <img id="mobileImage" src="./images/Cedar.jpg" >
                                         <ul>
-                                            <li><strong>Company:</strong> Cedar Financial</li>
+                                            <li><strong>Company:</strong> I.T. Paths, Cedar Financial</li>
                                             <li><strong>Role:</strong> Data Analytics Intern</li>
-                                            <li><strong>Contribution:</strong> Gained experience in data analytics using Python, Power BI, and SQL.</li>
-                                            <li><strong>Tech Stack:</strong> Python, FastAPI, NLTK, Pandas, Matplotlib, Microsoft SQL Server, Power BI</li>
-                                            <li><strong>Lead Projects:</strong> Led two projects, managing teams of 5+ developers.</li>
-                                            <li><strong>Skills Gained:</strong> Developed expertise in sentiment analysis and backend development with FastAPI.</li>
-                                            <li><strong>Agile Methodology:</strong> Participated in daily stand-ups and sprint planning sessions to improve workflow.</li>
+                                            <li><strong>Duration:</strong> Dec 2022 - Mar 2023 · 4 months</li>
+                                            <li><strong>Location:</strong> Lahore, Punjab, Pakistan · Hybrid</li>
+                                            <li><strong>Key Contributions:</strong>
+                                                <ul>
+                                                    <li>Gained practical experience in data analytics using Python, Power BI, and SQL.</li>
+                                                    <li>Developed expertise in sentiment analysis and backend development with FastAPI.</li>
+                                                    <li>Led two projects, managing teams of 5+ developers.</li>
+                                                </ul>
+                                            </li>
+                                            <li><strong>Skills Gained:</strong>
+                                                <ul>
+                                                    <li>Python, FastAPI, NLTK, NumPy, Pandas, Matplotlib, Microsoft SQL Server, Power BI, MS Excel</li>
+                                                </ul>
+                                            </li>
                                         </ul>
+                                        
                                     </div>
                                     <div id="achievementImage">
                                         <img src="./images/Cedar.jpg" >
@@ -554,14 +610,22 @@
                                         <img id="mobileImage" src="./images/clip_insights.jpg" >
                                         <ul>
                                             <li><strong>Project:</strong> Clip Insights</li>
-                                            <li><strong>Description:</strong> Web app to analyze and visualize data from video clips.</li>
-                                            <li><strong>Tech Stack:</strong> React.js, Node.js, MongoDB</li>
-                                            <li><strong>Impact:</strong> Used by media professionals to extract insights from video content.</li>
-                                            <li><strong>User Feedback:</strong> Praised for intuitive interface and fast data processing.</li>
-                                            <li><strong>Features:</strong> Provides sentiment analysis and key moment tracking.</li>
-                                            <li><strong>Security:</strong> Implemented encryption to safeguard sensitive media data.</li>
-                                            <li><strong>Deployment:</strong> Deployed on AWS with auto-scaling for high traffic.</li>
+                                            <li><strong>Duration:</strong> Nov 2024 - Present</li>
+                                            <li><strong>Description:</strong> AI-powered Chrome extension to optimize YouTube content consumption, featuring in-app notes, video snapshots, key point extraction, and video summaries.</li>
+                                            <li><strong>Key Features:</strong>
+                                                <ul>
+                                                    <li>In-app notes and instant video snapshots</li>
+                                                    <li>Key point extraction and video summaries</li>
+                                                    <li>Interactive chat, personalized cloud workspace, and note export</li>
+                                                </ul>
+                                            </li>
+                                            <li><strong>Tech Stack:</strong>
+                                                <ul>
+                                                    <li>Python, JavaScript, Django REST Framework, React, LangChain, Groq, PostgreSQL, Amazon S3, Index DB, Docker, HTML5, Tailwind CSS, WordPress</li>
+                                                </ul>
+                                            </li>
                                         </ul>
+                                        
                                     </div>
                                     <div id="achievementImage" class="clipInsights">
                                         <img src="./images/clip_insights.jpg" >
@@ -585,7 +649,81 @@
             </div>
         </section>
         
+        <section id="testimonials">
+            <h1 class="text-3xl mb-4 text-white projectsHeading fade-in-scale">What my clients say!</h1>
+            <div class="testimonials-container">
+                <div class="testimonial-card">
+                    <h3 class="testimonial-name">Sajjal</h3>
+                    <p class="testimonial-date">December 3, 2024</p>
+                    <div class="testimonial-bar">
+                        <div class="testimonial-emptybar"></div>
+                        <div class="testimonial-filledbar"></div>
+                    </div>
+                    <p class="testimonial-text">"Having Abdullah as a teaching assistant in Python has been a truly positive experience. He has an impressive ability to explain complex concepts in a simple way."</p>
+                </div>
         
+                <div class="testimonial-card">
+                    <h3 class="testimonial-name">Farid</h3>
+                    <p class="testimonial-date">November 22, 2024</p>
+                    <div class="testimonial-bar">
+                        <div class="testimonial-emptybar"></div>
+                        <div class="testimonial-filledbar"></div>
+                    </div>
+                    <p class="testimonial-text">"Very good lessons, clear explanations. Theory is explained very clear. Thanks you very much.."</p>
+                </div>
+        
+                <div class="testimonial-card">
+                    <h3 class="testimonial-name">Divya</h3>
+                    <p class="testimonial-date">July 7, 2024</p>
+                    <div class="testimonial-bar">
+                        <div class="testimonial-emptybar"></div>
+                        <div class="testimonial-filledbar"></div>
+                    </div>
+                    <p class="testimonial-text">"A great tutor who explains concepts clearly and makes learning enjoyable. I appreciate his patience and expertise, and his classes are always engaging and informative."</p>
+                </div>
+        
+                <div class="testimonial-card">
+                    <h3 class="testimonial-name">Santhosh</h3>
+                    <p class="testimonial-date">April 7, 2024</p>
+                    <div class="testimonial-bar">
+                        <div class="testimonial-emptybar"></div>
+                        <div class="testimonial-filledbar"></div>
+                    </div>
+                    <p class="testimonial-text">"If you are new to Python and want a tutor to teach you, you should go to him. I understood most of the basic things in just a few classes."</p>
+                </div>
+        
+                <div class="testimonial-card">
+                    <h3 class="testimonial-name">Nian</h3>
+                    <p class="testimonial-date">March 5, 2024</p>
+                    <div class="testimonial-bar">
+                        <div class="testimonial-emptybar"></div>
+                        <div class="testimonial-filledbar"></div>
+                    </div>
+                    <p class="testimonial-text">"Abdullah is a great teacher. He is an expert of python help me with advance topics. He is an expert in web developing and very passionate about teaching."</p>
+                </div>
+
+                <div class="testimonial-card">
+                    <h3 class="testimonial-name">Fatima Noor</h3>
+                    <p class="testimonial-date">January 20, 2025</p>
+                    <div class="testimonial-bar">
+                        <div class="testimonial-emptybar"></div>
+                        <div class="testimonial-filledbar"></div>
+                    </div>
+                    <p class="testimonial-text">"Abdullah is an excellent team leader. He is patient and always supportive, even when I take time to complete tasks. His ability to guide the team makes working with him a great experience."</p>
+                </div>
+
+                <div class="testimonial-card">
+                    <h3 class="testimonial-name">Ayesha Zahid</h3>
+                    <p class="testimonial-date">Feburary 1, 2025</p>
+                    <div class="testimonial-bar">
+                        <div class="testimonial-emptybar"></div>
+                        <div class="testimonial-filledbar"></div>
+                    </div>
+                    <p class="testimonial-text">"Abdullah is a great team lead who provided constant guidance and support, helping me learn and grow throughout our work together."</p>
+                </div>
+    
+            </div>
+        </section>
 
         <footer class="footer">
             <div class="footer-left">
@@ -594,7 +732,7 @@
                 <a href="contactme.html"><button class="hire-me">Get in Touch!</button></a>
                 <p>Or connect with me on:</p>
                 <div class="social-links">
-                  <a href="https://instagram.com/" target="_blank">Instagram</a> |
+                 <!-- <a href="https://instagram.com/" target="_blank">Instagram</a> |-->
                   <a href="https://github.com/abdullahashfaqvirk" target="_blank">Github</a> |
                   <a href="https://www.linkedin.com/in/abdullahashfaqvirk/" target="_blank">LinkedIn</a> |
                   <a href="mailto:abdullahashfaq.ds@gmail.com">Gmail</a>
@@ -605,6 +743,7 @@
             </div>
           </footer>
         
+
     </main>
 
   
