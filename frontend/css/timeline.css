@@ -232,6 +232,12 @@
     font-family: monospace;
     margin-top: auto;
 }
+@media (min-width: 1024px) and (max-width: 1280px) {
+    #timeline{
+        margin-left: 6rem;
+        margin-right: 6rem;
+    }
+}
 
 @media (max-width: 768px) {
     .terminal{

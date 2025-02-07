@@ -12,7 +12,7 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    margin: 0; 
+    margin: 0;     
 }
 
 .back-icon {
@@ -33,7 +33,8 @@ body {
     text-decoration: none;
     transition: all 0.3s ease;
     background: none;
-    z-index: 1;
+    z-index: 10;
+    backdrop-filter: blur(10px);
 }
 .back-icon i {
     background: none;

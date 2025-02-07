@@ -73,7 +73,7 @@ span.num {
 }
   
 
-@media (min-width: 641px) and (max-width: 1025px) {
+@media (min-width: 641px) and (max-width: 1099px) {
     .wrapper {
         justify-content: center; 
         margin: 0 2rem;
@@ -163,6 +163,11 @@ span.num {
     .containerCounter {
         width: 30vmin;
         height: 20vmin;
+    }
+    span.num,
+    .plus-sign {
+        padding-bottom: 0.8rem;
+        font-size: 2em;
     }
 }
 @media (max-width: 640px) {
