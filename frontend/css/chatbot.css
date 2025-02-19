@@ -325,3 +325,51 @@
     width: 50vw; 
   }
 }
+
+@media only screen and (max-width: 480px) {
+  .chat-window {
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding-top: env(safe-area-inset-top);
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+
+  .messages {
+    flex: 1;
+    height: calc(100vh - 60px - 140px); 
+    padding-bottom: 0;
+    margin-bottom: 140px; 
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch; 
+  }
+  .bottom-wrapper {
+    position: fixed;
+    bottom: 50px;
+    left: 0;
+    width: 100%;
+    background-color: rgb(99, 99, 99);
+    padding: 10px;
+    box-sizing: border-box;
+    z-index: 1000;
+    padding-bottom: calc(10px + env(safe-area-inset-bottom));
+  }
+
+  #msg_input {
+    width: calc(100% - 70px);
+  }
+
+  .default-questions {
+    position: fixed;
+    bottom: 150px;
+    left: 0;
+    width: 100%;
+    margin: 0;
+    padding: 10px;
+    box-sizing: border-box;
+    z-index: 9;
+  }
+}

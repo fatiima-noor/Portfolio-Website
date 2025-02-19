@@ -420,27 +420,6 @@ window.addEventListener('load', function () {
     showBotMessage('Hello there! Type in a message.');
 });
 
-// Adjust screen size in mobile view
-function adjustChatWindowPosition() {
-    const chatWindow = document.querySelector('.chat-window');
-    const windowHeight = window.innerHeight;
-    const chatWindowHeight = chatWindow.offsetHeight;
-
-    const isMobile = window.innerWidth <= 768; 
-
-    if (isMobile) {
-        chatWindow.style.bottom = `${windowHeight - chatWindowHeight}px`;
-    } else {
-        chatWindow.style.bottom = '0px';
-    }
-}
-
-window.addEventListener('resize', adjustChatWindowPosition);
-
-adjustChatWindowPosition();
-
-
-
 //Achievements
 document.querySelector('.prev').addEventListener('click', function() {
     const current = document.querySelector('input[type=radio]:checked');
