@@ -372,4 +372,11 @@
     box-sizing: border-box;
     z-index: 9;
   }
+  .messages .message.right .text_wrapper {
+    margin-right: 4px;
+  }
+  .messages .message.left .text_wrapper {
+    margin-left: 4px;
+  }
+  
 }
