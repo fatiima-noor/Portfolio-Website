@@ -1,41 +1,43 @@
-/*Counter*/
+/* Counter */
 .wrapper {
-    padding: 60px 20px; 
-    margin-top: -200px; 
+    padding: 60px 20px;
+    margin-top: -200px;
     margin-left: 6rem;
     margin-right: 6rem;
-    display: flex; 
+    display: flex;
     justify-content: space-around;
-
 }
-
 
 .containerCounter {
     width: 35vmin;
     height: 25vmin;
     display: flex;
     flex-direction: column;
-    justify-content: center; ;
+    justify-content: center;
     padding: 1em 0;
     position: relative;
     font-size: 16px;
     border-radius: 0.5em;
     background-color: rgba(4, 59, 59, 0.6);
     border-bottom: 5px solid #0c97aa;
-    position: relative;
 }
+
 i {
     color: #0c97aa;
     font-size: 2em;
     text-align: center;
 }
+
 span.num {
     color: #ffffff;
     display: grid;
     place-items: center;
     font-weight: 600;
     font-size: 3em;
+    line-height: 1;
+    white-space: nowrap;
 }
+
 span.text {
     color: #e0e0e0;
     padding: 5px;
@@ -55,61 +57,58 @@ span.text {
     color: #ffffff;
     opacity: 0;
     transition: opacity 0.5s ease-in;
-    margin-left: 3px; 
-    line-height: 1; 
+    margin-left: 3px;
+    line-height: 1;
 }
 
-span.num {
-    line-height: 1; 
-    white-space: nowrap; 
-}
-
-  
-#numberPlus{
+#numberPlus {
     padding-top: 15px;
     display: flex;
     flex-direction: row;
     justify-content: center;
 }
-  
 
+/* Tablet (medium screens) */
 @media (min-width: 641px) and (max-width: 1099px) {
     .wrapper {
-        justify-content: center; 
+        justify-content: center;
         margin: 0 2rem;
-        position: relative;
-        padding-top: 1rem;
-        gap: 1rem; 
-        transform: translateY(-80px);
         margin-left: 6rem;
         margin-right: 6rem;
+        position: relative;
+        padding-top: 1rem;
+        gap: 1rem;
+        transform: translateY(-80px);
     }
 
     .containerCounter {
         max-width: 100%;
-        height: auto; 
+        height: auto;
         margin-bottom: 25px;
-        
     }
 
-    span.num {
+    
+    span.num,
+    .plus-sign {
+        padding-top: ;
+        padding-bottom: 0.8rem;
         font-size: 2em;
     }
 
     i {
-        font-size: 1.6em; 
+        font-size: 1.6em;
     }
 
     span.text {
-        font-size: 1.1rem; 
+        font-size: 1rem;
     }
 }
 
-
+/* Small tablets */
 @media (max-width: 768px) {
     .wrapper {
         flex-wrap: wrap;
-        justify-content: space-between; 
+        justify-content: space-between;
         margin-left: 1rem;
         margin-right: 1rem;
         position: relative;
@@ -119,64 +118,33 @@ span.num {
     .containerCounter {
         width: 48%;
         max-width: 100%;
-        height: 150px; 
+        height: 150px;
         margin-bottom: 20px;
     }
 }
 
+/* Mobile */
 @media (max-width: 640px) {
     .wrapper {
         flex-wrap: wrap;
         justify-content: space-between;
         margin-left: 1rem;
         margin-right: 1rem;
-        transform: none;
-        position: relative;
         transform: translateY(-60px);
+        position: relative;
     }
 
     .containerCounter {
-        width: 48%; 
-        max-width: 100%; 
-        height: 100px; 
-        margin-bottom: 20px; 
-    }
-
-    span.num {
-        font-size: 1.8em; 
-    }
-
-    i {
-        font-size: 1.5em; 
-    }
-
-    span.text {
-        font-size: 1rem; 
-    }
-}
-
-@media (min-width: 1180px) and (max-width: 1450px) {
-    .wrapper {
-        gap: 1rem;
-    }
-    
-    .containerCounter {
-        width: 30vmin;
-        height: 20vmin;
-    }
-    span.num,
-    .plus-sign {
-        padding-bottom: 0.8rem;
-        font-size: 2em;
-    }
-}
-@media (max-width: 640px) {
-    .containerCounter {
+        width: 48%;
+        max-width: 100%;
+        height: 100px;
+        margin-bottom: 20px;
         min-height: 100px;
     }
 
     span.num,
     .plus-sign {
+        padding-top: ;
         padding-bottom: 0.8rem;
         font-size: 2em;
     }
@@ -188,5 +156,47 @@ span.num {
     span.text {
         padding-bottom: 0.15rem;
         font-size: 0.8rem;
+    }
+}
+
+/* Large screens */
+@media (min-width: 1180px) and (max-width: 1450px) {
+    .wrapper {
+        gap: 1rem;
+    }
+    
+    .containerCounter {
+        width: 30vmin;
+        height: 20vmin;
+    }
+
+    span.num,
+    .plus-sign {
+        padding-bottom: 0.8rem;
+        font-size: 2em;
+    }
+}
+
+/* Targeted fix for laptop sizes */
+@media (min-width: 1100px) and (max-width: 1200px) and (max-height: 600px) {
+    i {
+        font-size: 1.8em;
+        margin-bottom: 5px;
+        margin-top: -12px;
+    }
+    
+    #numberPlus {
+        padding-top: 5px;
+        margin-bottom: 5px;
+    }
+    
+    span.num, 
+    .plus-sign {
+        font-size: 2.5em;
+    }
+    
+    span.text {
+        bottom: 8px;
+        font-size: 1rem;
     }
 }
