@@ -44,9 +44,16 @@
 
 .icon {
     color: #0c97aa;
-    margin-top: 5%;
     transition: color 0.3s ease-in-out, transform 0.3s ease-in-out; 
     font-size: 1rem; 
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Specifically making the mail icon slightly smaller as requested */
+.icon[aria-label="Email"] {
+    font-size: 0.9rem;
 }
 
 .icon:hover {
@@ -138,8 +145,8 @@
     }
 
    
-    .icons i1 { 
-        font-size: 20px; 
+    .icons i { 
+        font-size: 0.9rem; 
     }
 }
 

@@ -1,29 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Abdullah Ashfaq</title>
-    <link rel="icon" href="images/wotteo.jpg"  type="image/x-icon">
+    <title>Fatima Noor</title>
+    <link rel="icon" href="images/wotteo.jpg" type="image/x-icon">
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-    <link href="css/timeline.css" rel="stylesheet" >
-    <link href="css/style.css" rel="stylesheet" >
-    <link href="css/background.css" rel="stylesheet" >
-    <link href="css/navbar.css" rel="stylesheet" >
-    <link href="css/about.css" rel="stylesheet" >
-    <link href="css/scrollbar.css" rel="stylesheet" >
-    <link href="css/heroSection.css" rel="stylesheet" >   
-    <link href="css/counter.css" rel="stylesheet" >
-    <link href="css/footer.css" rel="stylesheet" >
-    <link href="css/animation.css" rel="stylesheet" >
-    <link href="css/chatbot.css" rel="stylesheet" >
-    <link href="css/projects.css" rel="stylesheet" >
-    <link href="css/achievements.css" rel="stylesheet" >
-    <link href="css/testimonial.css" rel="stylesheet" >
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <link href="css/timeline.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/background.css" rel="stylesheet">
+    <link href="css/navbar.css" rel="stylesheet">
+    <link href="css/about.css" rel="stylesheet">
+    <link href="css/scrollbar.css" rel="stylesheet">
+    <link href="css/heroSection.css" rel="stylesheet">
+    <link href="css/counter.css" rel="stylesheet">
+    <link href="css/footer.css" rel="stylesheet">
+    <link href="css/animation.css" rel="stylesheet">
+    <link href="css/chatbot.css" rel="stylesheet">
+    <link href="css/projects.css" rel="stylesheet">
+    <link href="css/achievements.css" rel="stylesheet">
+    <link href="css/testimonial.css" rel="stylesheet">
 </head>
+
 <body>
     <div class="canvas-container">
         <canvas id="backgroundCanvas"></canvas>
@@ -34,10 +36,10 @@
             <div class="planet planet-2"></div>
             <div class="planet planet-3"></div>
             <div class="planet planet-4"></div>
-            
+
             <header class="header">
-                <a href="#" class="logo">Abdullah.</a>
-                <div class="hamburger" onclick="toggleDropdown()">&#9776;</div> 
+                <a href="#" class="logo">Noor.</a>
+                <div class="hamburger" onclick="toggleDropdown()">&#9776;</div>
                 <nav class="navbar">
                     <a href="#About">About</a>
                     <a href="#Projects">Projects</a>
@@ -50,82 +52,97 @@
                     <a href="#Projects">Projects</a>
                     <a href="#achievements">Achievements</a>
                     <a href="contactme.html">Contact</a>
-                    <a href="https://drive.google.com/file/d/1RHrVvxO14PQnM6guSGczMtcUuCfGvdY0/view?usp=sharing">Download Résumé</a>
+                    <a href="https://drive.google.com/file/d/1RHrVvxO14PQnM6guSGczMtcUuCfGvdY0/view?usp=sharing">Download
+                        Résumé</a>
                 </div>
             </header>
-        
+
             <div class="relative flex flex-col items-center mt-20 sm:h-screen md:h-[85vh] lg:h-screen">
 
-                <h1 class="text-4xl glow"><span class= "noStroke">Hello, I'm </span><span class="stroke">Abdullah Ashfaq</span></h1>
+                <h1 class="text-4xl glow"><span class="noStroke">Hello, I'm </span><span class="stroke">Fatima
+                        Noor</span></h1>
                 <p class="text-gray-300 mt-2">Welcome to my portfolio</p>
                 <p class="text-white text-lg mt-4 max-w-xl text-center px-4">
-                    A fearless <b>Data Scientist</b> wrangling <b>AI/ML models</b>, <b>messy databases</b>, and <b>rogue bugs</b>.
-                    Fueled by caffeine and curiosity, turning chaos into code—one panic attack at a time! 
+                    A bold <b>Software Engineer</b> wrangling <b>AI/ML models</b>, <b>messy databases</b> and <b>rogue
+                        bugs</b>.
+                    Fueled by caffeine and curiosity, turning chaos into code - one panic attack at a time!
                 </p>
                 <div class="button-container">
-                    <a href="https://drive.google.com/file/d/1RHrVvxO14PQnM6guSGczMtcUuCfGvdY0/view?usp=sharing" target="_blank">
-                        <button id="down" class="relative mt-6 px-6 py-3 text-lg text-white font-bold bg-gradient-to-r from-teal-400 to-blue-500 rounded-full overflow-hidden shadow-lg border-2 border-teal-300 glowButton self-start sm:self-center">
+                    <a href="https://drive.google.com/file/d/1heP5oltOecLsKkfafD4XCZNPojbYHyXn/view?usp=sharing"
+                        target="_blank">
+                        <button id="down"
+                            class="relative mt-6 px-6 py-3 text-lg text-white font-bold bg-gradient-to-r from-teal-400 to-blue-500 rounded-full overflow-hidden shadow-lg border-2 border-teal-300 glowButton self-start sm:self-center">
                             Download Résumé
                         </button>
                     </a>
-    
-                    <button id="ai"class="relative mt-6 px-6 py-4 text-lg text-white font-bold bg-gradient-to-r from-teal-400 to-blue-500 rounded-full overflow-hidden shadow-lg border-2 border-teal-300 glowButton self-start sm:self-center hidden" id="aiSupportButton">
+
+                    <button id="ai"
+                        class="relative mt-6 px-6 py-4 text-lg text-white font-bold bg-gradient-to-r from-teal-400 to-blue-500 rounded-full overflow-hidden shadow-lg border-2 border-teal-300 glowButton self-start sm:self-center hidden"
+                        id="aiSupportButton">
                         <img src="images/wotteo.jpg" alt="Wotteo" class="wotteoImage">
                         Chat with AI Assistant
                     </button>
-    
-                    
-                    
-                    <div class="mt-4 flex space-x-6 icons">
+
+
+
+                    <div class="mt-4 flex items-center space-x-6 icons">
                         <!--<a href="#"  class="icon"aria-label="GitHub">
                             <i class="fa-brands fa-instagram"></i>
                         </a>-->
-                        <a href="https://www.kaggle.com/abdullahashfaqvirk" target="_blank" class="icon"aria-label="GitHub">
+                        <!--<a href="https://www.kaggle.com/abdullahashfaqvirk" target="_blank" class="icon"
+                            aria-label="GitHub">
                             <i class="fa-brands fa-kaggle"></i>
+                        </a>-->
+                        <a href="mailto:fatimanoor.se22@gmail.com" class="icon" aria-label="Email">
+                            <i class="fa-solid fa-envelope"></i>
                         </a>
-                        <a href="https://github.com/abdullahashfaqvirk" target="_blank" class="icon"aria-label="GitHub">
+                        <a href="https://github.com/fatiima-noor/" target="_blank" class="icon" aria-label="GitHub">
                             <i class="fa-brands fa-github"></i>
                         </a>
-                        <a href="https://www.linkedin.com/in/abdullahashfaqvirk/" target="_blank" class="icon"aria-label="GitHub">
+                        <a href="https://www.linkedin.com/in/fatimanooor/" target="_blank" class="icon"
+                            aria-label="LinkedIn">
                             <i class="fa-brands fa-linkedin"></i>
                         </a>
                     </div>
-                 </div>
                 </div>
-                
             </div>
-    
+
+            </div>
+
 
             <div class="image-container relative">
-                <img src="images/wotteo.jpg" alt="Wotteo" class="w-40 h-auto absolute right-6 wotteo" style="bottom: 220px;" id="b15">
+                <img src="images/wotteo.jpg" alt="Wotteo" class="w-40 h-auto absolute right-6 wotteo"
+                    style="bottom: 220px;" id="b15">
                 <div id="chatBubble" class="chat-btn absolute  ">
-                    <button id="supportButton" class="mt-6 px-9 py-2 text-lg rounded-full overflow-hidden shadow-lg border-2 border-teal-300 cButton self-start  gradient-button ">AI Support</button>
+                    <button id="supportButton"
+                        class="mt-6 px-9 py-2 text-lg rounded-full overflow-hidden shadow-lg border-2 border-teal-300 cButton self-start  gradient-button ">AI
+                        Support</button>
                 </div>
             </div>
-            
+
             <section class="wrapper ">
                 <div class="containerCounter">
-                <i class="fa-solid fa-check"></i>
-                <div id="numberPlus">
-                    <span class="num" data-val="20">0</span>
-                    <span class="plus-sign">+</span>
-                </div>        
-                <span class="text">Projects </span>
+                    <i class="fa-solid fa-check"></i>
+                    <div id="numberPlus">
+                        <span class="num" data-val="20">0</span>
+                        <span class="plus-sign">+</span>
+                    </div>
+                    <span class="text">Projects </span>
                 </div>
-        
+
                 <div class="containerCounter">
-                <i class="fas fa-smile-beam"></i>
-                <div id="numberPlus">
-                    <span class="num" data-val="10">0</span>
-                    <span class="plus-sign">+</span>
-                </div>               
-                <span class="text">Happy Clients</span>
+                    <i class="fas fa-smile-beam"></i>
+                    <div id="numberPlus">
+                        <span class="num" data-val="10">0</span>
+                        <span class="plus-sign">+</span>
+                    </div>
+                    <span class="text">Happy Clients</span>
                 </div>
-        
+
 
                 <div class="containerCounter">
                     <i class="fa-solid fa-hourglass-half"></i>
-                    <div id="numberPlus">     
+                    <div id="numberPlus">
                         <span class="num" data-val="3">0</span>
                         <span class="plus-sign">+</span>
                     </div>
@@ -134,12 +151,12 @@
 
 
                 <div class="containerCounter">
-                <i class="fa-solid fa-award"></i>
-                <div id="numberPlus">
-                    <span class="num" data-val="3">0</span>
-                </div> 
-                <span class="text">Achievements</span>
-                </div>       
+                    <i class="fa-solid fa-award"></i>
+                    <div id="numberPlus">
+                        <span class="num" data-val="3">0</span>
+                    </div>
+                    <span class="text">Achievements</span>
+                </div>
             </section>
         </section>
 
@@ -173,7 +190,8 @@
                     <div class="content">
                         <div class="title">BORN 2003 👶</div>
                         <div class="subtitle">System Bootstrap Initiated</div>
-                        <div class="description">Successfully deployed to Planet Earth. First words were 'Hello World!'</div>
+                        <div class="description">Successfully deployed to Planet Earth. First words were 'Hello World!'
+                        </div>
                         <div class="footnote">// TODO: Learn to walk without stack overflow 🚶‍♂️</div>
                     </div>
                 </div>
@@ -186,7 +204,8 @@
                     <div class="content">
                         <div class="title">ENDED SCHOOL 2019 🎓</div>
                         <div class="subtitle">Freedom.exe Unlocked</div>
-                        <div class="description">Finally escaped the Matrix. No more asking for bathroom permissions!</div>
+                        <div class="description">Finally escaped the Matrix. No more asking for bathroom permissions!
+                        </div>
                         <div class="footnote">/* Note: Still can't solve those watermelon math problems 🍉 */</div>
                     </div>
                 </div>
@@ -199,7 +218,8 @@
                     <div class="content">
                         <div class="title">ENDED COLLEGE 2021 📚</div>
                         <div class="subtitle">Speed Run Achievement Unlocked</div>
-                        <div class="description">Completed college faster than compiling a React app. Who needs sleep anyway?</div>
+                        <div class="description">Completed college faster than compiling a React app. Who needs sleep
+                            anyway?</div>
                         <div class="footnote">// Warning: Knowledge may be cached ⚠️</div>
                     </div>
                 </div>
@@ -212,7 +232,8 @@
                     <div class="content">
                         <div class="title">STARTED TEACHING 2022 🎯</div>
                         <div class="subtitle">Debug Mode: Expert</div>
-                        <div class="description">Turns out explaining code is harder than writing it. Students are the best debuggers!</div>
+                        <div class="description">Turns out explaining code is harder than writing it. Students are the
+                            best debuggers!</div>
                         <div class="footnote">/* Error: Student's code works but don't know why 🤔 */</div>
                     </div>
                 </div>
@@ -225,7 +246,8 @@
                     <div class="content">
                         <div class="title">FIRST INTERNSHIP 2022 💻</div>
                         <div class="subtitle">Production Access Granted</div>
-                        <div class="description">Finally getting paid to Google things and attend meetings that could've been emails.</div>
+                        <div class="description">Finally getting paid to Google things and attend meetings that could've
+                            been emails.</div>
                         <div class="footnote">/* TODO: Figure out why production code works 🤷‍♂️ */</div>
                     </div>
                 </div>
@@ -238,7 +260,8 @@
                     <div class="content">
                         <div class="title">HACKATHON WINNER x2 🚀</div>
                         <div class="subtitle">Achievement Unlocked: Code Champion</div>
-                        <div class="description">Fueled by pizza, energy drinks, and questionable decisions, won two hackathons in 2024!</div>
+                        <div class="description">Fueled by pizza, energy drinks, and questionable decisions, won two
+                            hackathons in 2024!</div>
                         <div class="footnote">// Note: Sleep debt still in the negatives 😴</div>
                     </div>
                 </div>
@@ -251,11 +274,13 @@
                     <div class="content">
                         <div class="title">DATA SCIENTIST IN TRAINING 🚀</div>
                         <div class="subtitle">Achievement Unlocked: Almost Graduated!</div>
-                        <div class="description">Survived 4 years of university life, endless assignments, and caffeine-fueled study sessions. Few more months before I can call myself a 'real adult'!</div>
+                        <div class="description">Survived 4 years of university life, endless assignments, and
+                            caffeine-fueled study sessions. Few more months before I can call myself a 'real adult'!
+                        </div>
                         <div class="footnote">// Note: Finals week is my cardio 🏃‍♀️</div>
                     </div>
                 </div>
-                
+
             </div>
         </section>
 
@@ -265,15 +290,18 @@
 
 
         <a href="#About" class="scroll-button">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="20" height="20" class="transition-transform transform hover:scale-110 scrollArrow" fill="#FFFFFF8A">
-                <path d="M169.4 470.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 370.8 224 64c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 306.7L54.6 265.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z"/>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="20" height="20"
+                class="transition-transform transform hover:scale-110 scrollArrow" fill="#FFFFFF8A">
+                <path
+                    d="M169.4 470.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 370.8 224 64c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 306.7L54.6 265.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z" />
             </svg>
         </a>
 
         <section id="About" class="aboutSection">
             <div class="flex flex-col items-center  p-6 aboutContainer">
                 <h1 class="text-3xl mb-4 text-white aboutHeading fade-in-scale">About Abdullah</h1>
-                <div class="grid flex-grow w-full grid-cols-3 grid-rows-6 gap-4 " style="grid-template-columns: 1.2fr 0.8fr 1fr;">
+                <div class="grid flex-grow w-full grid-cols-3 grid-rows-6 gap-4 "
+                    style="grid-template-columns: 1.2fr 0.8fr 1fr;">
                     <div class="col-span-2 row-span-3 rounded-3xl fade-in-scale  p-4 shadow-lg text-white ">
                         <ul class="list-disc pl-5 space-y-2">
                             <li class="flex items-start">
@@ -301,13 +329,13 @@
                                 <span>Excited to lead teams in shaping the future of tech</span>
                             </li>
                         </ul>
-                        
+
                     </div>
-                    
+
                     <div class="row-span-4 rounded-3xl fade-in-scale">
                         <img src="images/developer.png" alt="developer" class="developer-image">
                     </div>
-                    
+
 
                     <div class="col-span-1.5 row-span-3 rounded-3xl fade-in-scale">
                         <h2 class="text-2xl font-bold mb-4">Certifications</h2>
@@ -319,8 +347,8 @@
                             <li class="mb-2">Tools for Data Science - IBM</li>
                         </ul>
                     </div>
-                    
-            
+
+
                     <div class="col-span-0.5 row-span-3 rounded-3xl fade-in-scale">
                         <h2 class="text-2xl font-bold mb-4">Skills</h2>
                         <ul class="list-disc pl-5">
@@ -330,10 +358,10 @@
                             <li class="mb-2">Backend Development</li>
                             <li class="mb-2">Teaching & Mentorship</li>
                         </ul>
-                        
+
                     </div>
-    
-        
+
+
                     <div class="row-span-2 rounded-3xl fade-in-scale">
                         <h2 class="text-2xl font-bold mb-4">Languages</h2>
                         <ul class="list-disc pl-5">
@@ -343,7 +371,7 @@
                     </div>
                 </div>
             </div>
-        </section>  
+        </section>
 
 
         <section id="AboutMobile" class="aboutSectionMobile">
@@ -373,7 +401,7 @@
                     </div>
                     <img src="images/developer.png" alt="developer" class="developer-image">
                 </div>
-        
+
                 <div class="certifications-block fade-in-scale rounded-3xl">
                     <h2>Certifications</h2>
                     <ul>
@@ -383,9 +411,9 @@
                         <li>Generative AI - Coursera</li>
                         <li>Machine Learning in Production - Coursera</li>
                     </ul>
-                    
+
                 </div>
-        
+
                 <div class="skills-block fade-in-scale rounded-3xl">
                     <h2>Skills</h2>
                     <ul>
@@ -394,9 +422,9 @@
                         <li>AI Specialist</li>
                         <li>Backend Development</li>
                         <li>Teaching & Mentorship</li>
-                    </ul>                    
+                    </ul>
                 </div>
-        
+
                 <div class="languages-block fade-in-scale rounded-3xl">
                     <h2>Languages</h2>
                     <ul>
@@ -417,7 +445,7 @@
                             <li>Teaching & Mentorship</li>
                         </ul>
                     </div>
-            
+
                     <div class="languages-block-Tablets fade-in-scale rounded-3xl">
                         <h2>Languages</h2>
                         <ul class="bulletsTablet">
@@ -428,7 +456,7 @@
                 </div>
             </div>
         </section>
-    
+
 
         <section id="Projects" class="projectsSection">
             <div class="flex flex-col items-center p-6 projectsContainer">
@@ -437,7 +465,8 @@
                     <div class="project-card rounded-3xl fade-in-scale">
                         <h2 class="text-2xl font-bold mb-2 projectCardHeading">Clip Insights</h2>
                         <div class="overlay">
-                            <p>A Chrome extension for optimizing YouTube content consumption with AI-driven features like notes, video snapshots, and summaries.</p>
+                            <p>A Chrome extension for optimizing YouTube content consumption with AI-driven features
+                                like notes, video snapshots, and summaries.</p>
                             <a href="https://clipinsights.com/" class="github-button">
                                 <span>Visit Github</span>
                                 <span class="arrow"> <i class="fa-solid fa-chevron-right"></i> </span>
@@ -448,7 +477,8 @@
                     <div class="project-card rounded-3xl fade-in-scale">
                         <h2 class="text-2xl font-bold mb-2 projectCardHeading">StudyBuddy</h2>
                         <div class="overlay">
-                            <p>An AI-driven platform for exam preparation, offering personalized learning paths and tools for students.</p>
+                            <p>An AI-driven platform for exam preparation, offering personalized learning paths and
+                                tools for students.</p>
                             <a href="https://github.com/abdullahdotnet/StudyBuddy-FYP" class="github-button">
                                 <span>Visit Github</span>
                                 <span class="arrow"> <i class="fa-solid fa-chevron-right"></i> </span>
@@ -459,19 +489,23 @@
                     <div class="project-card rounded-3xl fade-in-scale">
                         <h2 class="text-2xl font-bold mb-2 projectCardHeading">Rentension Intelligence System</h2>
                         <div class="overlay">
-                            <p>A machine learning model that predicts employee turnover, helping HR professionals make data-driven decisions.</p>
-                            <a href="https://github.com/abdullahashfaqvirk/Employee-Attrition-Prediction" class="github-button">
+                            <p>A machine learning model that predicts employee turnover, helping HR professionals make
+                                data-driven decisions.</p>
+                            <a href="https://github.com/abdullahashfaqvirk/Employee-Attrition-Prediction"
+                                class="github-button">
                                 <span>Visit Github</span>
                                 <span class="arrow"> <i class="fa-solid fa-chevron-right"></i> </span>
                             </a>
                         </div>
                     </div>
-        
+
                     <div class="project-card rounded-3xl fade-in-scale">
                         <h2 class="text-2xl font-bold mb-2 projectCardHeading">Online Retail Customer Analysis</h2>
                         <div class="overlay">
-                            <p>A detailed analysis of online retail transaction data using K-Means clustering and RFM framework to drive business decisions.</p>
-                            <a href="https://github.com/abdullahashfaqvirk/Online-Retail-Customer-Analysis" class="github-button">
+                            <p>A detailed analysis of online retail transaction data using K-Means clustering and RFM
+                                framework to drive business decisions.</p>
+                            <a href="https://github.com/abdullahashfaqvirk/Online-Retail-Customer-Analysis"
+                                class="github-button">
                                 <span>Visit Github</span>
                                 <span class="arrow"> <i class="fa-solid fa-chevron-right"></i> </span>
                             </a>
@@ -481,7 +515,8 @@
                     <div class="project-card rounded-3xl fade-in-scale">
                         <h2 class="text-2xl font-bold mb-2 projectCardHeading">PowerBI-Dashboards</h2>
                         <div class="overlay">
-                            <p>A collection of Microsoft Power BI dashboards and reports designed to address business challenges and support data driven decision-making.</p>
+                            <p>A collection of Microsoft Power BI dashboards and reports designed to address business
+                                challenges and support data driven decision-making.</p>
                             <a href="https://github.com/abdullahashfaqvirk/PowerBI-Dashboards" class="github-button">
                                 <span>Visit Github</span>
                                 <span class="arrow"> <i class="fa-solid fa-chevron-right"></i> </span>
@@ -492,9 +527,11 @@
                     <div class="project-card rounded-3xl fade-in-scale">
                         <h2 class="text-2xl font-bold mb-2 projectCardHeading">Text Summarization App</h2>
                         <div class="overlay">
-                            <p>A Hugging Face Spaces app for text summarization, utilizing advanced Transformers for accurate processing and Gradio for a seamless, interactive user interface.</p>
+                            <p>A Hugging Face Spaces app for text summarization, utilizing advanced Transformers for
+                                accurate processing and Gradio for a seamless, interactive user interface.</p>
 
-                            <a href="https://github.com/abdullahashfaqvirk/Text-Summarization-App" class="github-button">
+                            <a href="https://github.com/abdullahashfaqvirk/Text-Summarization-App"
+                                class="github-button">
                                 <span>Visit Github</span>
                                 <span class="arrow"> <i class="fa-solid fa-chevron-right"></i> </span>
                             </a>
@@ -503,7 +540,7 @@
                 </div>
             </div>
         </section>
-      
+
         <section id="achievements">
             <h1 class="text-3xl mb-4 text-white projectsHeading fade-in-scale">Achievements</h1>
             <div id="slider">
@@ -518,49 +555,56 @@
                                 <div class="slide-content">
                                     <div>
                                         <h2>🏆 Hackathon Winner</h2>
-                                        <img id="mobileImage" src="./images/hackathon.jpg" >
+                                        <img id="mobileImage" src="./images/hackathon.jpg">
                                         <ul>
                                             <li><strong>Hackathon Name:</strong> NUTech Peshawar 2024</li>
-                                            <li><strong>Achievement:</strong> Winner of the Data Analytics Hackathon</li>
-                                            <li><strong>User Feedback:</strong> Praised for innovative data-driven insights and interactive dashboard.</li>
-                                            <li><strong>Technologies Used:</strong> Python, Power BI, SQL, and FastAPI.</li>
+                                            <li><strong>Achievement:</strong> Winner of the Data Analytics Hackathon
+                                            </li>
+                                            <li><strong>User Feedback:</strong> Praised for innovative data-driven
+                                                insights and interactive dashboard.</li>
+                                            <li><strong>Technologies Used:</strong> Python, Power BI, SQL, and FastAPI.
+                                            </li>
                                         </ul>
-                                        
+
                                     </div>
-                                   <div id="achievementImage">
-                                        <img src="./images/hackathon.jpg" >
-                                   </div>
+                                    <div id="achievementImage">
+                                        <img src="./images/hackathon.jpg">
+                                    </div>
                                 </div>
                             </div>
                             <div class="slide slide_2">
                                 <div class="slide-content">
                                     <div>
                                         <h2>🚀 Career Highlights</h2>
-                                        <img id="mobileImage" src="./images/Preply2.png" >
+                                        <img id="mobileImage" src="./images/Preply2.png">
                                         <ul>
                                             <li><strong>Event Organizer (Event Management Society, PUCIT):</strong>
                                                 <ul>
-                                                    <li>Organized events, coordinated logistics, and engaged participants in university activities.</li>
+                                                    <li>Organized events, coordinated logistics, and engaged
+                                                        participants in university activities.</li>
                                                     <li>Duration: Jul 2022 - Aug 2023 (1 yr 2 mos)</li>
                                                 </ul>
                                             </li>
                                             <li><strong>Teaching Assistant (PUCIT):</strong>
                                                 <ul>
-                                                    <li>Assisted 45+ Data Science students with PF labs, offering support and evaluations to help them build confidence.</li>
+                                                    <li>Assisted 45+ Data Science students with PF labs, offering
+                                                        support and evaluations to help them build confidence.</li>
                                                     <li>Duration: Dec 2022 - May 2023 (6 mos)</li>
                                                 </ul>
                                             </li>
                                             <li><strong>Data Science Instructor (Preply):</strong>
                                                 <ul>
-                                                    <li>Delivered 110+ lessons in Python, SQL, Django, and AI/ML, earning a consistent 5/5 rating and Super Tutor recognition.</li>
+                                                    <li>Delivered 110+ lessons in Python, SQL, Django, and AI/ML,
+                                                        earning a consistent 5/5 rating and Super Tutor recognition.
+                                                    </li>
                                                 </ul>
                                             </li>
                                         </ul>
-                                        
+
                                     </div>
                                     <div id="achievementImage" class="Preply">
-                                        <img src="./images/Preply2.png" >
-                                        <img src="./images/Preply.png" >
+                                        <img src="./images/Preply2.png">
+                                        <img src="./images/Preply.png">
                                     </div>
                                 </div>
                             </div>
@@ -568,7 +612,7 @@
                                 <div class="slide-content">
                                     <div>
                                         <h2>💼 Internships</h2>
-                                        <img id="mobileImage" src="./images/Cedar.jpg" >
+                                        <img id="mobileImage" src="./images/Cedar.jpg">
                                         <ul>
                                             <li><strong>Company:</strong> I.T. Paths, Cedar Financial</li>
                                             <li><strong>Role:</strong> Data Analytics Intern</li>
@@ -576,21 +620,24 @@
                                             <li><strong>Location:</strong> Lahore, Punjab, Pakistan · Hybrid</li>
                                             <li><strong>Key Contributions:</strong>
                                                 <ul>
-                                                    <li>Gained practical experience in data analytics using Python, Power BI, and SQL.</li>
-                                                    <li>Developed expertise in sentiment analysis and backend development with FastAPI.</li>
+                                                    <li>Gained practical experience in data analytics using Python,
+                                                        Power BI, and SQL.</li>
+                                                    <li>Developed expertise in sentiment analysis and backend
+                                                        development with FastAPI.</li>
                                                     <li>Led two projects, managing teams of 5+ developers.</li>
                                                 </ul>
                                             </li>
                                             <li><strong>Skills Gained:</strong>
                                                 <ul>
-                                                    <li>Python, FastAPI, NLTK, NumPy, Pandas, Matplotlib, Microsoft SQL Server, Power BI, MS Excel</li>
+                                                    <li>Python, FastAPI, NLTK, NumPy, Pandas, Matplotlib, Microsoft SQL
+                                                        Server, Power BI, MS Excel</li>
                                                 </ul>
                                             </li>
                                         </ul>
-                                        
+
                                     </div>
                                     <div id="achievementImage">
-                                        <img src="./images/Cedar.jpg" >
+                                        <img src="./images/Cedar.jpg">
                                     </div>
                                 </div>
                             </div>
@@ -598,29 +645,34 @@
                                 <div class="slide-content">
                                     <div>
                                         <h2>🚀 Project Milestones</h2>
-                                        <img id="mobileImage" src="./images/clip_insights.jpg" >
+                                        <img id="mobileImage" src="./images/clip_insights.jpg">
                                         <ul>
                                             <li><strong>Project:</strong> Clip Insights</li>
                                             <li><strong>Duration:</strong> Nov 2024 - Present</li>
-                                            <li><strong>Description:</strong> AI-powered Chrome extension to optimize YouTube content consumption, featuring in-app notes, video snapshots, key point extraction, and video summaries.</li>
+                                            <li><strong>Description:</strong> AI-powered Chrome extension to optimize
+                                                YouTube content consumption, featuring in-app notes, video snapshots,
+                                                key point extraction, and video summaries.</li>
                                             <li><strong>Key Features:</strong>
                                                 <ul>
                                                     <li>In-app notes and instant video snapshots</li>
                                                     <li>Key point extraction and video summaries</li>
-                                                    <li>Interactive chat, personalized cloud workspace, and note export</li>
+                                                    <li>Interactive chat, personalized cloud workspace, and note export
+                                                    </li>
                                                 </ul>
                                             </li>
                                             <li><strong>Tech Stack:</strong>
                                                 <ul>
-                                                    <li>Python, JavaScript, Django REST Framework, React, LangChain, Groq, PostgreSQL, Amazon S3, Index DB, Docker, HTML5, Tailwind CSS, WordPress</li>
+                                                    <li>Python, JavaScript, Django REST Framework, React, LangChain,
+                                                        Groq, PostgreSQL, Amazon S3, Index DB, Docker, HTML5, Tailwind
+                                                        CSS, WordPress</li>
                                                 </ul>
                                             </li>
                                         </ul>
-                                        
+
                                     </div>
                                     <div id="achievementImage" class="clipInsights">
-                                        <img src="./images/clip_insights.jpg" >
-                                        <img src="./images/clip_insights2.jpg" >
+                                        <img src="./images/clip_insights.jpg">
+                                        <img src="./images/clip_insights2.jpg">
                                     </div>
                                 </div>
                             </div>
@@ -629,7 +681,7 @@
                 </div>
                 <div id="controls">
                     <label class="prev" id="prevBracket">&#8249;</label>
-                    <label class="next" id="nextBracket">&#8250;</label>  
+                    <label class="next" id="nextBracket">&#8250;</label>
                 </div>
                 <div id="bullets">
                     <label for="slide1"></label>
@@ -639,7 +691,7 @@
                 </div>
             </div>
         </section>
-        
+
         <section id="testimonials">
             <h1 class="text-3xl mb-4 text-white projectsHeading fade-in-scale">What my clients say!</h1>
             <div class="testimonials-container">
@@ -650,9 +702,11 @@
                         <div class="testimonial-emptybar"></div>
                         <div class="testimonial-filledbar"></div>
                     </div>
-                    <p class="testimonial-text">"Having Abdullah as a teaching assistant in Python has been a truly positive experience. He has an impressive ability to explain complex concepts in a simple way."</p>
+                    <p class="testimonial-text">"Having Abdullah as a teaching assistant in Python has been a truly
+                        positive experience. He has an impressive ability to explain complex concepts in a simple way."
+                    </p>
                 </div>
-        
+
                 <div class="testimonial-card">
                     <h3 class="testimonial-name">Farid</h3>
                     <p class="testimonial-date">November 22, 2024</p>
@@ -660,9 +714,10 @@
                         <div class="testimonial-emptybar"></div>
                         <div class="testimonial-filledbar"></div>
                     </div>
-                    <p class="testimonial-text">"Very good lessons, clear explanations. Theory is explained very clear. Thanks you very much.."</p>
+                    <p class="testimonial-text">"Very good lessons, clear explanations. Theory is explained very clear.
+                        Thanks you very much.."</p>
                 </div>
-        
+
                 <div class="testimonial-card">
                     <h3 class="testimonial-name">Divya</h3>
                     <p class="testimonial-date">July 7, 2024</p>
@@ -670,9 +725,11 @@
                         <div class="testimonial-emptybar"></div>
                         <div class="testimonial-filledbar"></div>
                     </div>
-                    <p class="testimonial-text">"A great tutor who explains concepts clearly and makes learning enjoyable. I appreciate his patience and expertise, and his classes are always engaging and informative."</p>
+                    <p class="testimonial-text">"A great tutor who explains concepts clearly and makes learning
+                        enjoyable. I appreciate his patience and expertise, and his classes are always engaging and
+                        informative."</p>
                 </div>
-        
+
                 <div class="testimonial-card">
                     <h3 class="testimonial-name">Santhosh</h3>
                     <p class="testimonial-date">April 7, 2024</p>
@@ -680,9 +737,10 @@
                         <div class="testimonial-emptybar"></div>
                         <div class="testimonial-filledbar"></div>
                     </div>
-                    <p class="testimonial-text">"If you are new to Python and want a tutor to teach you, you should go to him. I understood most of the basic things in just a few classes."</p>
+                    <p class="testimonial-text">"If you are new to Python and want a tutor to teach you, you should go
+                        to him. I understood most of the basic things in just a few classes."</p>
                 </div>
-        
+
                 <div class="testimonial-card">
                     <h3 class="testimonial-name">Nian</h3>
                     <p class="testimonial-date">March 5, 2024</p>
@@ -690,7 +748,8 @@
                         <div class="testimonial-emptybar"></div>
                         <div class="testimonial-filledbar"></div>
                     </div>
-                    <p class="testimonial-text">"Abdullah is a great teacher. He is an expert of python help me with advance topics. He is an expert in web developing and very passionate about teaching."</p>
+                    <p class="testimonial-text">"Abdullah is a great teacher. He is an expert of python help me with
+                        advance topics. He is an expert in web developing and very passionate about teaching."</p>
                 </div>
 
                 <div class="testimonial-card">
@@ -700,7 +759,9 @@
                         <div class="testimonial-emptybar"></div>
                         <div class="testimonial-filledbar"></div>
                     </div>
-                    <p class="testimonial-text">"Abdullah is an excellent team leader. He is patient and always supportive, even when I take time to complete tasks. His ability to guide the team makes working with him a great experience."</p>
+                    <p class="testimonial-text">"Abdullah is an excellent team leader. He is patient and always
+                        supportive, even when I take time to complete tasks. His ability to guide the team makes working
+                        with him a great experience."</p>
                 </div>
 
                 <div class="testimonial-card">
@@ -710,9 +771,10 @@
                         <div class="testimonial-emptybar"></div>
                         <div class="testimonial-filledbar"></div>
                     </div>
-                    <p class="testimonial-text">"Abdullah is a great team lead who provided constant guidance and support, helping me learn and grow throughout our work together."</p>
+                    <p class="testimonial-text">"Abdullah is a great team lead who provided constant guidance and
+                        support, helping me learn and grow throughout our work together."</p>
                 </div>
-    
+
             </div>
         </section>
 
@@ -723,22 +785,22 @@
                 <a href="contactme.html"><button class="hire-me">Get in Touch!</button></a>
                 <p>Or connect with me on:</p>
                 <div class="social-links">
-                 <!-- <a href="https://instagram.com/" target="_blank">Instagram</a> |-->
-                  <a href="https://github.com/abdullahashfaqvirk" target="_blank">Github</a> |
-                  <a href="https://www.linkedin.com/in/abdullahashfaqvirk/" target="_blank">LinkedIn</a> |
-                  <a href="mailto:abdullahashfaq.ds@gmail.com">Gmail</a>
+                    <!-- <a href="https://instagram.com/" target="_blank">Instagram</a> |-->
+                    <a href="https://github.com/abdullahashfaqvirk" target="_blank">Github</a> |
+                    <a href="https://www.linkedin.com/in/abdullahashfaqvirk/" target="_blank">LinkedIn</a> |
+                    <a href="mailto:abdullahashfaq.ds@gmail.com">Gmail</a>
                 </div>
-              </div>
-            <div class="footer-right">
-              <img src="images/footerWotteo.png" alt="Image">
             </div>
-          </footer>
-        
+            <div class="footer-right">
+                <img src="images/footerWotteo.png" alt="Image">
+            </div>
+        </footer>
+
 
     </main>
 
-  
-    <div class="container" id="chatContainer" >
+
+    <div class="container" id="chatContainer">
         <div class="chat-window">
             <div class="canvas-container">
                 <canvas id="chatBackgroundCanvas"></canvas>
@@ -762,11 +824,12 @@
                 <div id="send_button" class="app-button">
                     <i class="fa-solid fa-arrow-right"></i>
                 </div>
-            </div>      
+            </div>
         </div>
     </div>
-        
+
     <script src="js/scripts.js"></script>
 
 </body>
+
 </html>
