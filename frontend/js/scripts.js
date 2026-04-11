@@ -265,55 +265,108 @@ document.addEventListener("DOMContentLoaded", () => {
     if (chatContainer) chatContainer.style.display = 'none';
 });
 
+const chatHistory = [];
+
 document.querySelectorAll('.default-question').forEach((question) => {
     question.addEventListener('click', function () {
         const userMessage = this.textContent;
-        showUserMessage(userMessage);
-        const response = getDefaultResponse(userMessage);
-        showBotMessage(response);
         const dq = document.querySelector('.default-questions');
         if (dq) dq.style.display = 'none';
+        handleUserMessage(userMessage);
     });
 });
 
-function getDefaultResponse(message) {
-    const defaultResponses = {
-        "When are you available?": "I'm available 24/7 to assist you.",
-        "What services do you offer?": "I can help with troubleshooting, FAQs, and general guidance.",
-        "What is your latest project about?": "My latest project is StudyMate, an AI-powered study assistant built with Django, React, LLMs and RAG for personalized learning and real-time chat.",
-        "Where are you from?": "I am from Lahore, Pakistan. I am ready to work remote.",
-        "How do I contact support?": "You can reach me at fatimanoor.se22@gmail.com.",
-    };
-    return defaultResponses[message] || null;
-}
-
 const sendButtonEl = document.getElementById('send_button');
 if (sendButtonEl) {
-    sendButtonEl.addEventListener('click', function () {
-        const userMessage = document.getElementById('msg_input').value.trim();
-        showUserMessage(userMessage);
-        document.getElementById('msg_input').value = '';
-        const response = getDefaultResponse(userMessage) || botOutput();
-        setTimeout(() => {
-            showBotMessage(response);
-        }, 300);
-    });
+    sendButtonEl.addEventListener('click', sendMessage);
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+    const inputField = document.getElementById('msg_input');
+    if (inputField) {
+        inputField.addEventListener('keydown', function (e) {
+            if (e.key === 'Enter') {
+                e.preventDefault();
+                sendMessage();
+            }
+        });
+    }
+});
+
+function sendMessage() {
+    const inputField = document.getElementById('msg_input');
+    if (!inputField) return;
+    const userMessage = inputField.value.trim();
+    if (!userMessage) return;
+    const dq = document.querySelector('.default-questions');
+    if (dq) dq.style.display = 'none';
+    inputField.value = '';
+    handleUserMessage(userMessage);
+}
+
+async function handleUserMessage(userMessage) {
+    showUserMessage(userMessage);
+    chatHistory.push({ role: 'user', content: userMessage });
+
+    const typingId = showTypingIndicator();
+
+    try {
+        const response = await fetch('/api/chat', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ messages: chatHistory }),
+        });
+
+        removeTypingIndicator(typingId);
+
+        if (!response.ok) {
+            const err = await response.json();
+            showBotMessage(err.error || 'Something went wrong. Please try again.');
+            return;
+        }
+
+        const data = await response.json();
+        const reply = data.reply;
+        chatHistory.push({ role: 'assistant', content: reply });
+        showBotMessage(reply);
+
+    } catch (err) {
+        removeTypingIndicator(typingId);
+        showBotMessage("I'm having trouble connecting right now. You can reach Fatima directly at fatimanoor.se22@gmail.com.");
+    }
+}
+
+function showTypingIndicator() {
+    const id = 'typing-' + Date.now();
+    const messagesContainer = document.querySelector('.messages');
+    if (!messagesContainer) return id;
+
+    const message = document.createElement('li');
+    message.className = 'message left';
+    message.id = id;
+    message.innerHTML = `
+        <div class="avatar"></div>
+        <div class="text_wrapper">
+            <div class="text" style="letter-spacing:2px;opacity:0.6;">...</div>
+        </div>
+    `;
+    messagesContainer.appendChild(message);
+    setTimeout(() => message.classList.add('appeared'), 0);
+    messagesContainer.scrollTop = messagesContainer.scrollHeight;
+    return id;
+}
+
+function removeTypingIndicator(id) {
+    const el = document.getElementById(id);
+    if (el) el.remove();
 }
 
 function showBotMessage(message, datetime = getCurrentTimestamp()) {
-    renderMessageToScreen({
-        text: message,
-        time: datetime,
-        message_side: 'left',
-    });
+    renderMessageToScreen({ text: message, time: datetime, message_side: 'left' });
 }
 
 function showUserMessage(message, datetime = getCurrentTimestamp()) {
-    renderMessageToScreen({
-        text: message,
-        time: datetime,
-        message_side: 'right',
-    });
+    renderMessageToScreen({ text: message, time: datetime, message_side: 'right' });
 }
 
 function getCurrentTimestamp() {
@@ -356,47 +409,10 @@ function renderMessageToScreen(args) {
     messagesContainer.scrollTop = messagesContainer.scrollHeight;
 }
 
-document.addEventListener('DOMContentLoaded', function () {
-    const inputField = document.getElementById('msg_input');
-    const sendButton = document.getElementById('send_button');
-
-    if (inputField && sendButton) {
-        inputField.addEventListener('keydown', function (e) {
-            if (e.key === 'Enter') {
-                e.preventDefault();
-                sendMessage();
-            }
-        });
-
-        sendButton.addEventListener('click', sendMessage);
-    }
-});
-
-function sendMessage() {
-    const inputField = document.getElementById('msg_input');
-    if (!inputField) return;
-    const userMessage = inputField.value.trim();
-    if (!userMessage) return;
-    const suggestiveQuestions = document.querySelector('.default-questions');
-    if (suggestiveQuestions) suggestiveQuestions.style.display = 'none';
-
-    showUserMessage(userMessage);
-    inputField.value = '';
-
-    const response = getDefaultResponse(userMessage) || botOutput();
-    setTimeout(() => {
-        showBotMessage(response);
-    }, 300);
-}
-
-function botOutput() {
-    return 'Coming Soon! For inquiries please contact fatimanoor.se22@gmail.com';
-}
-
 window.addEventListener('load', function () {
     const msgContainer = document.querySelector('.messages');
     if (msgContainer) {
-        showBotMessage('Hello there! Type in a message.');
+        showBotMessage("Hi! I'm Fatima's AI assistant. Ask me anything about her work, projects, or experience.");
     }
 });
 
@@ -529,7 +545,7 @@ if (contactForm) {
         sendButton.disabled = true;
 
         try {
-            const response = await fetch('http://localhost:3000/api/contact', {
+            const response = await fetch('/api/contact', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ name, email, message }),
