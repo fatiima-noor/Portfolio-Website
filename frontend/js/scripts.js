@@ -311,7 +311,7 @@ async function handleUserMessage(userMessage) {
     const typingId = showTypingIndicator();
 
     try {
-        const response = await fetch('/api/chat', {
+        const response = await fetch('https://portfolio-website-dqza.vercel.app/api/chat', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ messages: chatHistory }),
@@ -545,7 +545,7 @@ if (contactForm) {
         sendButton.disabled = true;
 
         try {
-            const response = await fetch('/api/contact', {
+            const response = await fetch('https://portfolio-website-dqza.vercel.app/api/contact', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ name, email, message }),
