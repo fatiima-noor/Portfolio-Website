@@ -1,4 +1,3 @@
-//smooth scroll
 document.querySelectorAll('.navbar a').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         const targetId = this.getAttribute('href').substring(1);
@@ -17,88 +16,41 @@ document.querySelectorAll('.navbar a').forEach(anchor => {
     });
 });
 
-//background
 document.addEventListener('DOMContentLoaded', function () {
     const canvas = document.getElementById('backgroundCanvas');
-    const ctx = canvas.getContext('2d');
-
-    function resizeCanvas() {
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
-    }
-
-    resizeCanvas();
-    window.addEventListener('resize', resizeCanvas);
-
-    function createStar() {
-        const star = {
-            x: Math.random() * canvas.width,
-            y: Math.random() * canvas.height,
-            length: Math.random() * 2 + 1,
-            opacity: Math.random() * 0.5 + 0.5,
-            speed: Math.random() * 0.3 + 0.1
-        };
-        return star;
-    }
-
-    const stars = Array.from({ length: 100 }, createStar);
-
-    function drawStars() {
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-        stars.forEach(star => {
-            ctx.fillStyle = `rgba(255, 255, 255, ${star.opacity})`;
-            ctx.fillRect(star.x, star.y, star.length, 1);
-            star.y += star.speed;
-            if (star.y > canvas.height) {
-                star.y = 0;
-                star.x = Math.random() * canvas.width;
-            }
-        });
-    }
-
-    function animate() {
-        drawStars();
-        requestAnimationFrame(animate);
-    }
-
-    animate();
-
-
-    //chatbot background
-    document.addEventListener('DOMContentLoaded', function () {
-        const chatCanvas = document.getElementById('chatBackgroundCanvas');
-        const ctx = chatCanvas.getContext('2d');
-        const chatWindow = document.querySelector('.chat-window');
+    if (canvas) {
+        const ctx = canvas.getContext('2d');
 
         function resizeCanvas() {
-            chatCanvas.width = chatWindow.clientWidth;
-            chatCanvas.height = chatWindow.clientHeight;
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
         }
 
         resizeCanvas();
         window.addEventListener('resize', resizeCanvas);
 
         function createStar() {
-            return {
-                x: Math.random() * chatCanvas.width,
-                y: Math.random() * chatCanvas.height,
+            const star = {
+                x: Math.random() * canvas.width,
+                y: Math.random() * canvas.height,
                 length: Math.random() * 2 + 1,
                 opacity: Math.random() * 0.5 + 0.5,
                 speed: Math.random() * 0.3 + 0.1
             };
+            return star;
         }
 
         const stars = Array.from({ length: 100 }, createStar);
 
         function drawStars() {
-            ctx.clearRect(0, 0, chatCanvas.width, chatCanvas.height);
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
             stars.forEach(star => {
                 ctx.fillStyle = `rgba(255, 255, 255, ${star.opacity})`;
                 ctx.fillRect(star.x, star.y, star.length, 1);
                 star.y += star.speed;
-                if (star.y > chatCanvas.height) {
+                if (star.y > canvas.height) {
                     star.y = 0;
-                    star.x = Math.random() * chatCanvas.width;
+                    star.x = Math.random() * canvas.width;
                 }
             });
         }
@@ -109,96 +61,140 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
         animate();
+    }
+
+    document.addEventListener('DOMContentLoaded', function () {
+        const chatCanvas = document.getElementById('chatBackgroundCanvas');
+        if (chatCanvas) {
+            const ctx = chatCanvas.getContext('2d');
+            const chatWindow = document.querySelector('.chat-window');
+
+            function resizeCanvas() {
+                chatCanvas.width = chatWindow.clientWidth;
+                chatCanvas.height = chatWindow.clientHeight;
+            }
+
+            resizeCanvas();
+            window.addEventListener('resize', resizeCanvas);
+
+            function createStar() {
+                return {
+                    x: Math.random() * chatCanvas.width,
+                    y: Math.random() * chatCanvas.height,
+                    length: Math.random() * 2 + 1,
+                    opacity: Math.random() * 0.5 + 0.5,
+                    speed: Math.random() * 0.3 + 0.1
+                };
+            }
+
+            const stars = Array.from({ length: 100 }, createStar);
+
+            function drawStars() {
+                ctx.clearRect(0, 0, chatCanvas.width, chatCanvas.height);
+                stars.forEach(star => {
+                    ctx.fillStyle = `rgba(255, 255, 255, ${star.opacity})`;
+                    ctx.fillRect(star.x, star.y, star.length, 1);
+                    star.y += star.speed;
+                    if (star.y > chatCanvas.height) {
+                        star.y = 0;
+                        star.x = Math.random() * chatCanvas.width;
+                    }
+                });
+            }
+
+            function animate() {
+                drawStars();
+                requestAnimationFrame(animate);
+            }
+
+            animate();
+        }
     });
 
-
-    // Hamburger menu toggle
     const hamburger = document.querySelector('.hamburger');
     const dropdownMenu = document.querySelector('.dropdown-menu');
 
-
-    function showDropdown() {
-        dropdownMenu.style.display = 'block';
-        setTimeout(() => {
-            dropdownMenu.classList.add('show');
-        }, 10);
-    }
-
-
-    function hideDropdown() {
-        dropdownMenu.classList.remove('show');
-        setTimeout(() => {
-            dropdownMenu.style.display = 'none';
-        }, 500);
-    }
-
-
-    hamburger.addEventListener('click', (event) => {
-        event.stopPropagation();
-        if (dropdownMenu.classList.contains('show')) {
-            hideDropdown();
-        } else {
-            showDropdown();
+    if (hamburger && dropdownMenu) {
+        function showDropdown() {
+            dropdownMenu.style.display = 'block';
+            setTimeout(() => {
+                dropdownMenu.classList.add('show');
+            }, 10);
         }
-    });
 
-    document.addEventListener('click', (event) => {
-        if (!dropdownMenu.contains(event.target) && !hamburger.contains(event.target)) {
+        function hideDropdown() {
+            dropdownMenu.classList.remove('show');
+            setTimeout(() => {
+                dropdownMenu.style.display = 'none';
+            }, 500);
+        }
+
+        hamburger.addEventListener('click', (event) => {
+            event.stopPropagation();
             if (dropdownMenu.classList.contains('show')) {
                 hideDropdown();
+            } else {
+                showDropdown();
             }
-        }
-    });
+        });
 
-    // Number animation
-    let valueDisplays = document.querySelectorAll(".num");
-    let interval = 2000;
-
-    function animateNumbers() {
-        valueDisplays.forEach((valueDisplay) => {
-            let startValue = 0;
-            let endValue = parseInt(valueDisplay.getAttribute("data-val"));
-            let duration = Math.floor(interval / endValue);
-            let counter = setInterval(function () {
-                startValue += 1;
-                valueDisplay.textContent = startValue;
-                if (startValue == endValue) {
-                    clearInterval(counter);
-                    const plusSign = valueDisplay.nextElementSibling;
-                    if (plusSign && plusSign.classList.contains('plus-sign')) {
-                        setTimeout(() => {
-                            plusSign.style.opacity = '1';
-                        }, 200);
-                    }
+        document.addEventListener('click', (event) => {
+            if (!dropdownMenu.contains(event.target) && !hamburger.contains(event.target)) {
+                if (dropdownMenu.classList.contains('show')) {
+                    hideDropdown();
                 }
-            }, duration);
+            }
         });
     }
 
     const counterSection = document.querySelector(".wrapper");
+    if (counterSection) {
+        let valueDisplays = document.querySelectorAll(".num");
+        let interval = 2000;
 
-    let observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                animateNumbers();
-                observer.disconnect();
-            }
-        });
-    }, { threshold: 0.5 });
+        function animateNumbers() {
+            valueDisplays.forEach((valueDisplay) => {
+                let startValue = 0;
+                let endValue = parseInt(valueDisplay.getAttribute("data-val"));
+                let duration = Math.floor(interval / endValue);
+                let counter = setInterval(function () {
+                    startValue += 1;
+                    valueDisplay.textContent = startValue;
+                    if (startValue == endValue) {
+                        clearInterval(counter);
+                        const plusSign = valueDisplay.nextElementSibling;
+                        if (plusSign && plusSign.classList.contains('plus-sign')) {
+                            setTimeout(() => {
+                                plusSign.style.opacity = '1';
+                            }, 200);
+                        }
+                    }
+                }, duration);
+            });
+        }
 
-    observer.observe(counterSection);
+        let observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateNumbers();
+                    observer.disconnect();
+                }
+            });
+        }, { threshold: 0.5 });
+
+        observer.observe(counterSection);
+    }
 });
 
-//character
 window.addEventListener('load', function () {
     const imageContainer = document.querySelector('.image-container');
-
-    setTimeout(() => {
-        imageContainer.classList.add('float-in-space');
-    }, 1000);
+    if (imageContainer) {
+        setTimeout(() => {
+            imageContainer.classList.add('float-in-space');
+        }, 1000);
+    }
 });
 
-//About Section
 const elements = document.querySelectorAll('.fade-in-scale');
 
 const observer = new IntersectionObserver((entries) => {
@@ -213,27 +209,26 @@ const observer = new IntersectionObserver((entries) => {
 
 elements.forEach(el => observer.observe(el));
 
+const scrollBtn = document.querySelector('.scroll-button');
+if (scrollBtn) {
+    scrollBtn.addEventListener('click', function (e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href');
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+            targetElement.scrollIntoView({ behavior: 'smooth' });
+        }
+    });
+}
 
-//scroll button
-document.querySelector('.scroll-button').addEventListener('click', function (e) {
-    e.preventDefault();
-
-    const targetId = this.getAttribute('href');
-    const targetElement = document.querySelector(targetId);
-
-    targetElement.scrollIntoView({ behavior: 'smooth' });
-});
-
-
-//footer text
 document.addEventListener("DOMContentLoaded", function () {
     const text = document.querySelector('.cool-text');
-    const letters = text.textContent.split('').map(letter => `<span>${letter}</span>`).join('');
-    text.innerHTML = letters;
+    if (text) {
+        const letters = text.textContent.split('').map(letter => `<span>${letter}</span>`).join('');
+        text.innerHTML = letters;
+    }
 });
 
-
-//chatbot Design
 const supportButton = document.getElementById('supportButton');
 const aibutton = document.getElementById('ai');
 const chatContainer = document.getElementById('chatContainer');
@@ -241,40 +236,43 @@ const closeChat = document.getElementById('closeChat');
 const mainContent = document.querySelector('.main');
 
 function showChat() {
-    chatContainer.style.display = 'flex';
-    setTimeout(() => {
-        chatContainer.classList.add('visible');
-    }, 10);
-    mainContent.classList.add('blur');
-    document.body.classList.add('no-scroll');
+    if (chatContainer && mainContent) {
+        chatContainer.style.display = 'flex';
+        setTimeout(() => {
+            chatContainer.classList.add('visible');
+        }, 10);
+        mainContent.classList.add('blur');
+        document.body.classList.add('no-scroll');
+    }
 }
 
 function hideChat() {
-    chatContainer.classList.remove('visible');
-    setTimeout(() => {
-        chatContainer.style.display = 'none';
-        mainContent.classList.remove('blur');
-        document.body.classList.remove('no-scroll');
-    }, 500);
+    if (chatContainer && mainContent) {
+        chatContainer.classList.remove('visible');
+        setTimeout(() => {
+            chatContainer.style.display = 'none';
+            mainContent.classList.remove('blur');
+            document.body.classList.remove('no-scroll');
+        }, 500);
+    }
 }
 
-supportButton.addEventListener('click', showChat);
-aibutton.addEventListener('click', showChat);
-
-closeChat.addEventListener('click', hideChat);
+if (supportButton) supportButton.addEventListener('click', showChat);
+if (aibutton) aibutton.addEventListener('click', showChat);
+if (closeChat) closeChat.addEventListener('click', hideChat);
 
 document.addEventListener("DOMContentLoaded", () => {
-    chatContainer.style.display = 'none';
+    if (chatContainer) chatContainer.style.display = 'none';
 });
 
-//suggested questions
 document.querySelectorAll('.default-question').forEach((question) => {
     question.addEventListener('click', function () {
         const userMessage = this.textContent;
         showUserMessage(userMessage);
         const response = getDefaultResponse(userMessage);
         showBotMessage(response);
-        document.querySelector('.default-questions').style.display = 'none';
+        const dq = document.querySelector('.default-questions');
+        if (dq) dq.style.display = 'none';
     });
 });
 
@@ -282,24 +280,25 @@ function getDefaultResponse(message) {
     const defaultResponses = {
         "When are you available?": "I'm available 24/7 to assist you.",
         "What services do you offer?": "I can help with troubleshooting, FAQs, and general guidance.",
-        "What is your latest project about?": "My latest project is Clip Insights, an AI-powered tool that extracts key insights from video content. I'm actively working on refining its features, optimizing the AI models, and enhancing the user experience to make video analysis more efficient and insightful.My latest project is a real-time chat application that uses WebSockets for instant communication between users. It’s built with Node.js and React, and it includes message encryption for privacy.",
+        "What is your latest project about?": "My latest project is StudyMate, an AI-powered study assistant built with Django, React, LLMs and RAG for personalized learning and real-time chat.",
         "Where are you from?": "I am from Lahore, Pakistan. I am ready to work remote.",
-        "How do I contact support?": "You can reach support by emailing abdullahashfaq.ds@gmail.com.",
+        "How do I contact support?": "You can reach me at fatimanoor.se22@gmail.com.",
     };
-
     return defaultResponses[message] || null;
 }
 
-// Chatbot Message Handlers
-document.getElementById('send_button').addEventListener('click', function () {
-    const userMessage = document.getElementById('msg_input').value.trim();
-    showUserMessage(userMessage);
-    document.getElementById('msg_input').value = '';
-    const response = getDefaultResponse(userMessage) || botOutput();
-    setTimeout(() => {
-        showBotMessage(response);
-    }, 300);
-});
+const sendButtonEl = document.getElementById('send_button');
+if (sendButtonEl) {
+    sendButtonEl.addEventListener('click', function () {
+        const userMessage = document.getElementById('msg_input').value.trim();
+        showUserMessage(userMessage);
+        document.getElementById('msg_input').value = '';
+        const response = getDefaultResponse(userMessage) || botOutput();
+        setTimeout(() => {
+            showBotMessage(response);
+        }, 300);
+    });
+}
 
 function showBotMessage(message, datetime = getCurrentTimestamp()) {
     renderMessageToScreen({
@@ -317,10 +316,6 @@ function showUserMessage(message, datetime = getCurrentTimestamp()) {
     });
 }
 
-
-
-
-//Chatbot Message Internal Design
 function getCurrentTimestamp() {
     const now = new Date();
     let hours = now.getHours();
@@ -340,6 +335,7 @@ function renderMessageToScreen(args) {
     });
 
     let messagesContainer = document.querySelector('.messages');
+    if (!messagesContainer) return;
 
     let message = document.createElement('li');
     message.className = `message ${args.message_side}`;
@@ -364,24 +360,25 @@ document.addEventListener('DOMContentLoaded', function () {
     const inputField = document.getElementById('msg_input');
     const sendButton = document.getElementById('send_button');
 
-    inputField.addEventListener('keydown', function (e) {
-        if (e.key === 'Enter') {
-            e.preventDefault();
-            sendMessage();
-        }
-    });
+    if (inputField && sendButton) {
+        inputField.addEventListener('keydown', function (e) {
+            if (e.key === 'Enter') {
+                e.preventDefault();
+                sendMessage();
+            }
+        });
 
-    sendButton.addEventListener('click', sendMessage);
+        sendButton.addEventListener('click', sendMessage);
+    }
 });
 
 function sendMessage() {
     const inputField = document.getElementById('msg_input');
+    if (!inputField) return;
     const userMessage = inputField.value.trim();
     if (!userMessage) return;
     const suggestiveQuestions = document.querySelector('.default-questions');
-    if (suggestiveQuestions) {
-        suggestiveQuestions.style.display = 'none';
-    }
+    if (suggestiveQuestions) suggestiveQuestions.style.display = 'none';
 
     showUserMessage(userMessage);
     inputField.value = '';
@@ -392,35 +389,17 @@ function sendMessage() {
     }, 300);
 }
 
-
-
-function showUserMessage(message, datetime) {
-    renderMessageToScreen({
-        text: message,
-        time: datetime,
-        message_side: 'right',
-    });
-}
-
-function showBotMessage(message, datetime) {
-    renderMessageToScreen({
-        text: message,
-        time: datetime,
-        message_side: 'left',
-    });
-}
-
-
-function botOutput(length = 20) {
-    let output = 'Coming Soon! For inquiries plz contact at abdullahashfaq.ds@gmail.com';
-    return output;
+function botOutput() {
+    return 'Coming Soon! For inquiries please contact fatimanoor.se22@gmail.com';
 }
 
 window.addEventListener('load', function () {
-    showBotMessage('Hello there! Type in a message.');
+    const msgContainer = document.querySelector('.messages');
+    if (msgContainer) {
+        showBotMessage('Hello there! Type in a message.');
+    }
 });
 
-// Achievements
 const prevBtn = document.querySelector('.prev');
 const nextBtn = document.querySelector('.next');
 
@@ -444,70 +423,68 @@ if (prevBtn && nextBtn) {
     });
 }
 
-// Timeline 
-const messages = [
-    "$ whoami",
-    "$ ./initialize_life.sh",
-    "$ npm install --save motivation caffeine",
-    "$ git commit -m 'docs: Update life achievements'",
-    "$ docker run -d life-journey:latest"
-];
-
-let messageIndex = 0;
-let charIndex = 0;
 const terminalText = document.getElementById('terminal-text');
+if (terminalText) {
+    const messages = [
+        "$ whoami",
+        "$ ./initialize_life.sh",
+        "$ npm install --save motivation caffeine",
+        "$ git commit -m 'docs: Update life achievements'",
+        "$ docker run -d life-journey:latest"
+    ];
 
-function typeMessage() {
-    if (messageIndex < messages.length) {
-        if (charIndex < messages[messageIndex].length) {
-            terminalText.textContent = messages[messageIndex].substring(0, charIndex + 1);
-            charIndex++;
-            setTimeout(typeMessage, 50);
+    let messageIndex = 0;
+    let charIndex = 0;
+
+    function typeMessage() {
+        if (messageIndex < messages.length) {
+            if (charIndex < messages[messageIndex].length) {
+                terminalText.textContent = messages[messageIndex].substring(0, charIndex + 1);
+                charIndex++;
+                setTimeout(typeMessage, 50);
+            } else {
+                setTimeout(() => {
+                    messageIndex++;
+                    charIndex = 0;
+                    terminalText.textContent = '';
+                    typeMessage();
+                }, 1500);
+            }
         } else {
+            messageIndex = 0;
             setTimeout(() => {
-                messageIndex++;
-                charIndex = 0;
                 terminalText.textContent = '';
                 typeMessage();
-            }, 1500);
+            }, 2000);
         }
-    } else {
-        messageIndex = 0;
-        setTimeout(() => {
-            terminalText.textContent = '';
-            typeMessage();
-        }, 2000);
     }
+
+    typeMessage();
 }
 
-typeMessage();
+if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
+    gsap.registerPlugin(ScrollTrigger);
 
-gsap.registerPlugin(ScrollTrigger);
+    gsap.utils.toArray('.dev-timeline-item').forEach((item, i) => {
+        gsap.set(item, { opacity: 0, y: 50 });
 
-gsap.utils.toArray('.dev-timeline-item').forEach((item, i) => {
-    gsap.set(item, {
-        opacity: 0,
-        y: 50
+        ScrollTrigger.create({
+            trigger: item,
+            start: "top bottom-=100",
+            end: "top center",
+            scrub: true,
+            onEnter: () => {
+                gsap.to(item, {
+                    opacity: 1,
+                    y: 0,
+                    duration: 0.8,
+                    ease: "power2.out"
+                });
+            }
+        });
     });
+}
 
-    ScrollTrigger.create({
-        trigger: item,
-        start: "top bottom-=100",
-        end: "top center",
-        scrub: true,
-        onEnter: () => {
-            gsap.to(item, {
-                opacity: 1,
-                y: 0,
-                duration: 0.8,
-                ease: "power2.out"
-            });
-        }
-    });
-});
-
-
-// Stack
 (function () {
     const tags = document.querySelectorAll('.stack-tag');
 
@@ -536,3 +513,48 @@ gsap.utils.toArray('.dev-timeline-item').forEach((item, i) => {
         stackObserver.observe(cat);
     });
 })();
+
+const contactForm = document.getElementById('contactForm');
+
+if (contactForm) {
+    contactForm.addEventListener('submit', async function (e) {
+        e.preventDefault();
+
+        const name = document.getElementById('name').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const message = document.getElementById('message').value.trim();
+        const sendButton = contactForm.querySelector('.send-button');
+
+        sendButton.textContent = 'SENDING...';
+        sendButton.disabled = true;
+
+        try {
+            const response = await fetch('http://localhost:3000/api/contact', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ name, email, message }),
+            });
+
+            const data = await response.json();
+
+            if (response.ok) {
+                sendButton.textContent = 'SENT ✓';
+                sendButton.style.background = 'rgba(6, 182, 212, 0.3)';
+                contactForm.reset();
+                setTimeout(() => {
+                    sendButton.textContent = 'SEND';
+                    sendButton.style.background = '';
+                    sendButton.disabled = false;
+                }, 4000);
+            } else {
+                alert(data.error || 'Something went wrong. Please try again.');
+                sendButton.textContent = 'SEND';
+                sendButton.disabled = false;
+            }
+        } catch (err) {
+            alert('Network error. Please check your connection and try again.');
+            sendButton.textContent = 'SEND';
+            sendButton.disabled = false;
+        }
+    });
+}
