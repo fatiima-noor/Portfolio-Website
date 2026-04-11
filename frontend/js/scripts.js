@@ -420,24 +420,29 @@ window.addEventListener('load', function () {
     showBotMessage('Hello there! Type in a message.');
 });
 
-//Achievements
-document.querySelector('.prev').addEventListener('click', function () {
-    const current = document.querySelector('input[type=radio]:checked');
-    if (current.id === 'slide1') {
-        document.getElementById('slide4').checked = true;
-    } else if (current.previousElementSibling) {
-        current.previousElementSibling.checked = true;
-    }
-});
+// Achievements
+const prevBtn = document.querySelector('.prev');
+const nextBtn = document.querySelector('.next');
 
-document.querySelector('.next').addEventListener('click', function () {
-    const current = document.querySelector('input[type=radio]:checked');
-    if (current.id === 'slide4') {
-        document.getElementById('slide1').checked = true;
-    } else if (current.nextElementSibling) {
-        current.nextElementSibling.checked = true;
-    }
-});
+if (prevBtn && nextBtn) {
+    prevBtn.addEventListener('click', function () {
+        const current = document.querySelector('input[type=radio]:checked');
+        if (current.id === 'slide1') {
+            document.getElementById('slide4').checked = true;
+        } else if (current.previousElementSibling) {
+            current.previousElementSibling.checked = true;
+        }
+    });
+
+    nextBtn.addEventListener('click', function () {
+        const current = document.querySelector('input[type=radio]:checked');
+        if (current.id === 'slide4') {
+            document.getElementById('slide1').checked = true;
+        } else if (current.nextElementSibling) {
+            current.nextElementSibling.checked = true;
+        }
+    });
+}
 
 // Timeline 
 const messages = [
@@ -500,3 +505,34 @@ gsap.utils.toArray('.dev-timeline-item').forEach((item, i) => {
         }
     });
 });
+
+
+// Stack
+(function () {
+    const tags = document.querySelectorAll('.stack-tag');
+
+    tags.forEach(tag => {
+        tag.style.opacity = '0';
+        tag.style.transform = 'translateY(8px)';
+        tag.style.transition = 'opacity 0.4s ease, transform 0.4s ease, border-color 0.25s ease, box-shadow 0.25s ease, color 0.25s ease, background 0.25s ease';
+    });
+
+    const stackObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const visibleTags = entry.target.querySelectorAll('.stack-tag');
+                visibleTags.forEach((tag, i) => {
+                    setTimeout(() => {
+                        tag.style.opacity = '1';
+                        tag.style.transform = 'translateY(0)';
+                    }, i * 60);
+                });
+                stackObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.2 });
+
+    document.querySelectorAll('.stack-category').forEach(cat => {
+        stackObserver.observe(cat);
+    });
+})();
