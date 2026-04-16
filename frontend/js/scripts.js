@@ -346,9 +346,9 @@ function showTypingIndicator() {
     message.id = id;
     message.innerHTML = `
         <div class="avatar"></div>
-        <div class="text_wrapper">
-            <div class="text" style="letter-spacing:2px;opacity:0.6;">...</div>
-        </div>
+        <span class="typing-dots">
+            <span></span><span></span><span></span>
+        </span>
     `;
     messagesContainer.appendChild(message);
     setTimeout(() => message.classList.add('appeared'), 0);
