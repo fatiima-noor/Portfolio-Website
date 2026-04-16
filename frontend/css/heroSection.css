@@ -145,8 +145,12 @@
     }
 
    
-    .icons i { 
-        font-size: 0.9rem; 
+     .icon {
+        font-size: 1.4rem;
+    }
+
+    .icon[aria-label="Email"] {
+        font-size: 1.3rem;
     }
 }
 
