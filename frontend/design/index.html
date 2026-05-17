@@ -84,7 +84,7 @@
       justify-content: center;
       animation: fadeUp 0.8s 0.35s ease both;
       position: relative;
-      height: 580px;
+      height: 620px; /* UPDATED from 580px */
     }
 
     .phone-mockup {
@@ -96,7 +96,7 @@
       background: var(--white);
     }
     .phone-main {
-      width: 210px; height: 420px;
+      width: 255px; height: 510px; /* UPDATED from 210x420 */
       left: 50%; top: 50%;
       transform: translate(-50%, -50%);
       z-index: 3;
@@ -104,18 +104,20 @@
       border-color: rgba(200,184,232,0.6);
     }
     .phone-left {
-      width: 170px; height: 360px;
-      left: calc(50% - 175px); top: 50%;
+      width: 210px; height: 440px; /* UPDATED from 170x360 */
+      left: calc(50% - 215px); /* UPDATED from calc(50% - 175px) */
+      top: 50%;
       transform: translateY(-50%) rotate(-8deg);
       z-index: 2;
-      opacity: 0.85;
+      opacity: 0.88; /* UPDATED from 0.85 */
     }
     .phone-right {
-      width: 170px; height: 360px;
-      left: calc(50% + 45px); top: 50%;
+      width: 210px; height: 440px; /* UPDATED from 170x360 */
+      left: calc(50% + 55px); /* UPDATED from calc(50% + 45px) */
+      top: 50%;
       transform: translateY(-50%) rotate(8deg);
       z-index: 2;
-      opacity: 0.85;
+      opacity: 0.88; /* UPDATED from 0.85 */
     }
 
     /* phone screen content */
@@ -623,6 +625,8 @@
 
     @media (max-width: 480px) {
       .hero-headline { font-size: 48px; }
+      .hero-tag { font-size: 10px; padding: 5px 12px; gap: 5px; margin-bottom: 20px; } /* ADDED from v2 */
+      .hero-tag::before { font-size: 9px; } /* ADDED from v2 */
       .hero-actions { flex-direction: column; align-items: flex-start; }
       .btn-primary, .btn-outline { width: 100%; text-align: center; }
       .hero-stats { flex-wrap: wrap; gap: 20px; }
