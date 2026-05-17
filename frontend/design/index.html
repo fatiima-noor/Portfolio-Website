@@ -1,0 +1,1185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fatima Noor</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700;1,900&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      padding: 120px 60px 80px;
+      position: relative;
+      overflow: hidden;
+      gap: 60px;
+    }
+    .hero-left { display: flex; flex-direction: column; justify-content: center; }
+
+    .hero-blob-1 {
+      position: absolute; width: 520px; height: 520px;
+      background: radial-gradient(circle, var(--lavender-light) 0%, transparent 70%);
+      border-radius: 50%; top: -100px; right: -80px; pointer-events: none;
+    }
+    .hero-blob-2 {
+      position: absolute; width: 300px; height: 300px;
+      background: radial-gradient(circle, var(--peach) 0%, transparent 70%);
+      border-radius: 50%; bottom: 80px; left: -60px; pointer-events: none;
+    }
+    .sparkle {
+      position: absolute; pointer-events: none; opacity: 0.7;
+    }
+    .hero-tag {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--lavender-light); border: 1px solid var(--lavender);
+      border-radius: 100px; padding: 6px 16px; font-size: 13px;
+      color: var(--lavender-deep); font-weight: 500; margin-bottom: 32px;
+      width: fit-content; animation: fadeUp 0.6s ease both;
+    }
+    .hero-tag::before { content: '✦'; font-size: 11px; }
+    .hero-headline {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(56px, 7vw, 110px);
+      font-weight: 900; line-height: 0.92;
+      letter-spacing: -0.03em; color: var(--text-dark);
+      margin-bottom: 8px; animation: fadeUp 0.7s 0.1s ease both;
+    }
+    .hero-headline em { font-style: italic; color: var(--lavender-deep); }
+    .hero-headline .outline-text {
+      -webkit-text-stroke: 2px var(--text-dark); color: transparent;
+    }
+    .hero-sub {
+      font-size: clamp(14px, 1.6vw, 17px); color: var(--text-mid);
+      font-weight: 300; max-width: 460px; line-height: 1.7;
+      margin-top: 28px; margin-bottom: 48px;
+      animation: fadeUp 0.7s 0.2s ease both;
+    }
+    .hero-actions {
+      display: flex; gap: 16px; align-items: center; flex-wrap: wrap;
+      animation: fadeUp 0.7s 0.3s ease both;
+    }
+    .hero-stats {
+      display: flex; gap: 40px; margin-top: 64px;
+      padding-top: 40px; border-top: 1px solid rgba(200,184,232,0.4);
+      animation: fadeUp 0.7s 0.4s ease both; flex-wrap: wrap;
+    }
+    .stat-num {
+      font-family: 'Playfair Display', serif; font-size: 40px;
+      font-weight: 900; color: var(--text-dark); line-height: 1;
+    }
+    .stat-num span { color: var(--lavender-deep); }
+    .stat-label { font-size: 13px; color: var(--text-muted); margin-top: 4px; }
+
+    /* ── HERO RIGHT: mock screens ── */
+    .hero-right {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      animation: fadeUp 0.8s 0.35s ease both;
+      position: relative;
+      height: 580px;
+    }
+
+    .phone-mockup {
+      position: absolute;
+      border-radius: 36px;
+      overflow: hidden;
+      box-shadow: 0 24px 80px rgba(42,31,61,0.16);
+      border: 2.5px solid rgba(200,184,232,0.4);
+      background: var(--white);
+    }
+    .phone-main {
+      width: 210px; height: 420px;
+      left: 50%; top: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 3;
+      box-shadow: 0 32px 100px rgba(42,31,61,0.22);
+      border-color: rgba(200,184,232,0.6);
+    }
+    .phone-left {
+      width: 170px; height: 360px;
+      left: calc(50% - 175px); top: 50%;
+      transform: translateY(-50%) rotate(-8deg);
+      z-index: 2;
+      opacity: 0.85;
+    }
+    .phone-right {
+      width: 170px; height: 360px;
+      left: calc(50% + 45px); top: 50%;
+      transform: translateY(-50%) rotate(8deg);
+      z-index: 2;
+      opacity: 0.85;
+    }
+
+    /* phone screen content */
+    .phone-screen {
+      width: 100%; height: 100%;
+      display: flex; flex-direction: column;
+      position: relative; overflow: hidden;
+    }
+
+    /* Screen 1: esports app */
+    .screen-esports {
+      background: #0d0b14;
+    }
+    .screen-esports .s-header {
+      padding: 20px 16px 10px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .screen-esports .s-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 18px; font-weight: 900; color: var(--lavender);
+    }
+    .screen-esports .s-avatar {
+      width: 28px; height: 28px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--lavender-deep), #e8b4d0);
+    }
+    .screen-esports .s-banner {
+      margin: 0 12px;
+      height: 90px; border-radius: 16px;
+      background: linear-gradient(135deg, #1a1030 0%, #2d1a4a 100%);
+      display: flex; align-items: center; padding: 14px;
+      position: relative; overflow: hidden;
+    }
+    .screen-esports .s-banner::after {
+      content: '🎮';
+      position: absolute; right: 10px; top: 50%;
+      transform: translateY(-50%); font-size: 36px; opacity: 0.4;
+    }
+    .screen-esports .s-banner-label {
+      font-size: 9px; color: var(--lavender); font-weight: 500;
+      letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 4px;
+    }
+    .screen-esports .s-banner-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 13px; color: white; font-weight: 700; line-height: 1.2;
+    }
+    .screen-esports .s-section {
+      padding: 10px 14px 4px; font-size: 9px;
+      color: rgba(255,255,255,0.4); letter-spacing: 0.08em; text-transform: uppercase;
+    }
+    .screen-esports .s-list { padding: 0 12px; display: flex; flex-direction: column; gap: 6px; }
+    .screen-esports .s-item {
+      background: rgba(255,255,255,0.05); border-radius: 10px;
+      padding: 8px 10px; display: flex; align-items: center; gap: 8px;
+    }
+    .screen-esports .s-dot {
+      width: 28px; height: 28px; border-radius: 8px; flex-shrink: 0;
+    }
+    .screen-esports .s-item-title { font-size: 10px; color: white; font-weight: 500; }
+    .screen-esports .s-item-sub { font-size: 8px; color: rgba(255,255,255,0.4); margin-top: 2px; }
+    .screen-esports .s-nav {
+      margin-top: auto;
+      display: flex; justify-content: space-around;
+      padding: 8px 0 12px;
+      border-top: 1px solid rgba(255,255,255,0.06);
+    }
+    .screen-esports .s-nav-dot {
+      width: 6px; height: 6px; border-radius: 50%;
+    }
+
+    /* Screen 2: wellness/health app */
+    .screen-wellness {
+      background: #f5f0fb;
+    }
+    .screen-wellness .sw-header {
+      padding: 20px 14px 8px;
+    }
+    .screen-wellness .sw-greeting {
+      font-size: 9px; color: var(--text-muted); letter-spacing: 0.06em;
+    }
+    .screen-wellness .sw-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 15px; font-weight: 700; color: var(--text-dark); margin-top: 2px;
+    }
+    .screen-wellness .sw-card {
+      margin: 6px 12px;
+      background: linear-gradient(135deg, var(--lavender-deep), #c47db8);
+      border-radius: 16px; padding: 14px;
+      color: white;
+    }
+    .screen-wellness .sw-card-label {
+      font-size: 8px; opacity: 0.75; letter-spacing: 0.08em; text-transform: uppercase;
+    }
+    .screen-wellness .sw-card-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 26px; font-weight: 900; margin-top: 2px;
+    }
+    .screen-wellness .sw-card-sub { font-size: 8px; opacity: 0.65; margin-top: 1px; }
+    .screen-wellness .sw-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 6px; margin: 6px 12px;
+    }
+    .screen-wellness .sw-mini {
+      background: white; border-radius: 12px; padding: 10px;
+    }
+    .screen-wellness .sw-mini-icon { font-size: 14px; margin-bottom: 4px; }
+    .screen-wellness .sw-mini-label { font-size: 8px; color: var(--text-muted); }
+    .screen-wellness .sw-mini-val {
+      font-size: 11px; font-weight: 500; color: var(--text-dark); margin-top: 2px;
+    }
+    .screen-wellness .sw-bar {
+      height: 3px; border-radius: 2px; background: var(--lavender-light);
+      margin-top: 4px;
+    }
+    .screen-wellness .sw-bar-fill {
+      height: 100%; border-radius: 2px;
+      background: var(--lavender-deep);
+    }
+
+    /* Screen 3: fintech */
+    .screen-finance {
+      background: #ffffff;
+    }
+    .screen-finance .sf-header {
+      background: var(--text-dark); padding: 20px 14px 18px;
+    }
+    .screen-finance .sf-label {
+      font-size: 9px; color: rgba(250,247,242,0.5);
+      letter-spacing: 0.06em;
+    }
+    .screen-finance .sf-amount {
+      font-family: 'Playfair Display', serif;
+      font-size: 28px; font-weight: 900; color: white; margin-top: 2px;
+    }
+    .screen-finance .sf-change {
+      font-size: 9px; color: #7be8a0; margin-top: 2px;
+    }
+    .screen-finance .sf-chips {
+      display: flex; gap: 6px; margin-top: 10px;
+    }
+    .screen-finance .sf-chip {
+      background: rgba(255,255,255,0.1); border-radius: 100px;
+      padding: 4px 10px; font-size: 8px; color: white;
+    }
+    .screen-finance .sf-chip.active {
+      background: var(--lavender); color: var(--text-dark);
+    }
+    .screen-finance .sf-body { padding: 10px 12px; }
+    .screen-finance .sf-title {
+      font-size: 10px; font-weight: 500; color: var(--text-dark); margin-bottom: 8px;
+    }
+    .screen-finance .sf-row {
+      display: flex; align-items: center; gap: 8px;
+      padding: 7px 0; border-bottom: 1px solid rgba(200,184,232,0.2);
+    }
+    .screen-finance .sf-icon {
+      width: 26px; height: 26px; border-radius: 8px;
+      display: flex; align-items: center; justify-content: center; font-size: 13px;
+    }
+    .screen-finance .sf-row-label { flex: 1; }
+    .screen-finance .sf-row-title { font-size: 9px; color: var(--text-dark); font-weight: 500; }
+    .screen-finance .sf-row-sub { font-size: 7px; color: var(--text-muted); }
+    .screen-finance .sf-row-val { font-size: 9px; font-weight: 500; color: var(--text-dark); }
+
+    .hero-scroll-hint {
+      display: none;
+    }
+
+    /* ── ABOUT ── */
+    .about-section {
+      padding: 120px 60px;
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 80px; align-items: center;
+      background: var(--lavender-light);
+      position: relative; overflow: hidden;
+    }
+    .about-section::before {
+      content: ''; position: absolute;
+      top: -100px; right: -100px; width: 400px; height: 400px;
+      background: radial-gradient(circle, var(--lilac-soft) 0%, transparent 70%);
+      border-radius: 50%; pointer-events: none;
+    }
+    .about-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(36px, 4vw, 54px);
+      font-weight: 700; line-height: 1.1; letter-spacing: -0.02em; margin-bottom: 24px;
+    }
+    .about-title em { font-style: italic; color: var(--lavender-deep); }
+    .about-text { font-size: 16px; color: var(--text-mid); line-height: 1.8; margin-bottom: 16px; }
+    .about-right { display: flex; flex-direction: column; gap: 20px; }
+    .about-card {
+      background: var(--white); border-radius: 20px; padding: 28px;
+      border: 1px solid rgba(200,184,232,0.3); transition: transform 0.2s;
+    }
+    .about-card:hover { transform: translateY(-4px); }
+    .about-card-icon { font-size: 28px; margin-bottom: 12px; }
+    .about-card-title {
+      font-family: 'Playfair Display', serif; font-size: 18px;
+      font-weight: 700; margin-bottom: 8px;
+    }
+    .about-card-text { font-size: 14px; color: var(--text-muted); line-height: 1.6; }
+    .about-card.accent { background: var(--text-dark); color: var(--cream); }
+    .about-card.accent .about-card-title { color: var(--cream); }
+    .about-card.accent .about-card-text { color: rgba(250,247,242,0.6); }
+
+    /* ── SKILLS ── */
+    .skills-section { padding: 120px 60px; background: var(--cream); }
+    .skills-header {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 60px; margin-bottom: 72px; align-items: end;
+    }
+    .skills-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(40px, 5vw, 64px); font-weight: 900;
+      line-height: 1; letter-spacing: -0.03em;
+    }
+    .skills-title em { font-style: italic; color: var(--lavender-deep); }
+    .skills-desc { font-size: 16px; color: var(--text-mid); line-height: 1.8; }
+    .tools-grid {
+      display: grid; grid-template-columns: repeat(4, 1fr);
+      gap: 16px; margin-bottom: 60px;
+    }
+    .tool-card {
+      background: var(--white); border: 1px solid rgba(200,184,232,0.3);
+      border-radius: 16px; padding: 24px;
+      display: flex; flex-direction: column; gap: 12px;
+      transition: all 0.2s; position: relative; overflow: hidden;
+    }
+    .tool-card::after {
+      content: ''; position: absolute; inset: 0;
+      background: var(--lavender-light); opacity: 0;
+      transition: opacity 0.2s; border-radius: 16px;
+    }
+    .tool-card:hover::after { opacity: 1; }
+    .tool-card:hover { transform: translateY(-4px); border-color: var(--lavender); }
+    .tool-icon { font-size: 32px; position: relative; z-index: 1; }
+    .tool-name { font-weight: 500; font-size: 15px; color: var(--text-dark); position: relative; z-index: 1; }
+    .tool-desc { font-size: 12px; color: var(--text-muted); line-height: 1.5; position: relative; z-index: 1; }
+    .skills-pills { display: flex; flex-wrap: wrap; gap: 10px; }
+
+    /* ── EXPERIENCE ── */
+    .experience-section {
+      padding: 120px 60px; background: var(--text-dark);
+      color: var(--cream); position: relative; overflow: hidden;
+    }
+    .experience-section::before {
+      content: ''; position: absolute;
+      top: -200px; right: -200px; width: 600px; height: 600px;
+      background: radial-gradient(circle, rgba(200,184,232,0.08) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+    .exp-header { margin-bottom: 72px; }
+    .exp-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(40px, 5vw, 64px); font-weight: 900;
+      line-height: 1; letter-spacing: -0.03em;
+    }
+    .exp-title em { font-style: italic; color: var(--lavender); }
+    .timeline { display: flex; flex-direction: column; }
+    .timeline-item {
+      display: grid; grid-template-columns: 180px 1px 1fr;
+      gap: 32px; padding: 40px 0;
+      border-top: 1px solid rgba(250,247,242,0.08);
+      position: relative;
+    }
+    .timeline-item:last-child { border-bottom: 1px solid rgba(250,247,242,0.08); }
+    .timeline-year {
+      font-family: 'Playfair Display', serif; font-size: 15px;
+      font-weight: 700; color: var(--lavender); padding-top: 4px;
+    }
+    .timeline-divider { background: rgba(200,184,232,0.2); position: relative; }
+    .timeline-divider::before {
+      content: ''; position: absolute;
+      top: 8px; left: 50%; transform: translateX(-50%);
+      width: 8px; height: 8px; border-radius: 50%; background: var(--lavender);
+    }
+    .timeline-role {
+      font-family: 'Playfair Display', serif; font-size: 22px;
+      font-weight: 700; color: var(--cream); margin-bottom: 4px;
+    }
+    .timeline-company { font-size: 14px; color: var(--lavender); margin-bottom: 12px; font-weight: 500; }
+    .timeline-desc { font-size: 14px; color: rgba(250,247,242,0.55); line-height: 1.7; max-width: 600px; }
+    .timeline-tag {
+      display: inline-block; margin-top: 16px;
+      background: rgba(200,184,232,0.12); border: 1px solid rgba(200,184,232,0.2);
+      color: var(--lavender); padding: 4px 12px; border-radius: 100px; font-size: 12px;
+    }
+
+    /* hackathon list */
+    .hack-list { margin-top: 16px; display: flex; flex-direction: column; gap: 6px; }
+    .hack-item {
+      display: flex; align-items: center; gap: 8px;
+      font-size: 13px; color: rgba(250,247,242,0.65);
+    }
+    .hack-badge {
+      font-size: 11px; padding: 2px 8px; border-radius: 100px;
+      font-weight: 500; flex-shrink: 0;
+    }
+    .hack-badge.winner { background: rgba(200,184,232,0.18); color: var(--lavender); }
+    .hack-badge.runner { background: rgba(245,207,192,0.15); color: #f5cfc0; }
+
+    /* ── WHY I LOVE DESIGN ── */
+    .love-section {
+      padding: 120px 60px; background: var(--blush);
+      position: relative; overflow: hidden;
+    }
+    .love-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(40px, 5vw, 72px); font-weight: 900;
+      line-height: 1; letter-spacing: -0.03em;
+      margin-bottom: 72px; max-width: 700px;
+    }
+    .love-title em { font-style: italic; color: var(--lavender-deep); }
+    .love-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .love-card {
+      background: var(--white); border-radius: 24px; padding: 40px 32px;
+      position: relative; overflow: hidden; transition: transform 0.2s;
+    }
+    .love-card:hover { transform: translateY(-6px); }
+    .love-card:nth-child(2) { background: var(--lavender-light); margin-top: 40px; }
+    .love-card:nth-child(3) { background: var(--text-dark); color: var(--cream); }
+    .love-num {
+      font-family: 'Playfair Display', serif; font-size: 80px; font-weight: 900;
+      color: rgba(200,184,232,0.25); line-height: 1;
+      position: absolute; top: 16px; right: 24px;
+    }
+    .love-card:nth-child(3) .love-num { color: rgba(250,247,242,0.08); }
+    .love-emoji { font-size: 40px; margin-bottom: 20px; display: block; }
+    .love-card-title {
+      font-family: 'Playfair Display', serif; font-size: 22px;
+      font-weight: 700; margin-bottom: 12px; line-height: 1.2;
+    }
+    .love-card:nth-child(3) .love-card-title { color: var(--cream); }
+    .love-card-text { font-size: 15px; color: var(--text-mid); line-height: 1.7; }
+    .love-card:nth-child(3) .love-card-text { color: rgba(250,247,242,0.55); }
+    .floating-badge {
+      position: absolute; bottom: -20px; right: 60px;
+      background: var(--lavender-deep); color: var(--white);
+      padding: 16px 28px; border-radius: 100px;
+      font-family: 'Playfair Display', serif; font-size: 16px;
+      font-style: italic; font-weight: 700; transform: rotate(-3deg);
+      box-shadow: 0 8px 32px rgba(155,132,200,0.3);
+    }
+
+    /* ── CASE STUDIES ── */
+    .work-section { padding: 120px 60px; background: var(--cream); }
+    .work-header {
+      display: flex; align-items: flex-end; justify-content: space-between;
+      margin-bottom: 64px;
+    }
+    .work-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(40px, 5vw, 64px); font-weight: 900;
+      line-height: 1; letter-spacing: -0.03em;
+    }
+    .work-title em { font-style: italic; color: var(--lavender-deep); }
+    .work-subtitle { font-size: 15px; color: var(--text-muted); max-width: 280px; text-align: right; line-height: 1.6; }
+    .case-studies-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+    .case-card {
+      border-radius: 24px; overflow: hidden;
+      text-decoration: none; color: inherit;
+      position: relative; transition: transform 0.25s; display: block;
+    }
+    .case-card:hover { transform: translateY(-6px); }
+    .case-card-inner {
+      padding: 48px; min-height: 360px;
+      display: flex; flex-direction: column; justify-content: space-between;
+      position: relative; overflow: hidden;
+    }
+    .case-card:nth-child(1) .case-card-inner { background: var(--lavender-light); }
+    .case-card:nth-child(2) .case-card-inner { background: var(--text-dark); color: var(--cream); }
+    .case-card:nth-child(3) .case-card-inner { background: var(--peach); }
+    .case-card:nth-child(4) .case-card-inner { background: var(--mint); }
+    .case-card:nth-child(5) .case-card-inner { background: var(--lilac-soft); }
+    .case-card:nth-child(6) .case-card-inner { background: var(--blush); }
+    .case-num {
+      font-family: 'Playfair Display', serif; font-size: 100px;
+      font-weight: 900; opacity: 0.08;
+      position: absolute; bottom: -20px; right: 24px; line-height: 1;
+    }
+    .case-tag {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 12px; font-weight: 500; letter-spacing: 0.1em;
+      text-transform: uppercase; color: var(--lavender-deep);
+      background: rgba(200,184,232,0.25); padding: 5px 12px;
+      border-radius: 100px; width: fit-content;
+    }
+    .case-card:nth-child(2) .case-tag { color: var(--lavender); background: rgba(200,184,232,0.1); }
+    .case-card:nth-child(3) .case-tag,
+    .case-card:nth-child(4) .case-tag,
+    .case-card:nth-child(5) .case-tag,
+    .case-card:nth-child(6) .case-tag { color: var(--text-dark); background: rgba(42,31,61,0.1); }
+    .case-title {
+      font-family: 'Playfair Display', serif; font-size: 30px;
+      font-weight: 900; line-height: 1.1; letter-spacing: -0.02em; margin-bottom: 12px;
+    }
+    .case-card:nth-child(2) .case-title { color: var(--cream); }
+    .case-desc { font-size: 14px; color: var(--text-mid); line-height: 1.6; }
+    .case-card:nth-child(2) .case-desc { color: rgba(250,247,242,0.5); }
+    .case-arrow {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--text-dark); color: var(--cream);
+      padding: 10px 18px; border-radius: 100px; font-size: 14px;
+      margin-top: 24px; transition: background 0.2s; width: fit-content;
+    }
+    .case-card:hover .case-arrow { background: var(--lavender-deep); }
+    .case-card:nth-child(2) .case-arrow { background: var(--lavender); color: var(--text-dark); }
+    .case-award {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 12px; color: var(--lavender-deep); font-weight: 500; margin-top: 8px;
+    }
+    .case-card:nth-child(2) .case-award { color: var(--lavender); }
+
+    /* ── CONTACT ── */
+    .contact-section {
+      padding: 120px 60px; background: var(--lavender-light);
+      position: relative; overflow: hidden;
+    }
+    .contact-section::before {
+      content: ''; position: absolute;
+      bottom: -200px; right: -100px; width: 500px; height: 500px;
+      background: radial-gradient(circle, var(--lavender) 0%, transparent 70%);
+      border-radius: 50%; opacity: 0.4;
+    }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
+    .contact-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(40px, 5vw, 64px); font-weight: 900;
+      line-height: 1; letter-spacing: -0.03em; margin-bottom: 24px;
+    }
+    .contact-title em { font-style: italic; color: var(--lavender-deep); }
+    .contact-desc { font-size: 16px; color: var(--text-mid); line-height: 1.8; margin-bottom: 40px; }
+    .contact-links { display: flex; flex-direction: column; gap: 16px; }
+    .contact-link {
+      display: flex; align-items: center; gap: 14px;
+      text-decoration: none; color: var(--text-dark);
+      font-size: 15px; font-weight: 500;
+      padding: 16px 20px; background: var(--white);
+      border-radius: 14px; border: 1px solid rgba(200,184,232,0.3);
+      transition: all 0.2s;
+    }
+    .contact-link:hover { background: var(--lavender-deep); color: var(--white); transform: translateX(4px); }
+    .contact-link-icon {
+      width: 36px; height: 36px; background: var(--lavender-light);
+      border-radius: 10px; display: flex; align-items: center; justify-content: center;
+      font-size: 18px; flex-shrink: 0; transition: background 0.2s;
+    }
+    .contact-link:hover .contact-link-icon { background: rgba(255,255,255,0.2); }
+    .contact-form { display: flex; flex-direction: column; gap: 16px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .form-group { display: flex; flex-direction: column; gap: 8px; }
+    .form-label { font-size: 13px; font-weight: 500; color: var(--text-mid); letter-spacing: 0.04em; }
+    .form-input, .form-textarea {
+      background: var(--white); border: 1.5px solid rgba(200,184,232,0.4);
+      border-radius: 12px; padding: 14px 18px;
+      font-family: 'DM Sans', sans-serif; font-size: 15px;
+      color: var(--text-dark); outline: none;
+      transition: border-color 0.2s, box-shadow 0.2s; width: 100%;
+    }
+    .form-input:focus, .form-textarea:focus {
+      border-color: var(--lavender-deep);
+      box-shadow: 0 0 0 3px rgba(155,132,200,0.15);
+    }
+    .form-textarea { resize: vertical; min-height: 140px; }
+    .form-submit {
+      background: var(--text-dark); color: var(--cream);
+      border: none; border-radius: 100px; padding: 16px 36px;
+      font-family: 'DM Sans', sans-serif; font-size: 16px;
+      font-weight: 500; cursor: pointer;
+      transition: background 0.2s, transform 0.15s; width: fit-content;
+    }
+    .form-submit:hover { background: var(--lavender-deep); transform: translateY(-2px); }
+    .form-status { font-size: 14px; padding: 12px 18px; border-radius: 10px; display: none; }
+    .form-status.success { background: #e8f5e9; color: #2e7d32; display: block; }
+    .form-status.error { background: #fce4ec; color: #c62828; display: block; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 1100px) {
+      .hero { grid-template-columns: 1fr; min-height: auto; padding: 110px 40px 60px; }
+      .hero-right { display: none; }
+      .tools-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 900px) {
+      .hero { padding: 100px 20px 60px; }
+      .hero-headline { font-size: clamp(52px, 13vw, 80px); }
+      .hero-stats { gap: 24px; }
+      .about-section { grid-template-columns: 1fr; padding: 80px 20px; gap: 40px; }
+      .skills-section { padding: 80px 20px; }
+      .skills-header { grid-template-columns: 1fr; gap: 24px; margin-bottom: 40px; }
+      .tools-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
+      .experience-section { padding: 80px 20px; }
+      .timeline-item { grid-template-columns: 100px 1px 1fr; gap: 16px; padding: 28px 0; }
+      .love-section { padding: 80px 20px; }
+      .love-grid { grid-template-columns: 1fr; }
+      .love-card:nth-child(2) { margin-top: 0; }
+      .floating-badge { right: 20px; font-size: 13px; padding: 12px 20px; }
+      .work-section { padding: 80px 20px; }
+      .work-header { flex-direction: column; align-items: flex-start; gap: 12px; }
+      .work-subtitle { text-align: left; }
+      .case-studies-grid { grid-template-columns: 1fr; }
+      .contact-section { padding: 80px 20px; }
+      .contact-grid { grid-template-columns: 1fr; gap: 40px; }
+      .form-row { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 480px) {
+      .hero-headline { font-size: 48px; }
+      .hero-actions { flex-direction: column; align-items: flex-start; }
+      .btn-primary, .btn-outline { width: 100%; text-align: center; }
+      .hero-stats { flex-wrap: wrap; gap: 20px; }
+      .stat-num { font-size: 32px; }
+      .tools-grid { grid-template-columns: 1fr; }
+      .timeline-item { grid-template-columns: 1fr; gap: 8px; }
+      .timeline-divider { display: none; }
+      .case-card-inner { padding: 28px; min-height: 280px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── NAVBAR ── -->
+  <nav>
+    <a href="#" class="nav-logo">Fatima <span>Noor</span></a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#about">About</a></li>
+      <li><a href="#work">Work</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="https://www.fatimanoor.me" target="_blank">Dev Portfolio</a></li>
+      <li><a href="#contact" class="nav-cta">Let's Talk</a></li>
+    </ul>
+  </nav>
+
+  <!-- ── HERO ── -->
+  <section class="hero">
+    <div class="hero-blob-1"></div>
+    <div class="hero-blob-2"></div>
+
+    <svg class="sparkle" style="top:15%;left:55%;width:28px" viewBox="0 0 28 28"><path d="M14 0 L15.2 12.8 L28 14 L15.2 15.2 L14 28 L12.8 15.2 L0 14 L12.8 12.8 Z" fill="#c8b8e8"/></svg>
+    <svg class="sparkle" style="top:70%;right:15%;width:18px" viewBox="0 0 28 28"><path d="M14 0 L15.2 12.8 L28 14 L15.2 15.2 L14 28 L12.8 15.2 L0 14 L12.8 12.8 Z" fill="#ddd0f0"/></svg>
+    <svg class="sparkle" style="bottom:20%;left:42%;width:22px" viewBox="0 0 28 28"><path d="M14 0 L15.2 12.8 L28 14 L15.2 15.2 L14 28 L12.8 15.2 L0 14 L12.8 12.8 Z" fill="#c8b8e8"/></svg>
+
+    <div class="hero-left">
+      <div class="hero-tag">Product Designer & Software Engineer</div>
+      <h1 class="hero-headline">
+        Design<br>
+        that <em>feels</em><br>
+        <span class="outline-text">right.</span>
+      </h1>
+      <p class="hero-sub">
+        Hi, I'm Fatima — a software engineer who designs. 6 national hackathon placements in UI/UX, a UX internship at The Nexen Studio, and a genuine belief that good design has to be buildable.
+      </p>
+      <div class="hero-actions">
+        <a href="#work" class="btn-primary">View Case Studies</a>
+        <a href="#contact" class="btn-outline">Get in Touch</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat-item">
+          <div class="stat-num">6<span>×</span></div>
+          <div class="stat-label">Hackathon Wins</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">1</div>
+          <div class="stat-label">UX Internship</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">20<span>+</span></div>
+          <div class="stat-label">Screens per project</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">8<span>+</span></div>
+          <div class="stat-label"> hours avg hackathon sprint</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── HERO RIGHT: phone mockups ── -->
+    <div class="hero-right">
+      <!-- Left phone: wellness -->
+      <div class="phone-mockup phone-left">
+        <div class="phone-screen screen-wellness">
+          <div class="sw-header">
+            <div class="sw-greeting">GOOD MORNING</div>
+            <div class="sw-name">Your Dashboard</div>
+          </div>
+          <div class="sw-card">
+            <div class="sw-card-label">Steps Today</div>
+            <div class="sw-card-num">8,240</div>
+            <div class="sw-card-sub">82% of daily goal</div>
+          </div>
+          <div class="sw-grid">
+            <div class="sw-mini">
+              <div class="sw-mini-icon">💧</div>
+              <div class="sw-mini-label">Water</div>
+              <div class="sw-mini-val">1.8 L</div>
+              <div class="sw-bar"><div class="sw-bar-fill" style="width:72%"></div></div>
+            </div>
+            <div class="sw-mini">
+              <div class="sw-mini-icon">😴</div>
+              <div class="sw-mini-label">Sleep</div>
+              <div class="sw-mini-val">7h 12m</div>
+              <div class="sw-bar"><div class="sw-bar-fill" style="width:85%"></div></div>
+            </div>
+            <div class="sw-mini">
+              <div class="sw-mini-icon">🔥</div>
+              <div class="sw-mini-label">Calories</div>
+              <div class="sw-mini-val">1,640</div>
+              <div class="sw-bar"><div class="sw-bar-fill" style="width:60%"></div></div>
+            </div>
+            <div class="sw-mini">
+              <div class="sw-mini-icon">💜</div>
+              <div class="sw-mini-label">Heart Rate</div>
+              <div class="sw-mini-val">72 bpm</div>
+              <div class="sw-bar"><div class="sw-bar-fill" style="width:90%"></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Main phone: esports -->
+      <div class="phone-mockup phone-main">
+        <div class="phone-screen screen-esports">
+          <div class="s-header">
+            <div class="s-logo">GG</div>
+            <div class="s-avatar"></div>
+          </div>
+          <div class="s-banner">
+            <div>
+              <div class="s-banner-label">Live Tournament</div>
+              <div class="s-banner-title">SOFTEC Open<br>Season 4</div>
+            </div>
+          </div>
+          <div class="s-section">Upcoming Matches</div>
+          <div class="s-list">
+            <div class="s-item">
+              <div class="s-dot" style="background:linear-gradient(135deg,#9b84c8,#c47db8)"></div>
+              <div>
+                <div class="s-item-title">Team Phoenix vs Nexus</div>
+                <div class="s-item-sub">Today · 8:00 PM</div>
+              </div>
+            </div>
+            <div class="s-item">
+              <div class="s-dot" style="background:linear-gradient(135deg,#2d6a8a,#3da8d4)"></div>
+              <div>
+                <div class="s-item-title">Blaze vs Storm</div>
+                <div class="s-item-sub">Tomorrow · 6:30 PM</div>
+              </div>
+            </div>
+            <div class="s-item">
+              <div class="s-dot" style="background:linear-gradient(135deg,#8a6a2d,#d4a83d)"></div>
+              <div>
+                <div class="s-item-title">Finals — TBA</div>
+                <div class="s-item-sub">Sat · 9:00 PM</div>
+              </div>
+            </div>
+          </div>
+          <div class="s-nav">
+            <div class="s-nav-dot" style="background:var(--lavender)"></div>
+            <div class="s-nav-dot" style="background:rgba(255,255,255,0.2)"></div>
+            <div class="s-nav-dot" style="background:rgba(255,255,255,0.2)"></div>
+            <div class="s-nav-dot" style="background:rgba(255,255,255,0.2)"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right phone: fintech -->
+      <div class="phone-mockup phone-right">
+        <div class="phone-screen screen-finance">
+          <div class="sf-header">
+            <div class="sf-label">PORTFOLIO VALUE</div>
+            <div class="sf-amount">Rs 2,84,500</div>
+            <div class="sf-change">+4.2% this week</div>
+            <div class="sf-chips">
+              <div class="sf-chip active">All</div>
+              <div class="sf-chip">Stocks</div>
+              <div class="sf-chip">Crypto</div>
+            </div>
+          </div>
+          <div class="sf-body">
+            <div class="sf-title">Recent Transactions</div>
+            <div class="sf-row">
+              <div class="sf-icon" style="background:#e8f5e9">💹</div>
+              <div class="sf-row-label">
+                <div class="sf-row-title">HBL Stock</div>
+                <div class="sf-row-sub">Bought · Today</div>
+              </div>
+              <div class="sf-row-val">+Rs 4,200</div>
+            </div>
+            <div class="sf-row">
+              <div class="sf-icon" style="background:#fce4ec">📉</div>
+              <div class="sf-row-label">
+                <div class="sf-row-title">PSO</div>
+                <div class="sf-row-sub">Sold · Yesterday</div>
+              </div>
+              <div class="sf-row-val" style="color:#e57373">-Rs 1,100</div>
+            </div>
+            <div class="sf-row">
+              <div class="sf-icon" style="background:var(--lavender-light)">🏦</div>
+              <div class="sf-row-label">
+                <div class="sf-row-title">Savings Goal</div>
+                <div class="sf-row-sub">Auto-deposit</div>
+              </div>
+              <div class="sf-row-val">Rs 5,000</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── MARQUEE ── -->
+  <div class="marquee-section">
+    <div class="marquee-track">
+      <div class="marquee-item">User Research</div>
+      <div class="marquee-item">Wireframing</div>
+      <div class="marquee-item">Prototyping</div>
+      <div class="marquee-item">Design Systems</div>
+      <div class="marquee-item">Interaction Design</div>
+      <div class="marquee-item">Figma</div>
+      <div class="marquee-item">Mobile UI</div>
+      <div class="marquee-item">Responsive Design</div>
+      <div class="marquee-item">User Research</div>
+      <div class="marquee-item">Wireframing</div>
+      <div class="marquee-item">Prototyping</div>
+      <div class="marquee-item">Design Systems</div>
+      <div class="marquee-item">Interaction Design</div>
+      <div class="marquee-item">Figma</div>
+      <div class="marquee-item">Mobile UI</div>
+      <div class="marquee-item">Responsive Design</div>
+    </div>
+  </div>
+
+  <!-- ── ABOUT ── -->
+  <section class="about-section" id="about">
+    <div class="about-left reveal">
+      <div class="section-label">About Me</div>
+      <h2 class="about-title">Engineer by training,<br><em>designer</em> by drive.</h2>
+      <p class="about-text">I got into design through hackathons, and I got serious about it fast. Six national placements later, I had built a body of work that spoke for itself — full hi-fi prototypes, real problem statements, real competition.</p>
+      <p class="about-text">Being a software engineer changes how I design. I know what a rerender costs. I understand how an API response shapes a screen. Every design decision I make accounts for how it will actually be built.</p>
+      <p class="about-text">I graduated with a degree in Software Engineering from PUCIT, Lahore. I bring both sides of the product to every room I'm in.</p>
+    </div>
+    <div class="about-right reveal">
+      <div class="about-card">
+        <div class="about-card-icon">🎓</div>
+        <div class="about-card-title">Software Engineering @ PUCIT</div>
+        <div class="about-card-text">Lahore, Pakistan. The technical foundation that makes my design decisions grounded and buildable.</div>
+      </div>
+      <div class="about-card accent">
+        <div class="about-card-icon">🏆</div>
+        <div class="about-card-title">6 National Hackathon Placements</div>
+        <div class="about-card-text">Wins and runner-up finishes across Pakistan's top university tech competitions, all in UI/UX.</div>
+      </div>
+      <div class="about-card">
+        <div class="about-card-icon">💼</div>
+        <div class="about-card-title">UX Designer Intern at The Nexen Studio</div>
+        <div class="about-card-text">Designed and delivered landing pages, worked closely with developers, and contributed to live client projects.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── SKILLS ── -->
+  <section class="skills-section" id="skills">
+    <div class="skills-header reveal">
+      <div>
+        <div class="section-label">Skills & Tools</div>
+        <h2 class="skills-title">What I work<br><em>with.</em></h2>
+      </div>
+      <p class="skills-desc">I move fast in Figma, think in systems, and because I'm also an engineer, I know when a design decision will cost three sprints to implement.</p>
+    </div>
+    <div class="tools-grid reveal">
+      <div class="tool-card">
+        <div class="tool-icon">🎨</div>
+        <div class="tool-name">Figma</div>
+        <div class="tool-desc">Primary design tool — components, auto-layout, prototyping, design systems</div>
+      </div>
+      <div class="tool-card">
+        <div class="tool-icon">🔬</div>
+        <div class="tool-name">User Research</div>
+        <div class="tool-desc">Problem framing, user flows, pain point mapping, competitive analysis</div>
+      </div>
+      <div class="tool-card">
+        <div class="tool-icon">📱</div>
+        <div class="tool-name">Mobile-First Design</div>
+        <div class="tool-desc">iOS and Android patterns, responsive layouts, touch interaction design</div>
+      </div>
+      <div class="tool-card">
+        <div class="tool-icon">⚡</div>
+        <div class="tool-name">Rapid Prototyping</div>
+        <div class="tool-desc">Hackathon-trained — full hi-fi prototypes under pressure in 8-hour sprints</div>
+      </div>
+      <div class="tool-card">
+        <div class="tool-icon">🧩</div>
+        <div class="tool-name">Design Systems</div>
+        <div class="tool-desc">Color tokens, typography scales, component libraries, spacing systems</div>
+      </div>
+      <div class="tool-card">
+        <div class="tool-icon">💻</div>
+        <div class="tool-name">HTML / CSS / JS</div>
+        <div class="tool-desc">I can read and write front-end code — design handoffs I give actually work</div>
+      </div>
+      <div class="tool-card">
+        <div class="tool-icon">🤖</div>
+        <div class="tool-name">AI-Assisted Design</div>
+        <div class="tool-desc">ChatGPT, Claude, and generative tools for faster ideation and content</div>
+      </div>
+      <div class="tool-card">
+        <div class="tool-icon">🗺️</div>
+        <div class="tool-name">Information Architecture</div>
+        <div class="tool-desc">User flows, sitemap design, navigation systems, content hierarchy</div>
+      </div>
+    </div>
+    <div class="skills-pills reveal">
+      <span class="skill-pill">Wireframing</span>
+      <span class="skill-pill">Hi-Fi Prototyping</span>
+      <span class="skill-pill">Interaction Design</span>
+      <span class="skill-pill">Visual Hierarchy</span>
+      <span class="skill-pill">Typography</span>
+      <span class="skill-pill">Color Theory</span>
+      <span class="skill-pill">Usability Heuristics</span>
+      <span class="skill-pill">Design Critique</span>
+      <span class="skill-pill">Accessibility</span>
+      <span class="skill-pill">Onboarding Flows</span>
+    </div>
+  </section>
+
+  <!-- ── EXPERIENCE ── -->
+  <section class="experience-section" id="experience">
+    <div class="exp-header reveal">
+      <h2 class="exp-title">Where I've<br><em>worked.</em></h2>
+    </div>
+    <div class="timeline reveal">
+
+      <div class="timeline-item">
+        <div class="timeline-year">2024 – 2025</div>
+        <div class="timeline-divider"></div>
+        <div class="timeline-content">
+          <div class="timeline-role">UX Designer Intern</div>
+          <div class="timeline-company">The Nexen Studio — Remote, Dubai</div>
+          <div class="timeline-desc">Designed and delivered 20+ landing pages across 6 client projects, from initial wireframes to developer-ready handoffs. Collaborated closely with the development team across multiple live products, aligning design decisions with technical constraints. Contributed to improving client engagement metrics through cleaner information architecture and stronger visual hierarchy.</div>
+          <span class="timeline-tag">Internship · UI/UX</span>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-year">2022 – 2025</div>
+        <div class="timeline-divider"></div>
+        <div class="timeline-content">
+          <div class="timeline-role">Competitive UI/UX Designer</div>
+          <div class="timeline-company">National University Hackathons — Pakistan</div>
+          <div class="timeline-desc">Earned 6 national placements across Pakistan's top university tech competitions, all in the UI/UX track. Each project was built from scratch within an 8-hour sprint — problem research, user flows, wireframes, full hi-fi screens, and a live prototype ready for presentation. Also received a Letter of Appreciation from PUCIT for outstanding design work.</div>
+          <div class="hack-list">
+            <div class="hack-item"><span class="hack-badge winner">Winner</span> SOFTEC'26 — FAST NUCES</div>
+            <div class="hack-item"><span class="hack-badge winner">Winner</span> Technoverse'25 — COMSATS</div>
+            <div class="hack-item"><span class="hack-badge winner">Winner</span> PUCON'25 — PUCIT</div>
+            <div class="hack-item"><span class="hack-badge runner">Runner-Up</span> SOFTEC'25 — FAST NUCES</div>
+            <div class="hack-item"><span class="hack-badge runner">Runner-Up</span> RC3'25 — Riphah</div>
+            <div class="hack-item"><span class="hack-badge runner">Runner-Up</span> Techverse'26 — UMT</div>
+          </div>
+          <span class="timeline-tag">6 Placements · National Level</span>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-year">2022 – 2026</div>
+        <div class="timeline-divider"></div>
+        <div class="timeline-content">
+          <div class="timeline-role">Software Engineering Student</div>
+          <div class="timeline-company">PUCIT — Lahore, Pakistan</div>
+          <div class="timeline-desc">Bachelor's in Software Engineering. The technical background behind every design decision — understanding systems, data structures, and how interfaces actually get built gives me a different perspective in the room.</div>
+          <span class="timeline-tag">Graduated 2026</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── WHY I LOVE DESIGN ── -->
+  <section class="love-section">
+    <h2 class="love-title reveal">Why I actually<br><em>love</em> this.</h2>
+    <div class="love-grid reveal">
+      <div class="love-card">
+        <div class="love-num">01</div>
+        <span class="love-emoji">🧩</span>
+        <div class="love-card-title">Every screen is a puzzle</div>
+        <div class="love-card-text">I love the constraint. You have limited space, a distracted user, and a business goal that needs to happen in three taps. That tension is exactly where good design lives.</div>
+      </div>
+      <div class="love-card">
+        <div class="love-num">02</div>
+        <span class="love-emoji">🤝</span>
+        <div class="love-card-title">The most honest feedback loop</div>
+        <div class="love-card-text">You ship something and you immediately know if it worked. Users don't lie with their behavior. That directness is addictive once you've experienced it in a hackathon setting.</div>
+      </div>
+      <div class="love-card">
+        <div class="love-num">03</div>
+        <span class="love-emoji">⚡</span>
+        <div class="love-card-title">Engineering + design is a superpower</div>
+        <div class="love-card-text">Most designers don't know what a rerender costs. Most engineers don't think about cognitive load. Being both means I never design something that can't be built — and I never build something that shouldn't exist.</div>
+      </div>
+    </div>
+    <div class="floating-badge">let's make something good ✦</div>
+  </section>
+
+  <!-- ── CASE STUDIES ── -->
+  <section class="work-section" id="work">
+    <div class="work-header reveal">
+      <div>
+        <div class="section-label">Case Studies</div>
+        <h2 class="work-title">The <em>work.</em></h2>
+      </div>
+      <p class="work-subtitle">6 projects. All built in 8-hour sprints. All placed at national level.</p>
+    </div>
+    <div class="case-studies-grid reveal">
+
+      <a href="casestudies/egaming.html" class="case-card">
+        <div class="case-card-inner">
+          <div class="case-num">01</div>
+          <div>
+            <span class="case-tag">Mobile App · Esports</span>
+            <div class="case-award">🏆 SOFTEC'26 Winner</div>
+          </div>
+          <div>
+            <div class="case-title">GG — Social Platform for Gamers</div>
+            <div class="case-desc">Instagram meets esports. A mobile app for competitive gamers to discover tournaments, track brackets, and build a community.</div>
+            <div class="case-arrow">View Case Study →</div>
+          </div>
+        </div>
+      </a>
+
+      <a href="casestudies/cs2.html" class="case-card">
+        <div class="case-card-inner">
+          <div class="case-num">02</div>
+          <div><span class="case-tag">Coming Soon</span></div>
+          <div>
+            <div class="case-title">Case Study 02</div>
+            <div class="case-desc">Details coming soon. Add your second hackathon project here.</div>
+            <div class="case-arrow">Coming Soon</div>
+          </div>
+        </div>
+      </a>
+
+      <a href="casestudies/cs3.html" class="case-card">
+        <div class="case-card-inner">
+          <div class="case-num">03</div>
+          <div><span class="case-tag">Coming Soon</span></div>
+          <div>
+            <div class="case-title">Case Study 03</div>
+            <div class="case-desc">Details coming soon.</div>
+            <div class="case-arrow">Coming Soon</div>
+          </div>
+        </div>
+      </a>
+
+      <a href="casestudies/cs4.html" class="case-card">
+        <div class="case-card-inner">
+          <div class="case-num">04</div>
+          <div><span class="case-tag">Coming Soon</span></div>
+          <div>
+            <div class="case-title">Case Study 04</div>
+            <div class="case-desc">Details coming soon.</div>
+            <div class="case-arrow">Coming Soon</div>
+          </div>
+        </div>
+      </a>
+
+      <a href="casestudies/cs5.html" class="case-card">
+        <div class="case-card-inner">
+          <div class="case-num">05</div>
+          <div><span class="case-tag">Coming Soon</span></div>
+          <div>
+            <div class="case-title">Case Study 05</div>
+            <div class="case-desc">Details coming soon.</div>
+            <div class="case-arrow">Coming Soon</div>
+          </div>
+        </div>
+      </a>
+
+      <a href="casestudies/cs6.html" class="case-card">
+        <div class="case-card-inner">
+          <div class="case-num">06</div>
+          <div><span class="case-tag">Coming Soon</span></div>
+          <div>
+            <div class="case-title">Case Study 06</div>
+            <div class="case-desc">Details coming soon.</div>
+            <div class="case-arrow">Coming Soon</div>
+          </div>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- ── CONTACT ── -->
+  <section class="contact-section" id="contact">
+    <div class="contact-grid">
+      <div class="reveal">
+        <div class="section-label">Contact</div>
+        <h2 class="contact-title">Let's work<br><em>together.</em></h2>
+        <p class="contact-desc">Whether it's a full-time role, a freelance project, or just a conversation about design — I'm always open to a good one.</p>
+        <div class="contact-links">
+          <a href="mailto:fatimanoor.se22@gmail.com" class="contact-link">
+            <div class="contact-link-icon">✉️</div>
+            fatimanoor.se22@gmail.com
+          </a>
+          <a href="https://www.linkedin.com/in/fatimanooor/" target="_blank" class="contact-link">
+            <div class="contact-link-icon">💼</div>
+            linkedin.com/in/fatimanooor
+          </a>
+          <a href="https://github.com/fatiima-noor" target="_blank" class="contact-link">
+            <div class="contact-link-icon">🐙</div>
+            github.com/fatiima-noor
+          </a>
+          <a href="https://www.fatimanoor.me" target="_blank" class="contact-link">
+            <div class="contact-link-icon">💻</div>
+            Dev Portfolio → fatimanoor.me
+          </a>
+        </div>
+      </div>
+      <div class="reveal">
+        <form class="contact-form" id="contactForm">
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">Your Name</label>
+              <input type="text" class="form-input" id="name" placeholder="Stacy Summers" required />
+            </div>
+            <div class="form-group">
+              <label class="form-label">Your Email</label>
+              <input type="email" class="form-input" id="email" placeholder="stacy@studio.co" required />
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Subject</label>
+            <input type="text" class="form-input" id="subject" placeholder="I'd love to work on a project together" />
+          </div>
+          <div class="form-group">
+            <label class="form-label">Message</label>
+            <textarea class="form-textarea" id="message" placeholder="Tell me what you're working on..." required></textarea>
+          </div>
+          <button type="submit" class="form-submit">Send Message ✦</button>
+          <div class="form-status" id="formStatus"></div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ── -->
+  <footer>
+    <div>
+      <div class="footer-brand">Fatima <span>Noor</span></div>
+      <div class="footer-tagline">Product Designer & Software Engineer · Lahore, Pakistan</div>
+    </div>
+    <ul class="footer-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#work">Case Studies</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="footer-right">
+      <div class="footer-copy">© 2026 Fatima Noor. All rights reserved.</div>
+      <a href="https://www.fatimanoor.me" class="footer-back" target="_blank">Dev Portfolio →</a>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
