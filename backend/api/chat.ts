@@ -111,7 +111,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
     try {
         const response = await groq.chat.completions.create({
-            model: 'llama-3.1-8b-instant',
+            model: 'openai/gpt-oss-20b',
             max_tokens: 300,
             messages: [
                 { role: 'system', content: FATIMA_SYSTEM_PROMPT },
