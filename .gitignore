@@ -173,3 +173,4 @@ dist/
 
 # Vercel
 .vercel
+.DS_Store
